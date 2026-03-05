@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:mattrutherford.co.uk)",
+      "WebFetch(domain:www.armstrongexecutivecoaching.ie)",
+      "WebFetch(domain:www.vickiharris.ie)"
+    ]
+  }
+}

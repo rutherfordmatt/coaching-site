@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Rutherford | Executive &amp; Business Coach</title>
+    <meta name="description" content="Executive and business coaching for ambitious leaders. 30 years of tech and leadership experience. ideas. clarity. growth.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:           #FAFAF8;
+            --bg-alt:       #F3F0EB;
+            --text:         #1A1A1A;
+            --text-muted:   #686460;
+            --accent:       #3A6B6B;
+            --accent-dark:  #2B5050;
+            --accent-light: #E6EFEF;
+            --border:       #E2DEDA;
+            --white:        #FFFFFF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body:    'Inter', system-ui, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        /* ─── Typography ─── */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.15;
+        }
+        h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
+        h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+        h3 { font-size: 1.6rem; }
+        p  { color: var(--text-muted); line-height: 1.85; }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+
+        /* ─── Buttons ─── */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(58,107,107,0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+        }
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ─── Nav ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+            background: rgba(250, 250, 248, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        nav.scrolled { border-bottom-color: var(--border); }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .nav-brand span {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        .nav-cta {
+            padding: 0.55rem 1.4rem !important;
+            background: var(--accent) !important;
+            color: var(--white) !important;
+            border-radius: 2px;
+            font-size: 0.75rem !important;
+            transition: background 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--accent-dark) !important; }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 6px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--text);
+            transition: all 0.3s;
+        }
+
+        /* ─── Hero ─── */
+        #hero {
+            padding-top: 68px;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 4rem 6rem 8rem;
+        }
+
+        .hero-tagline {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+        .hero-tagline span { margin: 0 0.5rem; opacity: 0.35; }
+
+        .hero-title {
+            color: var(--text);
+            margin-bottom: 1.8rem;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 460px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(250,250,248,0.15) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        /* ─── About ─── */
+        #about {
+            background: var(--bg-alt);
+        }
+        .about-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 7rem;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+        .about-image-wrap img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .about-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: -1.5rem;
+            left: -1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            border: 1px solid var(--border);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .about-image-wrap img { position: relative; z-index: 1; }
+
+        .about-text h2 { margin-bottom: 1.5rem; }
+        .about-text p { margin-bottom: 1.2rem; }
+
+        .credentials {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+        }
+        .credential-value {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .credential-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ─── Services ─── */
+        #services {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .services-header h2 { margin-bottom: 1rem; }
+        .services-header p { max-width: 540px; margin: 0 auto; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border);
+        }
+
+        .service-card {
+            background: var(--bg);
+            padding: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+        .service-card:hover { background: var(--white); }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 3.5rem; right: 3.5rem;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-num {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--accent-light);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .service-card > p {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .feature-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+        .feature-list li::before {
+            content: '';
+            width: 14px;
+            height: 1px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+
+        /* ─── Process ─── */
+        #process {
+            background: var(--text);
+        }
+        .process-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+        .process-header .section-label { color: rgba(255,255,255,0.4); }
+        .process-header h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .process-header p {
+            color: rgba(255,255,255,0.5);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: calc(33.33% / 2 + 1rem);
+            right: calc(33.33% / 2 + 1rem);
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .process-step { text-align: center; }
+
+        .step-circle {
+            width: 64px;
+            height: 64px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+            background: var(--text);
+        }
+        .step-circle svg {
+            width: 22px;
+            height: 22px;
+            stroke: rgba(255,255,255,0.6);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .step-word {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent-light);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .process-step h3 {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.2rem;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.8;
+        }
+
+        /* ─── Testimonials ─── */
+        #testimonials {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .testimonials-header h2 { margin-bottom: 0.5rem; }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .testimonial:hover {
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+            transform: translateY(-3px);
+        }
+
+        .quote-mark {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            line-height: 0.6;
+            color: var(--accent-light);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid var(--border);
+            padding-top: 1.2rem;
+        }
+        .author-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+        .author-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ─── Contact ─── */
+        #contact {
+            background: var(--bg-alt);
+        }
+        .contact-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 7rem;
+            align-items: start;
+        }
+
+        .contact-text h2 { margin-bottom: 1.5rem; }
+        .contact-text > p { margin-bottom: 2.5rem; max-width: 380px; }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        .contact-detail svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+        .contact-detail a, .contact-detail span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-detail a:hover { color: var(--accent); }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+
+        input, textarea {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            padding: 0.85rem 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            width: 100%;
+            appearance: none;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(58,107,107,0.08);
+        }
+        input::placeholder, textarea::placeholder { color: #C4C0BB; }
+        textarea { resize: vertical; min-height: 140px; }
+
+        .form-footer {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.4rem;
+        }
+        .form-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .form-success {
+            display: none;
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ─── Footer ─── */
+        footer {
+            background: #111111;
+            padding: 3.5rem 3rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+        }
+        .footer-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+            margin-top: 0.35rem;
+        }
+        .footer-copy {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.3);
+            text-align: right;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 960px) {
+            nav { padding: 0 1.5rem; }
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 68px;
+                left: 0; right: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+
+            #hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .hero-image {
+                height: 65vw;
+                max-height: 480px;
+                order: -1;
+            }
+            .hero-content {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 5rem 1.5rem;
+            }
+            .about-image-wrap { order: -1; }
+            .about-image-wrap::before { display: none; }
+            .about-image-wrap img { aspect-ratio: 16/9; }
+
+            #services { padding: 5rem 1.5rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 2px; }
+
+            .process-inner { padding: 5rem 1.5rem; }
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+            .process-steps::before { display: none; }
+            .process-step { text-align: left; }
+            .step-circle { margin: 0 0 1.5rem; }
+
+            #testimonials { padding: 5rem 1.5rem; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 5rem 1.5rem;
+            }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-text > p { max-width: none; }
+
+            .credentials { flex-wrap: wrap; gap: 1.5rem; }
+
+            footer { padding: 2.5rem 1.5rem; }
+            .footer-inner { flex-direction: column; gap: 1.2rem; text-align: center; }
+            .footer-copy { text-align: center; }
+        }
+
+        @media (max-width: 500px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero-content { padding: 2.5rem 1.25rem; }
+            .service-card { padding: 2.5rem 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── NAV ─── -->
+    <nav id="mainNav">
+        <a href="#hero" class="nav-brand">Matt Rutherford</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Coaching</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#testimonials">Clients</a></li>
+            <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">ideas<span>·</span>clarity<span>·</span>growth</p>
+            <h1 class="hero-title">
+                Helping leaders think clearly and <em>grow with purpose</em>
+            </h1>
+            <p class="hero-subtitle">
+                Bespoke coaching for ambitious leaders who want to cut through the noise, make better decisions, and build a career they're genuinely proud of.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Work With Me</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Save your first photo as photo-1.jpg in this folder -->
+            <img src="photo-1.jpg" alt="Matt Rutherford, Executive &amp; Business Coach">
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="about-image-wrap">
+                <!-- Save your second photo as photo-2.jpg in this folder -->
+                <img src="photo-2.jpg" alt="Matt Rutherford">
+            </div>
+            <div class="about-text">
+                <p class="section-label">About Me</p>
+                <h2>30 years at the intersection of technology and leadership</h2>
+                <p>
+                    I've spent three decades working in organisations where the pace is relentless, the stakes are high, and the space to think clearly is rare. I've seen first-hand how the best leaders aren't always the ones with the most experience. They're the ones who know how to get out of their own way.
+                </p>
+                <p>
+                    I work with people who are ready to think more clearly, lead more effectively, and move forward with real purpose. My approach is direct, practical, and built around you, not a formula. I'm an accredited coach, though the 30 years in the room tends to matter more.
+                </p>
+                <p>
+                    The ideas, clarity, and growth you're looking for are already there. My job is to help you find them.
+                </p>
+                <div class="credentials">
+                    <div>
+                        <span class="credential-value">30+</span>
+                        <span class="credential-label">Years in Tech &amp; Leadership</span>
+                    </div>
+                    <div>
+                        <span class="credential-value">ACC</span>
+                        <span class="credential-label">Accredited Coach</span>
+                    </div>
+                    <div>
+                        <span class="credential-value">1:1</span>
+                        <span class="credential-label">Focused Coaching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SERVICES ─── -->
+    <section id="services">
+        <div class="services-header">
+            <p class="section-label">How I Can Help</p>
+            <h2>Three ways to work together</h2>
+            <p>Whether you're leading a business, navigating a career crossroads, or just need space to think, there's a way of working that fits where you are.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3>Business Coaching</h3>
+                <p>A structured 1:1 engagement built around you and what you want to achieve. Clear goals, honest conversations, and real accountability to help you lead with more impact.</p>
+                <ul class="feature-list">
+                    <li>Leadership presence and impact</li>
+                    <li>Strategic thinking and decision-making</li>
+                    <li>Your first 90 days in a new role</li>
+                    <li>Building confidence under pressure</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3>Career Coaching</h3>
+                <p>Whether you're going for promotion, searching for a new role, facing redundancy or retirement. I'll help you get clarity for the next move you make.</p>
+                <ul class="feature-list">
+                    <li>Clarity of direction and next steps</li>
+                    <li>Job search strategy and positioning</li>
+                    <li>Interview and presentation coaching</li>
+                    <li>Redundancy, promotion and retirement</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3>Thought Partnership</h3>
+                <p>A flexible, high-trust space to think out loud with someone who has seen it all. No formal programme, no fixed agenda. Just a candid thinking partner when you need one.</p>
+                <ul class="feature-list">
+                    <li>Confidential space to think clearly</li>
+                    <li>Sounding board for big decisions</li>
+                    <li>Navigating complexity and uncertainty</li>
+                    <li>Fresh perspective on hard problems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PROCESS ─── -->
+    <section id="process">
+        <div class="process-inner">
+            <div class="process-header">
+                <p class="section-label">The Approach</p>
+                <h2>Simple. Focused. Effective.</h2>
+                <p>Every engagement is different, but the core of my work follows a clear path from where you are to where you want to be.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-circle">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                        </svg>
+                    </div>
+                    <span class="step-word">ideas</span>
+                    <h3>Discover</h3>
+                    <p>We start with a deep, honest conversation about where you are: what's working, what isn't, and what you really want. No judgement, just clarity of starting point.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M2 12h20M2 6h14M2 18h9"/>
+                        </svg>
+                    </div>
+                    <span class="step-word">clarity</span>
+                    <h3>Focus</h3>
+                    <p>Together we cut through the noise, identifying the thinking patterns and blockers holding you back, and building a sharp picture of the path forward.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="22 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="16 6 22 6 22 12"/>
+                        </svg>
+                    </div>
+                    <span class="step-word">growth</span>
+                    <h3>Move</h3>
+                    <p>With clarity comes action. Each session builds momentum, keeps you accountable, and develops the habits and mindset for lasting, meaningful progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ─── -->
+    <section id="testimonials">
+        <div class="testimonials-header">
+            <p class="section-label">Client Voices</p>
+            <h2>What clients say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                    [Testimonial placeholder. Replace with real client quote. e.g. "Working with Matt gave me the clarity I'd been searching for. In just a few sessions I had a clear direction and the confidence to act on it."]
+                </p>
+                <div class="testimonial-author">
+                    <p class="author-name">Client Name</p>
+                    <p class="author-role">Job Title, Company</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                    [Testimonial placeholder. Replace with real client quote. e.g. "Matt has a rare ability to cut to what matters without making you feel rushed or judged. The work we did together changed how I lead."]
+                </p>
+                <div class="testimonial-author">
+                    <p class="author-name">Client Name</p>
+                    <p class="author-role">Job Title, Company</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">
+                    [Testimonial placeholder. Replace with real client quote. e.g. "I came to Matt feeling stuck. Within weeks I had a plan, real momentum, and a completely different relationship with the challenges in front of me."]
+                </p>
+                <div class="testimonial-author">
+                    <p class="author-name">Client Name</p>
+                    <p class="author-role">Job Title, Company</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+        <div class="contact-inner">
+            <div class="contact-text">
+                <p class="section-label">Get In Touch</p>
+                <h2>Let's start a conversation</h2>
+                <p>If you're curious about whether coaching is right for you, or you're ready to get started, I'd love to hear from you. No pitch, no pressure. Just a conversation.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:matt@mattrutherford.co.uk">matt@mattrutherford.co.uk</a>
+                    </div>
+                    <div class="contact-detail">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://www.linkedin.com/in/mattrutherford" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                FORM SETUP: This form uses Formspree (free, no backend needed).
+                1. Sign up at formspree.io
+                2. Create a new form and copy your form ID
+                3. Replace YOUR_FORM_ID below with your actual ID
+                4. The form will work on Render without any backend code
+            -->
+            <form id="contactForm" action="https://formspree.io/f/mgonwlry" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="role">Your Role</label>
+                    <input type="text" id="role" name="role" placeholder="e.g. CTO, Founder, Head of Product">
+                </div>
+                <div class="form-group">
+                    <label for="message">What's on your mind?</label>
+                    <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for..." required></textarea>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                    <p class="form-note">I typically respond within 24 hours.</p>
+                </div>
+                <p class="form-success" id="formSuccess">Thanks. I'll be in touch soon.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <p class="footer-brand">Matt Rutherford</p>
+                <p class="footer-tag">ideas · clarity · growth</p>
+            </div>
+            <p class="footer-copy">
+                Executive &amp; Business Coach<br>
+                <span style="opacity:0.6;">© 2026 Matt Rutherford. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Nav scroll state ───
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // ─── Mobile nav toggle ───
+        const toggle   = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        toggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ─── Contact form (Formspree AJAX) ───
+        const form    = document.getElementById('contactForm');
+        const btn     = document.getElementById('submitBtn');
+        const success = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', async (e) => {
+            // Only intercept if Formspree ID has been set
+            if (form.action.includes('YOUR_FORM_ID')) return; // fall through to native POST
+
+            e.preventDefault();
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (res.ok) {
+                    form.reset();
+                    btn.style.display = 'none';
+                    success.style.display = 'block';
+                } else {
+                    btn.textContent = 'Something went wrong. Please try emailing directly.';
+                    btn.disabled = false;
+                }
+            } catch {
+                btn.textContent = 'Something went wrong. Please try emailing directly.';
+                btn.disabled = false;
+            }
+        });
+
+        // ─── Subtle fade-in on scroll ───
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .testimonial, .process-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
