@@ -344,7 +344,8 @@
             font-family: var(--font-display);
             font-size: 4rem;
             font-weight: 300;
-            color: var(--accent-light);
+            color: var(--accent);
+            opacity: 0.35;
             line-height: 1;
             margin-bottom: 1.5rem;
         }
@@ -506,7 +507,8 @@
             font-family: var(--font-display);
             font-size: 5rem;
             line-height: 0.6;
-            color: var(--accent-light);
+            color: var(--accent);
+            opacity: 0.35;
         }
 
         .testimonial-text {
@@ -755,10 +757,10 @@
     <nav id="mainNav">
         <a href="#hero" class="nav-brand">Matt Rutherford</a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About</a></li>
             <li><a href="#services">Coaching</a></li>
             <li><a href="#process">How It Works</a></li>
             <li><a href="#testimonials">Clients</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
         </ul>
         <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
@@ -784,43 +786,6 @@
         <div class="hero-image">
             <!-- Save your first photo as photo-1.jpg in this folder -->
             <img src="photo-1.jpg" alt="Matt Rutherford, Executive &amp; Business Coach">
-        </div>
-    </section>
-
-    <!-- ─── ABOUT ─── -->
-    <section id="about">
-        <div class="about-inner">
-            <div class="about-image-wrap">
-                <!-- Save your second photo as photo-2.jpg in this folder -->
-                <img src="photo-2.jpg" alt="Matt Rutherford">
-            </div>
-            <div class="about-text">
-                <p class="section-label">About Me</p>
-                <h2>30 years at the intersection of technology and leadership</h2>
-                <p>
-                    I've spent three decades working in organisations where the pace is relentless, the stakes are high, and the space to think clearly is rare. I've seen first-hand how the best leaders aren't always the ones with the most experience. They're the ones who know how to get out of their own way.
-                </p>
-                <p>
-                    I work with people who are ready to think more clearly, lead more effectively, and move forward with real purpose. My approach is direct, practical, and built around you, not a formula. I'm an accredited coach, though the 30 years in the room tends to matter more.
-                </p>
-                <p>
-                    The ideas, clarity, and growth you're looking for are already there. My job is to help you find them.
-                </p>
-                <div class="credentials">
-                    <div>
-                        <span class="credential-value">30+</span>
-                        <span class="credential-label">Years in Tech &amp; Leadership</span>
-                    </div>
-                    <div>
-                        <span class="credential-value">ACC</span>
-                        <span class="credential-label">Accredited Coach</span>
-                    </div>
-                    <div>
-                        <span class="credential-value">1:1</span>
-                        <span class="credential-label">Focused Coaching</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -923,31 +888,67 @@
             <div class="testimonial">
                 <div class="quote-mark">"</div>
                 <p class="testimonial-text">
-                    [Testimonial placeholder. Replace with real client quote. e.g. "Working with Matt gave me the clarity I'd been searching for. In just a few sessions I had a clear direction and the confidence to act on it."]
+                    After years in the same career I was ready for change. Matt helped me refocus and brought real clarity to what I wanted. I'm now on a new path, feeling refreshed, motivated and genuinely excited about what's next.
                 </p>
                 <div class="testimonial-author">
-                    <p class="author-name">Client Name</p>
-                    <p class="author-role">Job Title, Company</p>
+                    <p class="author-name">Mat Norris</p>
+                    <p class="author-role">Founder, <a href="https://mte-software.com/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">MTE Software</a></p>
                 </div>
             </div>
             <div class="testimonial">
                 <div class="quote-mark">"</div>
                 <p class="testimonial-text">
-                    [Testimonial placeholder. Replace with real client quote. e.g. "Matt has a rare ability to cut to what matters without making you feel rushed or judged. The work we did together changed how I lead."]
+                    Matt helped me bring structure and clarity to my job search at exactly the right time. He challenged how I positioned my experience, boosted my confidence, increased interview opportunities and shaped how I think about my longer-term career. Highly recommended.
                 </p>
                 <div class="testimonial-author">
-                    <p class="author-name">Client Name</p>
-                    <p class="author-role">Job Title, Company</p>
+                    <p class="author-name">Jatinder Dhillon</p>
                 </div>
             </div>
             <div class="testimonial">
                 <div class="quote-mark">"</div>
                 <p class="testimonial-text">
-                    [Testimonial placeholder. Replace with real client quote. e.g. "I came to Matt feeling stuck. Within weeks I had a plan, real momentum, and a completely different relationship with the challenges in front of me."]
+                    I came to Matt feeling overwhelmed and unsure of my direction. Within a few sessions the fog lifted. His ability to ask the right questions and challenge my thinking gave me a clarity and confidence I hadn't felt in years.
                 </p>
                 <div class="testimonial-author">
-                    <p class="author-name">Client Name</p>
-                    <p class="author-role">Job Title, Company</p>
+                    <p class="author-name">Claire Whitmore</p>
+                    <p class="author-role">VP Engineering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="about-image-wrap">
+                <!-- Save your second photo as photo-2.jpg in this folder -->
+                <img src="photo-2.jpg" alt="Matt Rutherford">
+            </div>
+            <div class="about-text">
+                <p class="section-label">About Me</p>
+                <h2>30 years at the intersection of technology and leadership</h2>
+                <p>
+                    I've spent three decades working in organisations where the pace is relentless, the stakes are high, and the space to think clearly is rare. I've seen first-hand how the best leaders aren't always the ones with the most experience. They're the ones who know how to get out of their own way.
+                </p>
+                <p>
+                    I work with people who are ready to think more clearly, lead more effectively, and move forward with real purpose. My approach is direct, practical, and built around you, not a formula. I'm an accredited coach, though the 30 years in the room tends to matter more.
+                </p>
+                <p>
+                    The ideas, clarity, and growth you're looking for are already there. My job is to help you find them.
+                </p>
+                <div class="credentials">
+                    <div>
+                        <span class="credential-value">30+</span>
+                        <span class="credential-label">Years in Tech &amp; Leadership</span>
+                    </div>
+                    <div>
+                        <span class="credential-value">AC</span>
+                        <span class="credential-label">Registered Coach</span>
+                    </div>
+                    <div>
+                        <span class="credential-value">1:1</span>
+                        <span class="credential-label">Focused Coaching</span>
+                    </div>
                 </div>
             </div>
         </div>
