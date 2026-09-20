@@ -28,6 +28,9 @@
 
         html { scroll-behavior: smooth; }
 
+        /* Keep anchored sections clear of the 68px fixed nav */
+        section[id] { scroll-margin-top: 84px; }
+
         body {
             font-family: var(--font-body);
             background: var(--bg);
@@ -785,8 +788,13 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- Save your first photo as photo-1.jpg in this folder -->
-            <img src="photo-1.jpg" alt="Matt Rutherford, Executive &amp; Business Coach">
+            <!-- Source photo lives in git history; regenerate sizes with sips --resampleWidth -->
+            <img src="photo-1-1200.jpg"
+                 srcset="photo-1-800.jpg 800w, photo-1-1200.jpg 1200w, photo-1-1800.jpg 1800w"
+                 sizes="100vw"
+                 width="1200" height="800"
+                 fetchpriority="high" decoding="async"
+                 alt="Matt Rutherford, Executive &amp; Business Coach">
         </div>
     </section>
 
@@ -922,8 +930,13 @@
     <section id="about">
         <div class="about-inner">
             <div class="about-image-wrap">
-                <!-- Save your second photo as photo-2.jpg in this folder -->
-                <img src="photo-2.jpg" alt="Matt Rutherford">
+                <!-- Source photo lives in git history; regenerate sizes with sips --resampleWidth -->
+                <img src="photo-2-900.jpg"
+                     srcset="photo-2-600.jpg 600w, photo-2-900.jpg 900w, photo-2-1400.jpg 1400w"
+                     sizes="(max-width: 960px) 100vw, 850px"
+                     width="900" height="600"
+                     loading="lazy" decoding="async"
+                     alt="Matt Rutherford">
             </div>
             <div class="about-text">
                 <p class="section-label">About Me</p>
