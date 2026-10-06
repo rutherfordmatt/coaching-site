@@ -1,0 +1,57 @@
+[
+  {
+    "id": "free-conversation",
+    "question": "What happens in the free conversation?",
+    "answer": "<p>It is 45 minutes, online. You tell me where you are and what you want to move on, and I ask questions until I understand it. By the end we will both know whether coaching would help and, if it would, which package fits.</p><p>If you want to go ahead, I send you a short written proposal afterwards: the package, what we will work on, dates and price. If you want something to bring, try the <a href=\"{{ links.valuesFinder }}\">Values Finder</a> beforehand.</p>"
+  },
+  {
+    "id": "sales-call",
+    "question": "Is it a sales call?",
+    "answer": "<p>No. It is a conversation about your situation, and I will not push you to buy anything. If I am not the right coach for what you need, I will say so and point you to someone who is.</p>"
+  },
+  {
+    "id": "who",
+    "question": "Who do you work with?",
+    "answer": "<p>People making progress in their careers, from senior individual contributor up to executive, in any sector. The usual reasons people get in touch are stepping up to manage, starting in a new role, looking for the next one, or leading through change.</p>"
+  },
+  {
+    "id": "leader-already",
+    "question": "Do I need to be a leader already?",
+    "answer": "<p>No. Many of the people I work with are senior individual contributors thinking about, or just starting, their first management role. <a href=\"/coaching/the-next-move/\">The Next Move</a> is built for exactly that.</p>"
+  },
+  {
+    "id": "online",
+    "question": "Are sessions online or in person?",
+    "answer": "<p>Online by default, over video. In person in Dublin by arrangement. I work with clients in Ireland, the UK and Europe.</p>"
+  },
+  {
+    "id": "payment",
+    "question": "How do I pay, and can I pay in instalments?",
+    "answer": "<p>The first conversation is free. The Clarity Session and single sessions are paid by card when you book. Programmes and session blocks are invoiced after the first conversation and paid by bank transfer or card.</p><p>You can pay The Next Move in two payments of €600 and The Leadership Engagement in three payments of €1,000. Each instalment is a dated invoice, so you know in advance when each one is due.</p>"
+  },
+  {
+    "id": "employer",
+    "question": "Can my employer pay, and how do I ask?",
+    "answer": "<p>Yes, and the price is the same whoever pays. Many employers have a learning and development budget, and some managers can approve coaching from a team budget. Ask your manager or your HR team. I can send you a short proposal to forward, with the objectives, the package and the price.</p><p>When an employer pays, we start with a three-way conversation to agree objectives. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"
+  },
+  {
+    "id": "confidential",
+    "question": "Is what we discuss confidential, including from my employer?",
+    "answer": "<p>Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.</p><p>The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose.</p>"
+  },
+  {
+    "id": "cancellation",
+    "question": "What is your cancellation and rescheduling policy?",
+    "answer": "<p>{{ policies.reschedule }}</p>"
+  },
+  {
+    "id": "accredited",
+    "question": "Are you accredited?",
+    "answer": "<p>I am a registered member of the <a href=\"{{ links.acDirectory }}\">Association for Coaching</a> and hold a Diploma in Executive and Business Coaching (2024). Individual accreditation with the Association for Coaching is planned for 2027.</p>"
+  },
+  {
+    "id": "team-coaching",
+    "question": "Do you offer team coaching?",
+    "answer": "<p>Not at the moment. I work one to one. If your organisation wants coaching for several people, I can put together a proposal for each of them individually.</p>"
+  }
+]

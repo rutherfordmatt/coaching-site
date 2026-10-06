@@ -3,1173 +3,705 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Coach Dublin | Leadership Coaching — Matt Rutherford</title>
-    <meta name="description" content="Executive and leadership coaching for tech and business leaders. 30 years in the room. In person in Dublin, remote across Ireland, the UK and Europe.">
+    <title>Career and Leadership Coach, Dublin | Matt Rutherford Coaching</title>
+    <meta name="description" content="Career and leadership coaching for people making progress in their careers, from senior individual contributor to senior leader. Dublin and online. Free first conversation.">
     <link rel="canonical" href="https://mattrutherfordcoaching.com/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Matt Rutherford Coaching">
-    <meta property="og:title" content="Executive Coach Dublin | Matt Rutherford">
-    <meta property="og:description" content="Executive and leadership coaching for tech and business leaders. In person in Dublin, remote across Ireland, the UK and Europe.">
-    <meta property="og:image" content="https://mattrutherfordcoaching.com/photo-1-1200.jpg">
-    <meta property="og:image:alt" content="Matt Rutherford, executive and business coach">
+    <meta property="og:title" content="Matt Rutherford Coaching | Career and Leadership Coach, Dublin">
+    <meta property="og:description" content="Career and leadership coaching for people making progress in their careers, from senior individual contributor to senior leader. Dublin and online. Free first conversation.">
     <meta property="og:url" content="https://mattrutherfordcoaching.com/">
+    <meta property="og:image" content="https://mattrutherfordcoaching.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Matt Rutherford Coaching. Career and Leadership Coach. Make your next move with clarity.">
     <meta property="og:locale" content="en_IE">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Executive Coach Dublin | Matt Rutherford">
-    <meta name="twitter:description" content="Executive and leadership coaching for tech and business leaders. In person in Dublin, remote across Ireland, the UK and Europe.">
-    <meta name="twitter:image" content="https://mattrutherfordcoaching.com/photo-1-1200.jpg">
+    <meta name="twitter:title" content="Matt Rutherford Coaching | Career and Leadership Coach, Dublin">
+    <meta name="twitter:description" content="Career and leadership coaching for people making progress in their careers, from senior individual contributor to senior leader. Dublin and online. Free first conversation.">
+    <meta name="twitter:image" content="https://mattrutherfordcoaching.com/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* ─── Reset & Base ─── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --bg:           #FAFAF8;
-            --bg-alt:       #F3F0EB;
-            --text:         #1A1A1A;
-            --text-muted:   #686460;
-            --accent:       #3A6B6B;
-            --accent-dark:  #2B5050;
-            --accent-light: #E6EFEF;
-            --border:       #E2DEDA;
-            --white:        #FFFFFF;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body:    'Inter', system-ui, sans-serif;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        /* Keep anchored sections clear of the 68px fixed nav */
-        section[id] { scroll-margin-top: 84px; }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        img { display: block; max-width: 100%; }
-        a { color: inherit; }
-
-        /* ─── Typography ─── */
-        h1, h2, h3 {
-            font-family: var(--font-display);
-            font-weight: 400;
-            line-height: 1.15;
-        }
-        h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
-        h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
-        h3 { font-size: 1.6rem; }
-        p  { color: var(--text-muted); line-height: 1.85; }
-
-        .section-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.2rem;
-        }
-
-        /* ─── Buttons ─── */
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 2.2rem;
-            font-family: var(--font-body);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.25s ease;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: var(--white);
-        }
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(58,107,107,0.25);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--accent);
-            border: 1.5px solid var(--accent);
-        }
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--white);
-        }
-
-        /* ─── Nav ─── */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 3rem;
-            background: rgba(250, 250, 248, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-        nav.scrolled { border-bottom-color: var(--border); }
-
-        .nav-brand {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            text-decoration: none;
-            color: var(--text);
-        }
-        .nav-brand span {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        .nav-links a {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--accent); }
-
-        .nav-cta {
-            padding: 0.55rem 1.4rem !important;
-            background: var(--accent) !important;
-            color: var(--white) !important;
-            border-radius: 2px;
-            font-size: 0.75rem !important;
-            transition: background 0.2s !important;
-        }
-        .nav-cta:hover { background: var(--accent-dark) !important; }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 6px;
-        }
-        .nav-toggle span {
-            display: block;
-            width: 22px;
-            height: 1.5px;
-            background: var(--text);
-            transition: all 0.3s;
-        }
-
-        /* ─── Hero ─── */
-        #hero {
-            padding-top: 68px;
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 6rem 4rem 6rem 8rem;
-        }
-
-        .hero-tagline {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 2rem;
-        }
-        .hero-tagline span { margin: 0 0.5rem; opacity: 0.35; }
-
-        .hero-title {
-            color: var(--text);
-            margin-bottom: 1.8rem;
-        }
-        .hero-title em {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .hero-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 460px;
-            margin-bottom: 3rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .hero-image {
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(250,250,248,0.15) 0%, transparent 30%);
-            pointer-events: none;
-        }
-
-        /* ─── About ─── */
-        #about {
-            background: var(--bg-alt);
-        }
-        .about-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-            display: grid;
-            grid-template-columns: 5fr 7fr;
-            gap: 7rem;
-            align-items: center;
-        }
-
-        .about-image-wrap {
-            position: relative;
-        }
-        .about-image-wrap img {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            object-position: center top;
-        }
-        .about-image-wrap::before {
-            content: '';
-            position: absolute;
-            top: -1.5rem;
-            left: -1.5rem;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            border: 1px solid var(--border);
-            z-index: 0;
-            pointer-events: none;
-        }
-        .about-image-wrap img { position: relative; z-index: 1; }
-
-        .about-text h2 { margin-bottom: 1.5rem; }
-        .about-text p { margin-bottom: 1.2rem; }
-
-        .credentials {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border);
-        }
-        .credential-value {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--accent);
-            display: block;
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-        .credential-label {
-            font-size: 0.68rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        /* ─── Services ─── */
-        #services {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-        .services-header h2 { margin-bottom: 1rem; }
-        .services-header p { max-width: 540px; margin: 0 auto; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background: var(--border);
-        }
-
-        .service-card {
-            background: var(--bg);
-            padding: 3.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s;
-        }
-        .service-card:hover { background: var(--white); }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 3.5rem; right: 3.5rem;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        .service-card:hover::after { transform: scaleX(1); }
-
-        .service-num {
-            font-family: var(--font-display);
-            font-size: 4rem;
-            font-weight: 300;
-            color: var(--accent);
-            opacity: 0.35;
-            line-height: 1;
-            margin-bottom: 1.5rem;
-        }
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        .service-card > p {
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
-
-        .feature-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-        }
-        .feature-list li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-        }
-        .feature-list li::before {
-            content: '';
-            width: 14px;
-            height: 1px;
-            background: var(--accent);
-            flex-shrink: 0;
-        }
-
-
-        /* ─── Process ─── */
-        #process {
-            background: var(--text);
-        }
-        .process-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-        }
-
-        .process-header {
-            text-align: center;
-            margin-bottom: 6rem;
-        }
-        .process-header .section-label { color: rgba(255,255,255,0.4); }
-        .process-header h2 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-        .process-header p {
-            color: rgba(255,255,255,0.5);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-            position: relative;
-        }
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 2rem;
-            left: calc(33.33% / 2 + 1rem);
-            right: calc(33.33% / 2 + 1rem);
-            height: 1px;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .process-step { text-align: center; }
-
-        .step-circle {
-            width: 64px;
-            height: 64px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            position: relative;
-            z-index: 1;
-            background: var(--text);
-        }
-        .step-circle svg {
-            width: 22px;
-            height: 22px;
-            stroke: rgba(255,255,255,0.6);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .step-word {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-style: italic;
-            font-weight: 400;
-            color: var(--accent-light);
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-        .process-step h3 {
-            font-family: var(--font-body);
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 1.2rem;
-        }
-        .process-step p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.45);
-            line-height: 1.8;
-        }
-
-        /* ─── Testimonials ─── */
-        #testimonials {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-        }
-
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .testimonials-header h2 { margin-bottom: 0.5rem; }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .testimonial {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-        .testimonial:hover {
-            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
-            transform: translateY(-3px);
-        }
-
-        .quote-mark {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            line-height: 0.6;
-            color: var(--accent);
-            opacity: 0.35;
-        }
-
-        .testimonial-text {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            font-style: italic;
-            color: var(--text);
-            line-height: 1.7;
-            flex: 1;
-        }
-
-        .testimonial-author {
-            border-top: 1px solid var(--border);
-            padding-top: 1.2rem;
-        }
-        .author-name {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.2rem;
-        }
-        .author-role {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.04em;
-        }
-
-        /* ─── Contact ─── */
-        #contact {
-            background: var(--bg-alt);
-        }
-        .contact-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-            display: grid;
-            grid-template-columns: 5fr 7fr;
-            gap: 7rem;
-            align-items: start;
-        }
-
-        .contact-text h2 { margin-bottom: 1.5rem; }
-        .contact-text > p { margin-bottom: 2.5rem; max-width: 380px; }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-        }
-        .contact-detail svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 1.5;
-            flex-shrink: 0;
-        }
-        .contact-detail a, .contact-detail span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-detail a:hover { color: var(--accent); }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.4rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.4rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.45rem;
-        }
-
-        label {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text);
-        }
-
-        input, textarea {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--text);
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 2px;
-            padding: 0.85rem 1rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            outline: none;
-            width: 100%;
-            appearance: none;
-        }
-        input:focus, textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(58,107,107,0.08);
-        }
-        input::placeholder, textarea::placeholder { color: #C4C0BB; }
-        textarea { resize: vertical; min-height: 140px; }
-
-        .form-footer {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 0.4rem;
-        }
-        .form-note {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-        .form-success {
-            display: none;
-            font-size: 0.88rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* ─── Footer ─── */
-        footer {
-            background: #111111;
-            padding: 3.5rem 3rem;
-        }
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-brand {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
-        }
-        .footer-tag {
-            font-size: 0.65rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.25);
-            margin-top: 0.35rem;
-        }
-        .footer-copy {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.3);
-            text-align: right;
-        }
-
-        /* ─── Responsive ─── */
-        @media (max-width: 1280px) {
-            .hero-content { padding: 4rem 2.5rem 4rem 4rem; }
-        }
-
-        @media (max-width: 960px) {
-            nav { padding: 0 1.5rem; }
-            .nav-links { display: none; }
-            .nav-toggle { display: flex; }
-
-            .nav-links.open {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 68px;
-                left: 0; right: 0;
-                background: var(--bg);
-                border-bottom: 1px solid var(--border);
-                padding: 2rem 1.5rem;
-                gap: 1.5rem;
-                align-items: flex-start;
-            }
-
-            #hero {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-            .hero-image {
-                height: 65vw;
-                max-height: 480px;
-                order: -1;
-            }
-            .hero-content {
-                padding: 3.5rem 1.5rem;
-            }
-
-            .about-inner {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 5rem 1.5rem;
-            }
-            .about-image-wrap { order: -1; }
-            .about-image-wrap::before { display: none; }
-            .about-image-wrap img { aspect-ratio: 16/9; }
-
-            #services { padding: 5rem 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; gap: 2px; }
-
-            .process-inner { padding: 5rem 1.5rem; }
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 3.5rem;
-            }
-            .process-steps::before { display: none; }
-            .process-step { text-align: left; }
-            .step-circle { margin: 0 0 1.5rem; }
-
-            #testimonials { padding: 5rem 1.5rem; }
-            .testimonials-grid { grid-template-columns: 1fr; }
-
-            .contact-inner {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 5rem 1.5rem;
-            }
-            .form-row { grid-template-columns: 1fr; }
-            .contact-text > p { max-width: none; }
-
-            .credentials { flex-wrap: wrap; gap: 1.5rem; }
-
-            footer { padding: 2.5rem 1.5rem; }
-            .footer-inner { flex-direction: column; gap: 1.2rem; text-align: center; }
-            .footer-copy { text-align: center; }
-        }
-
-        @media (max-width: 500px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .hero-content { padding: 2.5rem 1.25rem; }
-            .service-card { padding: 2.5rem 1.75rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="/styles.css?v=a2094d1d">
     <script defer src="https://analytics.stff.me/script.js" data-website-id="3a83373e-0ff3-446c-867f-f787745cc92f" data-domains="mattrutherfordcoaching.com"></script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": "https://mattrutherfordcoaching.com/#business",
       "name": "Matt Rutherford Coaching",
       "url": "https://mattrutherfordcoaching.com/",
-      "image": "https://mattrutherfordcoaching.com/photo-1-1200.jpg",
-      "description": "Executive and leadership coaching for tech and business leaders. In person in Dublin, remote across Ireland, the UK and Europe.",
-      "email": "matt@mattrutherford.co.uk",
+      "image": "https://mattrutherfordcoaching.com/og-image.png",
+      "logo": "https://mattrutherfordcoaching.com/favicon.svg",
+      "description": "Career and leadership coaching for people making progress in their careers: from senior individual contributor to first-time manager, from manager to senior leader, and through the changes in between.",
+      "email": "matt@mattrutherfordcoaching.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dublin",
+        "addressCountry": "IE"
+      },
       "areaServed": [
-        { "@type": "City",    "name": "Dublin" },
-        { "@type": "Country", "name": "Ireland" },
-        { "@type": "Country", "name": "United Kingdom" },
-        { "@type": "Place",   "name": "Europe" }
+        {
+          "@type": "City",
+          "name": "Dublin"
+        },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
       ],
-      "serviceType": ["Executive Coaching", "Leadership Coaching", "Career Coaching"],
       "founder": {
-        "@type": "Person",
-        "@id": "https://mattrutherfordcoaching.com/#matt",
-        "name": "Matt Rutherford",
-        "jobTitle": "Executive & Business Coach",
-        "knowsAbout": [
-          "Executive coaching",
-          "Leadership development",
-          "Technology leadership",
-          "Career transition"
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/mattrutherford/",
-          "https://www.associationforcoaching.com/members/?id=82268264"
+        "@id": "https://mattrutherfordcoaching.com/#matt"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mattrutherford/",
+        "https://www.associationforcoaching.com/members/?id=82268264"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Coaching packages",
+        "url": "https://mattrutherfordcoaching.com/coaching/",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "The Clarity Session",
+            "price": "350",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/clarity-session/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/clarity-session/#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "The Next Move",
+            "price": "1200",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/the-next-move/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/the-next-move/#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "The Leadership Engagement",
+            "price": "3000",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Ongoing Partnership, single session",
+            "price": "200",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Ongoing Partnership, block of four sessions",
+            "price": "720",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Ongoing Partnership, block of eight sessions",
+            "price": "1360",
+            "priceCurrency": "EUR",
+            "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+            "itemOffered": {
+              "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+            }
+          }
         ]
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mattrutherfordcoaching.com/#matt",
+      "name": "Matt Rutherford",
+      "jobTitle": "Career and Leadership Coach",
+      "description": "Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta.",
+      "url": "https://mattrutherfordcoaching.com/about/",
+      "image": "https://mattrutherfordcoaching.com/photo-2-900.jpg",
+      "worksFor": {
+        "@id": "https://mattrutherfordcoaching.com/#business"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Dublin, Ireland"
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Association for Coaching"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Diploma in Executive and Business Coaching",
+        "dateCreated": "2024"
+      },
+      "knowsAbout": [
+        "Career coaching",
+        "Leadership coaching",
+        "Change management",
+        "Career transition"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mattrutherford/",
+        "https://www.associationforcoaching.com/members/?id=82268264"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mattrutherfordcoaching.com/coaching/clarity-session/#service",
+      "name": "The Clarity Session",
+      "serviceType": "Career and leadership coaching",
+      "description": "One decision, one situation, worked through properly in a single sitting.",
+      "url": "https://mattrutherfordcoaching.com/coaching/clarity-session/",
+      "provider": {
+        "@id": "https://mattrutherfordcoaching.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dublin"
+        },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "The Clarity Session",
+          "price": "350",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/clarity-session/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/clarity-session/#service"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mattrutherfordcoaching.com/coaching/the-next-move/#service",
+      "name": "The Next Move",
+      "serviceType": "Career and leadership coaching",
+      "description": "For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one.",
+      "url": "https://mattrutherfordcoaching.com/coaching/the-next-move/",
+      "provider": {
+        "@id": "https://mattrutherfordcoaching.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dublin"
+        },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "The Next Move",
+          "price": "1200",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/the-next-move/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/the-next-move/#service"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/#service",
+      "name": "The Leadership Engagement",
+      "serviceType": "Career and leadership coaching",
+      "description": "For experienced managers and senior leaders growing into a bigger role or leading through change.",
+      "url": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/",
+      "provider": {
+        "@id": "https://mattrutherfordcoaching.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dublin"
+        },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "The Leadership Engagement",
+          "price": "3000",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/leadership-engagement/#service"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service",
+      "name": "Ongoing Partnership",
+      "serviceType": "Career and leadership coaching",
+      "description": "For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.",
+      "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+      "provider": {
+        "@id": "https://mattrutherfordcoaching.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dublin"
+        },
+        {
+          "@type": "Country",
+          "name": "Ireland"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ongoing Partnership, single session",
+          "price": "200",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Ongoing Partnership, block of four sessions",
+          "price": "720",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Ongoing Partnership, block of eight sessions",
+          "price": "1360",
+          "priceCurrency": "EUR",
+          "url": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/",
+          "itemOffered": {
+            "@id": "https://mattrutherfordcoaching.com/coaching/ongoing-partnership/#service"
+          }
+        }
+      ]
     }
-    </script>
+  ]
+}
+</script>
 </head>
-<body>
-
-    <!-- ─── NAV ─── -->
-    <nav id="mainNav">
-        <a href="#hero" class="nav-brand">Matt Rutherford</a>
+<body class="">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" id="mainNav" aria-label="Main">
+        <a href="/" class="nav-brand">Matt Rutherford <span>Coaching</span></a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#services">Coaching</a></li>
-            <li><a href="#process">How It Works</a></li>
-            <li><a href="#testimonials">Clients</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+            <li><a href="/coaching/">Coaching</a></li>
+            <li><a href="/for-organisations/">For organisations</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="https://calendly.com/mattrutherfordcoaching/conversation" class="nav-cta">Book a free conversation</a></li>
         </ul>
-        <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
             <span></span><span></span><span></span>
         </button>
     </nav>
 
-    <!-- ─── HERO ─── -->
-    <section id="hero">
-        <div class="hero-content">
-            <p class="hero-tagline">ideas<span>·</span>clarity<span>·</span>growth</p>
-            <h1 class="hero-title">
-                Executive coaching that helps leaders think clearly and <em>grow with purpose</em>
-            </h1>
-            <p class="hero-subtitle">
-                Bespoke coaching for ambitious leaders who want to cut through the noise, make better decisions, and build a career they're genuinely proud of.
-            </p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">Work With Me</a>
-                <a href="#about" class="btn btn-outline">Learn More</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- Source photo lives in git history; regenerate sizes with sips --resampleWidth -->
-            <img src="photo-1-1200.jpg"
-                 srcset="photo-1-800.jpg 800w, photo-1-1200.jpg 1200w, photo-1-1800.jpg 1800w"
-                 sizes="100vw"
-                 width="1200" height="800"
-                 fetchpriority="high" decoding="async"
-                 alt="Matt Rutherford, Executive &amp; Business Coach">
-        </div>
-    </section>
-
-    <!-- ─── SERVICES ─── -->
-    <section id="services">
-        <div class="services-header">
-            <p class="section-label">How I Can Help</p>
-            <h2>Three ways to work together</h2>
-            <p>Whether you're leading a business, navigating a career crossroads, or just need space to think, there's a way of working that fits where you are.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-num">01</div>
-                <h3>Business Coaching</h3>
-                <p>A structured 1:1 engagement built around you and what you want to achieve. Clear goals, honest conversations, and real accountability to help you lead with more impact.</p>
-                <ul class="feature-list">
-                    <li>Leadership presence and impact</li>
-                    <li>Strategic thinking and decision-making</li>
-                    <li>Your first 90 days in a new role</li>
-                    <li>Building confidence under pressure</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-num">02</div>
-                <h3>Career Coaching</h3>
-                <p>Whether you're going for promotion, searching for a new role, facing redundancy or retirement. I'll help you get clarity for the next move you make.</p>
-                <ul class="feature-list">
-                    <li>Clarity of direction and next steps</li>
-                    <li>Job search strategy and positioning</li>
-                    <li>Interview and presentation coaching</li>
-                    <li>Redundancy, promotion and retirement</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-num">03</div>
-                <h3>Thought Partnership</h3>
-                <p>A flexible, high-trust space to think out loud with someone who has seen it all. No formal programme, no fixed agenda. Just a candid thinking partner when you need one.</p>
-                <ul class="feature-list">
-                    <li>Confidential space to think clearly</li>
-                    <li>Sounding board for big decisions</li>
-                    <li>Navigating complexity and uncertainty</li>
-                    <li>Fresh perspective on hard problems</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── PROCESS ─── -->
-    <section id="process">
-        <div class="process-inner">
-            <div class="process-header">
-                <p class="section-label">The Approach</p>
-                <h2>Simple. Focused. Effective.</h2>
-                <p>Every engagement is different, but the core of my work follows a clear path from where you are to where you want to be.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-circle">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-                        </svg>
-                    </div>
-                    <span class="step-word">ideas</span>
-                    <h3>Discover</h3>
-                    <p>We start with a deep, honest conversation about where you are: what's working, what isn't, and what you really want. No judgement, just clarity of starting point.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-circle">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M2 12h20M2 6h14M2 18h9"/>
-                        </svg>
-                    </div>
-                    <span class="step-word">clarity</span>
-                    <h3>Focus</h3>
-                    <p>Together we cut through the noise, identifying the thinking patterns and blockers holding you back, and building a sharp picture of the path forward.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-circle">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="22 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="16 6 22 6 22 12"/>
-                        </svg>
-                    </div>
-                    <span class="step-word">growth</span>
-                    <h3>Move</h3>
-                    <p>With clarity comes action. Each session builds momentum, keeps you accountable, and develops the habits and mindset for lasting, meaningful progress.</p>
+    <main id="main">
+<!-- The old one-page anchors (#hero, #services, #process, #testimonials,
+             #about, #contact) are kept as ids below so existing links still land. -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <p class="hero-tagline">Career and Leadership Coach<span aria-hidden="true">·</span>Dublin</p>
+                <h1 class="hero-title">Make your next move <em>with clarity.</em></h1>
+                <p class="hero-subtitle">Career and leadership coaching for people making progress in their careers: from senior individual contributor to first-time manager, from manager to senior leader, and through the changes in between.</p>
+                <div class="hero-actions">
+                    <a href="https://calendly.com/mattrutherfordcoaching/conversation" class="btn btn-primary">Book a free conversation</a>
+                    <a href="/coaching/" class="btn btn-outline">See the packages</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="hero-image">
+                <img src="/photo-1-1200.jpg" srcset="/photo-1-800.jpg 800w, /photo-1-1200.jpg 1200w, /photo-1-1800.jpg 1800w" sizes="(max-width: 960px) 100vw, 50vw" width="1200" height="800" fetchpriority="high" decoding="async" alt="Matt Rutherford, Career and Leadership Coach">
+            </div>
+        </section>
 
-    <!-- ─── TESTIMONIALS ─── -->
-    <section id="testimonials">
-        <div class="testimonials-header">
-            <p class="section-label">Client Voices</p>
-            <h2>What clients say</h2>
+        <div class="previously">
+            <p>Previously at Meta, LinkedIn and Microsoft. Most recently Global Head of Change Management at Meta.</p>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial">
-                <div class="quote-mark">"</div>
-                <p class="testimonial-text">
-                    After years in the same career I was ready for change. Matt helped me refocus and brought real clarity to what I wanted. I'm now on a new path, feeling refreshed, motivated and genuinely excited about what's next.
-                </p>
-                <div class="testimonial-author">
+
+        <section class="section" id="is-this-you" aria-labelledby="is-this-you-title">
+            <div class="checklist-wrap">
+                <div>
+                    <p class="section-label">Is this you?</p>
+                    <h2 id="is-this-you-title">Coaching for the next stage of your career.</h2>
+                    <p>If one of these sounds like you, a free conversation is the quickest way to find out whether coaching will help.</p>
+                </div>
+                <ul class="checklist">
+                    <li>You are a senior individual contributor stepping up to manage people.</li>
+                    <li>You are a new or recent manager working out how to lead.</li>
+                    <li>You have been promoted, moved sideways or started with a new employer.</li>
+                    <li>You have been laid off and are deciding what comes next.</li>
+                    <li>You are a senior leader with a decision to make and nobody neutral to think it through with.</li>
+                    <li>You are leading through a reorganisation or restructuring.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section--alt" id="services" aria-labelledby="services-title">
+            <div class="section">
+                <div class="section-header">
+                    <p class="section-label">Coaching packages</p>
+                    <h2 id="services-title">Four ways to work together</h2>
+                    <p>From individual contributor to the leadership table, and every move in between.</p>
+                </div>
+                <div class="packages-grid packages-grid--compact">
+                    
+            <article class="package-card package-card--compact">
+                <h3><a href="/coaching/clarity-session/">The Clarity Session</a></h3>
+                <p class="package-who">One decision, one situation, worked through properly in a single sitting.</p>
+                <p class="package-price"><span class="price">€350</span> <span class="price-note">opening offer</span></p>
+                <p class="package-length">One 90 minute session and a 30 minute follow-up</p>
+                <a href="/coaching/clarity-session/" class="text-link">About The Clarity Session<span aria-hidden="true"> &rarr;</span></a>
+            </article>
+
+            <article class="package-card package-card--compact">
+                <h3><a href="/coaching/the-next-move/">The Next Move</a></h3>
+                <p class="package-who">For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one.</p>
+                <p class="package-price"><span class="price">€1,200</span> <span class="price-note">or two payments of €600</span></p>
+                <p class="package-length">Six 60 minute sessions over twelve weeks</p>
+                <a href="/coaching/the-next-move/" class="text-link">About The Next Move<span aria-hidden="true"> &rarr;</span></a>
+            </article>
+
+            <article class="package-card package-card--compact">
+                <h3><a href="/coaching/leadership-engagement/">The Leadership Engagement</a></h3>
+                <p class="package-who">For experienced managers and senior leaders growing into a bigger role or leading through change.</p>
+                <p class="package-price"><span class="price">€3,000</span> <span class="price-note">or three payments of €1,000</span></p>
+                <p class="package-length">Eight 90 minute sessions over six months</p>
+                <a href="/coaching/leadership-engagement/" class="text-link">About The Leadership Engagement<span aria-hidden="true"> &rarr;</span></a>
+            </article>
+
+            <article class="package-card package-card--compact">
+                <h3><a href="/coaching/ongoing-partnership/">Ongoing Partnership</a></h3>
+                <p class="package-who">For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.</p>
+                <p class="package-price"><span class="price">€200</span> <span class="price-note">per session</span></p>
+                <p class="package-length">60 minute sessions, booked singly or in blocks</p>
+                <a href="/coaching/ongoing-partnership/" class="text-link">About Ongoing Partnership<span aria-hidden="true"> &rarr;</span></a>
+            </article>
+                </div>
+                <div class="section-footer">
+                    <div class="cta-row">
+                        <a href="/coaching/" class="btn btn-outline">See the packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="process" aria-labelledby="process-title">
+            <div class="process-inner">
+                <div class="process-header">
+                    <p class="section-label">How I work</p>
+                    <h2 id="process-title">A map first, then a plan</h2>
+                    <p>In the first session we map your situation. Every session after that works a part of the map, so you leave with a written plan rather than a set of notes.</p>
+                </div>
+                <ul class="map-grid">
+                    <li class="map-item">
+                        <h3>Where you are</h3>
+                        <p>Your role, your strengths, and what is and is not working right now.</p>
+                    </li>
+                    <li class="map-item">
+                        <h3>Where you are going</h3>
+                        <p>The move you want to make, described specifically enough to plan for.</p>
+                    </li>
+                    <li class="map-item">
+                        <h3>What is in the way</h3>
+                        <p>The gaps, habits and circumstances that slow you down.</p>
+                    </li>
+                    <li class="map-item">
+                        <h3>Who matters</h3>
+                        <p>The people whose support, decisions or opinion will shape the move.</p>
+                    </li>
+                </ul>
+                <div class="process-footer">
+                    <p>The coaching follows the Association for Coaching code of ethics.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="first-step" id="first-step" aria-labelledby="first-step-title">
+            <div class="first-step-inner">
+                <div class="first-step-text">
+                    <p class="section-label">The first step</p>
+                    <h2 id="first-step-title">Start with a free conversation</h2>
+                    <p>Before anything else, we have a free 45 minute conversation. It is a conversation, not a sales call. We talk about where you are and what you want to move on.</p>
+                    <p>If I am not the right coach for it, I will say so and point you to someone who is.</p>
+                    <p>If you want something to bring, you can try the <a href="https://thevaluesfinder.com" class="inline-link">Values Finder</a> beforehand.</p>
+                    <a href="https://calendly.com/mattrutherfordcoaching/conversation" class="btn btn-primary">Book a free conversation</a>
+                </div>
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">1</span>
+                        <h3>Conversation</h3>
+                        <p class="step-meta">Free, 45 minutes, online</p>
+                        <p>We talk about where you are, what you want to move on, and whether coaching is the right way to do it.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">2</span>
+                        <h3>Proposal</h3>
+                        <p class="step-meta">In writing</p>
+                        <p>I send a short written proposal: the package, what we will work on, dates and price.</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num" aria-hidden="true">3</span>
+                        <h3>Start</h3>
+                        <p class="step-meta">Within two weeks</p>
+                        <p>We begin. Your first session is within two weeks.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+
+        <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="section-header">
+                <p class="section-label">Client voices</p>
+                <h2 id="testimonials-title">What clients say</h2>
+            </div>
+            <div class="testimonials-grid testimonials-grid--3">
+            <figure class="testimonial">
+                <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                <blockquote class="testimonial-text"><p>After years in the same career I was ready for change. Matt helped me refocus and brought real clarity to what I wanted. I'm now on a new path, feeling refreshed, motivated and genuinely excited about what's next.</p></blockquote>
+                <figcaption class="testimonial-author">
                     <p class="author-name">Mat Norris</p>
-                    <p class="author-role">Founder, <a href="https://mte-software.com/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">MTE Software</a></p>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="quote-mark">"</div>
-                <p class="testimonial-text">
-                    Matt helped me bring structure and clarity to my job search at exactly the right time. He challenged how I positioned my experience, boosted my confidence, increased interview opportunities and shaped how I think about my longer-term career. Highly recommended.
-                </p>
-                <div class="testimonial-author">
+                    <p class="author-role">Founder, <a href="https://mte-software.com/" rel="noopener noreferrer">MTE Software</a></p>
+                </figcaption>
+            </figure>
+            <figure class="testimonial">
+                <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                <blockquote class="testimonial-text"><p>Matt helped me bring structure and clarity to my job search at exactly the right time. He challenged how I positioned my experience, boosted my confidence, increased interview opportunities and shaped how I think about my longer-term career. Highly recommended.</p></blockquote>
+                <figcaption class="testimonial-author">
                     <p class="author-name">Jatinder Dhillon</p>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="quote-mark">"</div>
-                <p class="testimonial-text">
-                    Matt's coaching was profoundly enlightening. His insights and tools helped me approach complex situations with renewed confidence, and fundamentally elevated my understanding of leadership. In the age of AI, human-centric skills matter more than ever — I highly recommend him.
-                </p>
-                <div class="testimonial-author">
+                    <p class="author-role">[TITLE]</p>
+                </figcaption>
+            </figure>
+            <figure class="testimonial">
+                <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                <blockquote class="testimonial-text"><p>Matt's coaching was profoundly enlightening. His insights and tools helped me approach complex situations with renewed confidence, and fundamentally elevated my understanding of leadership. In the age of AI, human-centric skills matter more than ever. I highly recommend him.</p></blockquote>
+                <figcaption class="testimonial-author">
                     <p class="author-name">Ellen Ren</p>
-                    <p class="author-role">Founder: <a href="https://hjarta.app/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Hjarta</a>, Adaptive Audio</p>
+                    <p class="author-role">Founder, <a href="https://hjarta.app/" rel="noopener noreferrer">Hjarta</a>, Adaptive Audio</p>
+                </figcaption>
+            </figure></div>
+        </section>
+
+
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="about-inner">
+                <div class="about-image-wrap">
+                    <img src="/photo-2-900.jpg" srcset="/photo-2-600.jpg 600w, /photo-2-900.jpg 900w, /photo-2-1400.jpg 1400w" sizes="(max-width: 960px) 100vw, 450px" width="900" height="600" loading="lazy" decoding="async" alt="Matt Rutherford">
+                </div>
+                <div class="about-text">
+                    <p class="section-label">About me</p>
+                    <h2 id="about-title">Thirty years in senior roles at Meta, LinkedIn and Microsoft</h2>
+                    <p>Most recently I was Global Head of Change Management at Meta. I have spent my career around people making moves: stepping up, starting again, leading teams through change. I have seen what helps and what gets in the way.</p>
+                    <p>Now I coach people through those moves, from senior individual contributors to executives, in any sector. My approach is direct, practical and built around you, not a formula.</p>
+                    <div class="credentials">
+                        <div>
+                            <span class="credential-value">30</span>
+                            <span class="credential-label"><a href="https://www.linkedin.com/in/mattrutherford/" rel="noopener noreferrer">Years at Meta, LinkedIn and Microsoft</a></span>
+                        </div>
+                        <div>
+                            <span class="credential-value">AC</span>
+                            <span class="credential-label"><a href="https://www.associationforcoaching.com/members/?id=82268264" rel="noopener noreferrer">Registered member</a></span>
+                        </div>
+                        <div>
+                            <span class="credential-value">2024</span>
+                            <span class="credential-label">Coaching diploma</span>
+                        </div>
+                    </div>
+                    <a href="/about/" class="text-link">More about me<span aria-hidden="true"> &rarr;</span></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ─── ABOUT ─── -->
-    <section id="about">
-        <div class="about-inner">
-            <div class="about-image-wrap">
-                <!-- Source photo lives in git history; regenerate sizes with sips --resampleWidth -->
-                <img src="photo-2-900.jpg"
-                     srcset="photo-2-600.jpg 600w, photo-2-900.jpg 900w, photo-2-1400.jpg 1400w"
-                     sizes="(max-width: 960px) 100vw, 850px"
-                     width="900" height="600"
-                     loading="lazy" decoding="async"
-                     alt="Matt Rutherford">
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="contact-inner">
+                <div class="contact-text">
+                    <p class="section-label">Get in touch</p>
+                    <h2 id="contact-title">Let's start a conversation</h2>
+                    <p>The quickest way to start is to book a free 45 minute conversation. Pick a time that suits you.</p>
+                    <a href="https://calendly.com/mattrutherfordcoaching/conversation" class="btn btn-primary">Book a free conversation</a>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:matt@mattrutherfordcoaching.com">matt@mattrutherfordcoaching.com</a>
+                        </div>
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://www.linkedin.com/in/mattrutherford/" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Dublin, Ireland. Online, and in person in Dublin by arrangement.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="form-heading">Or send a message</h3>
+                    <p class="form-intro">If you would rather write first, or you are asking on behalf of someone else, use the form.</p>
+                    <!-- Formspree form mgonwlry. The destination address is set in the
+                         Formspree dashboard, not here: point it at matt@mattrutherfordcoaching.com. -->
+                    <form id="contactForm" action="https://formspree.io/f/mgonwlry" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="situation">Your situation</label>
+                            <select id="situation" name="situation" required>
+                                <option value="" selected disabled>Choose the closest</option>
+                                <option data-key="stepping-up">Stepping up to manage</option>
+                                <option data-key="next-role">Looking for my next role</option>
+                                <option data-key="new-role">Starting a new role</option>
+                                <option data-key="senior-leader">Senior leader, a decision or change</option>
+                                <option data-key="sponsor">Sponsoring coaching for someone else</option>
+                                <option data-key="other">Something else</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="role">Your role <span class="label-optional">(optional)</span></label>
+                                <input type="text" id="role" name="role" autocomplete="organization-title" placeholder="e.g. Senior engineer, Head of Product">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="label-optional">(optional)</span></label>
+                                <input type="text" id="subject" name="_subject" placeholder="e.g. Coaching enquiry">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">What's on your mind?</label>
+                            <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for" required></textarea>
+                        </div>
+                        <div class="honeypot" aria-hidden="true">
+                            <label for="gotcha">Leave this empty</label>
+                            <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Send message</button>
+                            <p class="form-note">I typically respond within 24 hours.</p>
+                        </div>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
             </div>
-            <div class="about-text">
-                <p class="section-label">About Me</p>
-                <h2>30 years at the intersection of technology and leadership</h2>
-                <p>
-                    I've spent three decades working in organisations where the pace is relentless, the stakes are high, and the space to think clearly is rare. I've seen first-hand how the best leaders aren't always the ones with the most experience. They're the ones who know how to get out of their own way.
-                </p>
-                <p>
-                    I work with people who are ready to think more clearly, lead more effectively, and move forward with real purpose. My approach is direct, practical, and built around you, not a formula. I'm a <a href="https://www.associationforcoaching.com/members/?id=82268264#" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">registered coach</a>, though the 30 years in the room tends to matter more.
-                </p>
-                <p>
-                    The ideas, clarity, and growth you're looking for are already there. My job is to help you find them.
-                </p>
-                <div class="credentials">
-                    <div>
-                        <span class="credential-value">30+</span>
-                        <span class="credential-label"><a href="https://www.linkedin.com/in/mattrutherford/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Years in Tech &amp; Leadership</a></span>
-                    </div>
-                    <div>
-                        <span class="credential-value">AC</span>
-                        <span class="credential-label"><a href="https://www.associationforcoaching.com/members/?id=82268264#" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Registered Coach</a></span>
-                    </div>
-                    <div>
-                        <span class="credential-value">1:1</span>
-                        <span class="credential-label">Focused Coaching</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section id="contact">
-        <div class="contact-inner">
-            <div class="contact-text">
-                <p class="section-label">Get In Touch</p>
-                <h2>Let's start a conversation</h2>
-                <p>If you're curious about whether coaching is right for you, or you're ready to get started, I'd love to hear from you. No pitch, no pressure. Just a conversation.</p>
-                <p>I work in person in Dublin, and remotely with leaders across Ireland, the UK and Europe.</p>
-                <div class="contact-details">
-                    <div class="contact-detail">
-                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <a href="mailto:matt@mattrutherford.co.uk">matt@mattrutherford.co.uk</a>
-                    </div>
-                    <div class="contact-detail">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        <a href="https://www.linkedin.com/in/mattrutherford" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    </div>
-                    <div class="contact-detail">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>Dublin, Ireland &middot; and remote</span>
-                    </div>
-                </div>
-            </div>
 
-            <!--
-                FORM SETUP: This form uses Formspree (free, no backend needed).
-                1. Sign up at formspree.io
-                2. Create a new form and copy your form ID
-                3. Replace YOUR_FORM_ID below with your actual ID
-                4. The form will work on Render without any backend code
-            -->
-            <form id="contactForm" action="https://formspree.io/f/mgonwlry" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="role">Your Role</label>
-                    <input type="text" id="role" name="role" placeholder="e.g. CTO, Founder, Head of Product">
-                </div>
-                <div class="form-group">
-                    <label for="message">What's on your mind?</label>
-                    <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for..." required></textarea>
-                </div>
-                <div class="form-footer">
-                    <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
-                    <p class="form-note">I typically respond within 24 hours.</p>
-                </div>
-                <p class="form-success" id="formSuccess">Thanks. I'll be in touch soon.</p>
-            </form>
-        </div>
-    </section>
-
-    <!-- ─── FOOTER ─── -->
-    <footer>
+    </main>
+    <footer class="site-footer">
         <div class="footer-inner">
-            <div>
-                <p class="footer-brand">Matt Rutherford</p>
-                <p class="footer-tag">ideas · clarity · growth</p>
+            <div class="footer-id">
+                <p class="footer-brand">Matt Rutherford Coaching</p>
+                <p class="footer-label">Career and Leadership Coach</p>
+                <p>Dublin, Ireland, online and in person.</p>
+                <p><a href="mailto:matt@mattrutherfordcoaching.com">matt@mattrutherfordcoaching.com</a></p>
+                <p><a href="https://www.associationforcoaching.com/members/?id=82268264" rel="noopener noreferrer">Association for Coaching registered member</a></p>
+                
             </div>
-            <p class="footer-copy">
-                Executive &amp; Business Coach<br>
-                <span style="opacity:0.6;">© 2026 Matt Rutherford. All rights reserved.</span>
-            </p>
+            <nav class="footer-nav" aria-label="Footer">
+                <ul>
+                    <li><a href="/coaching/">Coaching</a></li>
+                    <li><a href="/for-organisations/">For organisations</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/privacy/">Privacy</a></li>
+                    
+                    <li><a href="https://thevaluesfinder.com">Values Finder</a></li>
+                    <li><a href="https://www.linkedin.com/in/mattrutherford/" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </nav>
         </div>
+        <p class="footer-copy">&copy; 2026 Matt Rutherford Coaching</p>
     </footer>
 
-    <script>
-        // ─── Nav scroll state ───
-        const nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 10);
-        });
-
-        // ─── Mobile nav toggle ───
-        const toggle   = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        toggle.addEventListener('click', () => {
-            const open = navLinks.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', open);
-        });
-
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // ─── Contact form (Formspree AJAX) ───
-        const form    = document.getElementById('contactForm');
-        const btn     = document.getElementById('submitBtn');
-        const success = document.getElementById('formSuccess');
-
-        form.addEventListener('submit', async (e) => {
-            // Only intercept if Formspree ID has been set
-            if (form.action.includes('YOUR_FORM_ID')) return; // fall through to native POST
-
-            e.preventDefault();
-            btn.textContent = 'Sending…';
-            btn.disabled = true;
-
-            try {
-                const res = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (res.ok) {
-                    form.reset();
-                    btn.style.display = 'none';
-                    success.style.display = 'block';
-                } else {
-                    btn.textContent = 'Something went wrong. Please try emailing directly.';
-                    btn.disabled = false;
-                }
-            } catch {
-                btn.textContent = 'Something went wrong. Please try emailing directly.';
-                btn.disabled = false;
-            }
-        });
-
-        // ─── Subtle fade-in on scroll ───
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.service-card, .testimonial, .process-step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-
+    <script src="/site.js?v=a2094d1d" defer></script>
 </body>
 </html>

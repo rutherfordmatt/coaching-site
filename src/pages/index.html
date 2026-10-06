@@ -1,0 +1,103 @@
+<!--
+{
+  "path": "/",
+  "title": "Career and Leadership Coach, Dublin | Matt Rutherford Coaching",
+  "ogTitle": "Matt Rutherford Coaching | Career and Leadership Coach, Dublin",
+  "description": "Career and leadership coaching for people making progress in their careers, from senior individual contributor to senior leader. Dublin and online. Free first conversation.",
+  "schema": ["graph"],
+  "priority": "1.0"
+}
+-->
+        <!-- The old one-page anchors (#hero, #services, #process, #testimonials,
+             #about, #contact) are kept as ids below so existing links still land. -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <p class="hero-tagline">{{ label }}<span aria-hidden="true">·</span>Dublin</p>
+                <h1 class="hero-title">Make your next move <em>with clarity.</em></h1>
+                <p class="hero-subtitle">{{ positioning }}</p>
+                <div class="hero-actions">
+                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
+                    <a href="/coaching/" class="btn btn-outline">See the packages</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                {{ photo hero/eager }}
+            </div>
+        </section>
+
+        <div class="previously">
+            <p>Previously at Meta, LinkedIn and Microsoft. Most recently Global Head of Change Management at Meta.</p>
+        </div>
+
+        <section class="section" id="is-this-you" aria-labelledby="is-this-you-title">
+            <div class="checklist-wrap">
+                <div>
+                    <p class="section-label">Is this you?</p>
+                    <h2 id="is-this-you-title">Coaching for the next stage of your career.</h2>
+                    <p>If one of these sounds like you, a free conversation is the quickest way to find out whether coaching will help.</p>
+                </div>
+                <ul class="checklist">
+                    <li>You are a senior individual contributor stepping up to manage people.</li>
+                    <li>You are a new or recent manager working out how to lead.</li>
+                    <li>You have been promoted, moved sideways or started with a new employer.</li>
+                    <li>You have been laid off and are deciding what comes next.</li>
+                    <li>You are a senior leader with a decision to make and nobody neutral to think it through with.</li>
+                    <li>You are leading through a reorganisation or restructuring.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section--alt" id="services" aria-labelledby="services-title">
+            <div class="section">
+                <div class="section-header">
+                    <p class="section-label">Coaching packages</p>
+                    <h2 id="services-title">Four ways to work together</h2>
+                    <p>From individual contributor to the leadership table, and every move in between.</p>
+                </div>
+                <div class="packages-grid packages-grid--compact">
+                    {{ package_cards compact }}
+                </div>
+                <div class="section-footer">
+                    <div class="cta-row">
+                        <a href="/coaching/" class="btn btn-outline">See the packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{{> how-i-work }}
+
+{{> first-step }}
+
+{{> testimonials }}
+
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="about-inner">
+                <div class="about-image-wrap">
+                    {{ photo portrait }}
+                </div>
+                <div class="about-text">
+                    <p class="section-label">About me</p>
+                    <h2 id="about-title">Thirty years in senior roles at Meta, LinkedIn and Microsoft</h2>
+                    <p>Most recently I was Global Head of Change Management at Meta. I have spent my career around people making moves: stepping up, starting again, leading teams through change. I have seen what helps and what gets in the way.</p>
+                    <p>Now I coach people through those moves, from senior individual contributors to executives, in any sector. My approach is direct, practical and built around you, not a formula.</p>
+                    <div class="credentials">
+                        <div>
+                            <span class="credential-value">30</span>
+                            <span class="credential-label"><a href="{{ links.linkedin }}" rel="noopener noreferrer">Years at Meta, LinkedIn and Microsoft</a></span>
+                        </div>
+                        <div>
+                            <span class="credential-value">AC</span>
+                            <span class="credential-label"><a href="{{ links.acDirectory }}" rel="noopener noreferrer">Registered member</a></span>
+                        </div>
+                        <div>
+                            <span class="credential-value">2024</span>
+                            <span class="credential-label">Coaching diploma</span>
+                        </div>
+                    </div>
+                    <a href="/about/" class="text-link">More about me<span aria-hidden="true"> &rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+{{> contact }}

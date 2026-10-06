@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "clarity-session",
+    "name": "The Clarity Session",
+    "url": "/coaching/clarity-session/",
+    "who": "One decision, one situation, worked through properly in a single sitting.",
+    "price": "€350",
+    "priceNote": "opening offer",
+    "length": "One 90 minute session and a 30 minute follow-up",
+    "payment": "Paid by card when you book.",
+    "includes": [
+      "A short written brief from you beforehand",
+      "One 90 minute session",
+      "A written summary with the decision, options and next steps",
+      "A 30 minute follow-up call three weeks later"
+    ],
+    "note": "The fee is credited against The Next Move or The Leadership Engagement if you continue within 30 days.",
+    "cta": { "label": "Book a Clarity Session", "booking": "clarity" },
+    "offers": [{ "name": "The Clarity Session", "price": "350" }]
+  },
+  {
+    "slug": "the-next-move",
+    "name": "The Next Move",
+    "url": "/coaching/the-next-move/",
+    "who": "For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one.",
+    "price": "€1,200",
+    "priceNote": "or two payments of €600",
+    "length": "Six 60 minute sessions over twelve weeks",
+    "payment": "Invoiced after the free conversation. One payment, or two of €600.",
+    "includes": [
+      "A transition map of your situation, built in the first session",
+      "A workbook between sessions",
+      "Messaging access between sessions",
+      "A written 90 day plan you leave with"
+    ],
+    "cta": { "label": "Book a free conversation", "booking": "conversation" },
+    "offers": [{ "name": "The Next Move", "price": "1200" }]
+  },
+  {
+    "slug": "leadership-engagement",
+    "name": "The Leadership Engagement",
+    "url": "/coaching/leadership-engagement/",
+    "who": "For experienced managers and senior leaders growing into a bigger role or leading through change.",
+    "price": "€3,000",
+    "priceNote": "or three payments of €1,000",
+    "length": "Eight 90 minute sessions over six months",
+    "payment": "Invoiced after the free conversation. One payment, or three of €1,000.",
+    "includes": [
+      "Structured 360 feedback gathered at the start from your manager, peers and team",
+      "A written mid-point review",
+      "Messaging access between sessions",
+      "A written close-out"
+    ],
+    "cta": { "label": "Book a free conversation", "booking": "conversation" },
+    "offers": [{ "name": "The Leadership Engagement", "price": "3000" }]
+  },
+  {
+    "slug": "ongoing-partnership",
+    "name": "Ongoing Partnership",
+    "url": "/coaching/ongoing-partnership/",
+    "who": "For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.",
+    "price": "€200",
+    "priceNote": "per session",
+    "priceList": [
+      "Block of four: €720",
+      "Block of eight: €1,360"
+    ],
+    "length": "60 minute sessions, booked singly or in blocks",
+    "payment": "Single sessions are paid by card when you book. Blocks are invoiced.",
+    "includes": [
+      "60 minute sessions, booked singly or in blocks of four (€720) or eight (€1,360)",
+      "Blocks are valid for six months",
+      "Blocks include messaging between sessions and priority scheduling"
+    ],
+    "cta": { "label": "Book a single session", "booking": "coaching" },
+    "offers": [
+      { "name": "Ongoing Partnership, single session", "price": "200" },
+      { "name": "Ongoing Partnership, block of four sessions", "price": "720" },
+      { "name": "Ongoing Partnership, block of eight sessions", "price": "1360" }
+    ]
+  }
+]
