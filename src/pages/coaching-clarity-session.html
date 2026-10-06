@@ -1,0 +1,57 @@
+<!--
+{
+  "path": "/coaching/clarity-session/",
+  "title": "The Clarity Session, €350 | Matt Rutherford Coaching, Dublin",
+  "description": "One decision or situation, worked through properly in a single 90 minute coaching session, with a written summary and a follow-up call three weeks later. €350.",
+  "schema": ["service:clarity-session"]
+}
+-->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <p class="section-label">Coaching package</p>
+                <h1>{{ package clarity-session.name }}</h1>
+                <p class="page-lede">{{ package clarity-session.who }}</p>
+                <div class="hero-actions">
+                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
+                    <a href="/coaching/" class="btn btn-outline">See the packages</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-layout">
+            <div class="prose">
+                <h2>Who it is for</h2>
+                <p>Some things do not need a programme. You have an offer to weigh, a conversation to prepare for, a restructure to respond to, or a choice you keep putting off. The Clarity Session gives it ninety minutes of proper attention with someone who has no stake in what you decide.</p>
+
+                <h2>What is included</h2>
+                {{ package_includes clarity-session }}
+
+                <h2>How it works</h2>
+                <div class="stages">
+                    <div class="stage">
+                        <h3>Before</h3>
+                        <p>You send a short written brief: the decision or situation, what you have already considered, and what a good outcome would look like.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>The session</h3>
+                        <p>Ninety minutes, online, working it through properly.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>After</h3>
+                        <p>I send a written summary with the decision, the options and your next steps.</p>
+                    </div>
+                    <div class="stage">
+                        <h3>Three weeks later</h3>
+                        <p>A 30 minute follow-up call to see what has moved.</p>
+                    </div>
+                </div>
+
+                <h2>Paying</h2>
+                <p>{{ package clarity-session.price }}, an opening offer, paid by card when you book.</p>
+                <p>{{ package clarity-session.note }}</p>
+                <p>If you are not sure whether a single session is enough, book the free conversation first and we can decide together.</p>
+            </div>
+            {{ package_facts clarity-session }}
+        </div>
+
+{{> first-step }}
