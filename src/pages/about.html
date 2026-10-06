@@ -8,23 +8,11 @@
 }
 -->
         <section class="page-hero page-hero--no-label">
-            <div class="page-hero-inner">
-                <h1>Matt Rutherford</h1>
-                <p class="about-role">{{ label }}</p>
-                <p class="page-lede">{{ aboutIntro.headline }}. {{ aboutIntro.line }}</p>
-            </div>
-        </section>
-
-        <section class="about about--after-hero" aria-label="Background and credentials">
-            <div class="about-inner">
-                <div class="about-image-wrap">
-                    <!-- New photography is due in November 2026. To swap it, replace the
-                         portrait entry in src/config.json and rebuild. -->
-                    {{ photo portrait }}
-                </div>
-                <div class="about-text prose">
-                    <h2>Where I have been</h2>
-                    <p>I spent thirty years in senior roles at Meta, LinkedIn and Microsoft. Most recently, as Global Head of Change Management at Meta, I led a team of senior programme managers delivering hundreds of change projects a year around the world. Throughout my career I have driven change, shaped teams and nurtured talent. Now I bring what I learned in those thirty years to people making their next career move.</p>
+            <div class="page-hero-inner about-hero">
+                <div class="about-hero-text">
+                    <h1>Matt Rutherford</h1>
+                    <p class="about-role">{{ label }}</p>
+                    <p class="page-lede">{{ aboutIntro.headline }}. {{ aboutIntro.line }}</p>
                     <div class="credentials">
                         <div>
                             <span class="credential-value">30</span>
@@ -40,8 +28,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="about-image-wrap">
+                    <!-- New photography is due in November 2026. To swap it, replace the
+                         portrait entry in src/config.json and rebuild. -->
+                    {{ photo portrait }}
+                </div>
             </div>
         </section>
+
+        <div class="content-layout content-layout--single">
+            <div class="prose">
+                <h2>Where I have been</h2>
+                <p>I spent thirty years in senior roles at Meta, LinkedIn and Microsoft. Most recently, as Global Head of Change Management at Meta, I led a team of senior programme managers delivering hundreds of change projects a year around the world. Throughout my career I have driven change, shaped teams and nurtured talent. Now I bring what I learned in those thirty years to people making their next career move.</p>
+            </div>
+        </div>
 
 {{> how-i-work }}
 
