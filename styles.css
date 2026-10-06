@@ -748,7 +748,7 @@ p  { color: var(--text-muted); line-height: 1.85; }
     border: 2px solid var(--border);
     margin: 1.5rem 0 2rem;
 }
-.tracks { grid-template-columns: repeat(3, 1fr); }
+.tracks { grid-template-columns: 1fr; }
 .stages { grid-template-columns: 1fr; }
 .track, .stage { background: var(--white); padding: 1.8rem; }
 .track h3, .stage h3 { margin-top: 0; }
@@ -891,7 +891,7 @@ input, textarea, select {
     font-size: 0.95rem;
     color: var(--text);
     background: var(--white);
-    border: 1px solid #B9B4AE;
+    border: 1px solid #8C8680;
     border-radius: 2px;
     padding: 0.85rem 1rem;
     transition: border-color 0.2s, box-shadow 0.2s;
