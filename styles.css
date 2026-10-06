@@ -584,16 +584,6 @@ p  { color: var(--text-muted); line-height: 1.85; }
     color: rgba(255,255,255,0.72);
     line-height: 1.8;
 }
-.process-footer {
-    margin-top: 4.5rem;
-    text-align: center;
-}
-.process-footer p {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.92rem;
-    max-width: 620px;
-    margin: 0 auto;
-}
 
 /* ─── Testimonials ─── */
 .testimonials-grid {
