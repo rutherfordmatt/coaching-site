@@ -1,0 +1,43 @@
+<!--
+{
+  "path": "/coaching/",
+  "title": "Coaching Packages and Prices | Matt Rutherford Coaching, Dublin",
+  "description": "Four career and leadership coaching packages with published prices, from a single Clarity Session to a six month Leadership Engagement. Online, or in person in Dublin.",
+  "schema": ["graph"],
+  "priority": "0.9"
+}
+-->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <p class="section-label">For individuals</p>
+                <h1>Coaching for the next stage of your career.</h1>
+                <p class="page-lede">From your first team to the leadership table, and every move in between. Four packages and one price list.</p>
+                <div class="hero-actions">
+                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="packages" aria-labelledby="packages-title">
+            <div class="section-header">
+                <p class="section-label">The packages</p>
+                <h2 id="packages-title">Four ways to work together</h2>
+                <p>You can book the Clarity Session or a single session straight away. If you are not sure which fits, start with a free conversation and we will work it out together.</p>
+            </div>
+            <div class="packages-grid">
+                {{ package_cards full }}
+            </div>
+        </section>
+
+        <section class="section--white" id="pricing" aria-labelledby="pricing-title">
+            <div class="section section--narrow">
+                <div class="section-header">
+                    <p class="section-label">Prices and payment</p>
+                    <h2 id="pricing-title">What it costs and how you pay</h2>
+                </div>
+{{> fees-table }}
+                <p class="muted-note fees-policy">{{ policies.reschedule }} More in the <a href="/faq/#fees">FAQ</a>.</p>
+            </div>
+        </section>
+
+{{> first-step }}

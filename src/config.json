@@ -1,0 +1,53 @@
+{
+  "siteUrl": "https://mattrutherfordcoaching.com",
+  "businessName": "Matt Rutherford Coaching",
+  "personName": "Matt Rutherford",
+  "label": "Career and Leadership Coach",
+  "positioning": "Career and leadership coaching for people making progress in their careers: from senior individual contributor to first-time manager, from manager to senior leader, and through the changes in between.",
+  "background": "Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta.",
+  "email": "matt@mattrutherfordcoaching.com",
+
+  "aboutIntro": {
+    "headline": "Direct, practical, and on your side",
+    "line": "I know these moves from the inside, because I have spent my career making them and leading people through them. My coaching is built around you and your situation, not a formula."
+  },
+
+  "booking": {
+    "conversation": "https://calendly.com/mattrutherfordcoaching/conversation",
+    "clarity": "https://calendly.com/mattrutherfordcoaching/clarity",
+    "coaching": "https://calendly.com/mattrutherfordcoaching/coaching"
+  },
+
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/mattrutherford/",
+    "acDirectory": "https://www.associationforcoaching.com/members/?id=82268264",
+    "valuesFinder": "https://thevaluesfinder.com",
+    "newsletter": "https://www.mattrutherford.co.uk/newsletter/"
+  },
+
+  "croNumber": "[CRO_NUMBER]",
+
+  "policies": {
+    "reschedule": "If you need to move a session, give me at least 48 hours notice and you can reschedule without charge.",
+    "openingRates": "Opening rates, reviewed January 2027."
+  },
+
+  "photos": {
+    "hero": {
+      "src": "photo-1-1200.jpg",
+      "srcset": [["/photo-1-800.jpg", 800], ["/photo-1-1200.jpg", 1200], ["/photo-1-1800.jpg", 1800]],
+      "sizes": "(max-width: 960px) 100vw, 50vw",
+      "width": 1200,
+      "height": 800,
+      "alt": "Matt Rutherford, Career and Leadership Coach"
+    },
+    "portrait": {
+      "src": "photo-2-900.jpg",
+      "srcset": [["/photo-2-600.jpg", 600], ["/photo-2-900.jpg", 900], ["/photo-2-1400.jpg", 1400]],
+      "sizes": "(max-width: 960px) 100vw, 450px",
+      "width": 900,
+      "height": 600,
+      "alt": "Matt Rutherford"
+    }
+  }
+}

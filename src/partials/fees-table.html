@@ -1,0 +1,23 @@
+                <div class="fees">
+                    <div class="table-wrap">
+                        <table class="fees-table">
+                            <caption class="visually-hidden">Prices and how to pay</caption>
+                            <thead>
+                                <tr><th scope="col">What</th><th scope="col">Price</th><th scope="col">How you pay</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">First conversation</th><td>Free</td><td>Nothing to pay</td></tr>
+                                <tr><th scope="row"><a href="/coaching/clarity-session/">The Clarity Session</a></th><td>{{ package clarity-session.price }}</td><td>Card, when you book</td></tr>
+                                <tr><th scope="row"><a href="/coaching/ongoing-partnership/">Single session</a></th><td>{{ package ongoing-partnership.price }}</td><td>Card, when you book</td></tr>
+                                <tr><th scope="row"><a href="/coaching/ongoing-partnership/">Block of four or eight sessions</a></th><td>{{ package ongoing-partnership.blockFour }} or {{ package ongoing-partnership.blockEight }}</td><td>Invoice</td></tr>
+                                <tr><th scope="row"><a href="/coaching/the-next-move/">The Next Move</a></th><td>{{ package the-next-move.price }}</td><td>Invoice: one payment, or two of €600</td></tr>
+                                <tr><th scope="row"><a href="/coaching/leadership-engagement/">The Leadership Engagement</a></th><td>{{ package leadership-engagement.price }}</td><td>Invoice: one payment, or three of €1,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="fees-notes">
+                        <li>Invoices are sent after the free conversation and paid by bank transfer or card. Each instalment is a dated invoice.</li>
+                        <li>The same prices apply whether you pay or your employer does.</li>
+                        <li>{{ policies.openingRates }}</li>
+                    </ul>
+                </div>
