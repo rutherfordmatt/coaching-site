@@ -851,6 +851,9 @@ p  { color: var(--text-muted); line-height: 1.85; }
 .about-hero .page-lede { margin-bottom: 0; }
 .about-hero .credentials { margin-top: 2.2rem; padding-top: 2.2rem; }
 .about-hero .about-image-wrap img { aspect-ratio: 4/5; }
+/* Where I have been: half the usual space below, down to the dark band */
+.about-story { padding-bottom: 2.95rem; }
+.about-story .prose p:last-child { margin-bottom: 0; }
 
 /* ─── Prose pages ─── */
 .content-layout {
@@ -1176,6 +1179,7 @@ textarea { resize: vertical; min-height: 140px; }
     .page-hero--no-label .page-hero-inner { padding-top: calc(4rem + 37px); padding-bottom: 2.5rem; }
     .about-hero { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-hero .about-image-wrap { order: 0; }
+    .about-story { padding-bottom: 2.5rem; }
     .content-layout { padding: 4rem 1.5rem 5rem; }
     .content-layout--single { grid-template-columns: minmax(0, 1fr); }
 
