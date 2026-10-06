@@ -831,8 +831,8 @@ p  { color: var(--text-muted); line-height: 1.85; }
 
 /* About page header has no eyebrow; add its height (line + 16px gap)
    back so the name sits where every other page's title sits. */
-.page-hero--no-label .page-hero-inner { padding-top: calc(6rem + 37px); padding-bottom: 3.5rem; }
-.page-hero h1 + .about-role { margin-top: -0.6rem; }
+.page-hero--no-label .page-hero-inner { padding-top: calc(6rem + 37px); padding-bottom: 5rem; }
+.page-hero h1 + .about-role { margin-top: -0.6rem; margin-bottom: 1.4rem; }
 .about-role {
     font-size: 0.75rem;
     font-weight: 600;
