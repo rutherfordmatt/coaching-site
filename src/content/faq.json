@@ -33,7 +33,6 @@
   {
     "group": "Fees and payment",
     "id": "fees",
-    "intro": "{{> fees-table }}",
     "items": [
       {
         "id": "payment",
@@ -64,7 +63,7 @@
       {
         "id": "accredited",
         "question": "Are you accredited?",
-        "answer": "<p>I am a registered member of the <a href=\"{{ links.acDirectory }}\">Association for Coaching</a> and hold a Diploma in Executive and Business Coaching (2024). Individual accreditation with the Association for Coaching is planned for 2027.</p>"
+        "answer": "<p>I am a registered member of the <a href=\"{{ links.acDirectory }}\">Association for Coaching</a> and hold a Diploma in Executive and Business Coaching (2024).</p>"
       },
       {
         "id": "team-coaching",
