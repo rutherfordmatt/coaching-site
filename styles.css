@@ -309,6 +309,8 @@ p  { color: var(--text-muted); line-height: 1.85; }
     padding: 6rem 2rem 5rem;
 }
 .page-hero h1 { max-width: 820px; margin-bottom: 1.5rem; }
+/* Match the home hero: 16px between eyebrow (or back link) and headline */
+.page-hero .section-label, .page-hero .back-link { margin-bottom: 1rem; }
 .page-lede {
     font-size: 1.1rem;
     max-width: 640px;
