@@ -8,8 +8,9 @@
   "priority": "1.0"
 }
 -->
-        <!-- The old one-page anchors (#hero, #services, #process, #testimonials,
-             #about, #contact) are kept as ids below so existing links still land. -->
+        <!-- The old one-page anchors (#hero, #services, #testimonials, #about,
+             #contact) are kept as ids below so existing links still land.
+             #process moved to /about/#process; site.js forwards it. -->
         <section class="hero" id="hero">
             <div class="hero-content">
                 <p class="hero-tagline">{{ label }}</p>
@@ -52,7 +53,7 @@
                 <div class="section-header">
                     <p class="section-label">Coaching packages</p>
                     <h2 id="services-title">Four ways to work together</h2>
-                    <p>From your first team to the leadership table, and every move in between.</p>
+                    <p>From your first team to the leadership table, and every move in between. Every programme starts by mapping your situation and ends with a written plan.</p>
                 </div>
                 <div class="packages-grid packages-grid--compact">
                     {{ package_cards compact }}
@@ -66,8 +67,6 @@
         </section>
 
 {{> testimonials }}
-
-{{> how-i-work }}
 
 {{> first-step }}
 

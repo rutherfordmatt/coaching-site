@@ -1,4 +1,10 @@
 (function () {
+    // ─── Old one-page anchor: How I work moved to the About page ───
+    if (location.pathname === '/' && location.hash === '#process') {
+        location.replace('/about/#process');
+        return;
+    }
+
     // ─── Nav scroll state ───
     const nav = document.getElementById('mainNav');
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
