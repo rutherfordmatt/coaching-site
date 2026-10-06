@@ -22,7 +22,7 @@
             <div class="section-header">
                 <p class="section-label">The packages</p>
                 <h2 id="packages-title">Four ways to work together</h2>
-                <p>{{ policies.openingRates }} One price list: the same prices apply whether you pay or your employer does.</p>
+                <p>Every package starts with a free conversation, where we work out together which one fits.</p>
             </div>
             <div class="packages-grid">
                 {{ package_cards full }}
@@ -30,28 +30,13 @@
         </section>
 
         <section class="section--white" id="pricing" aria-labelledby="pricing-title">
-            <div class="section">
+            <div class="section section--narrow">
                 <div class="section-header">
                     <p class="section-label">Prices and payment</p>
-                    <h2 id="pricing-title">How paying works</h2>
+                    <h2 id="pricing-title">What it costs and how you pay</h2>
                 </div>
-                <div class="notes-grid">
-                    <div>
-                        <h3>Paying</h3>
-                        <p>The conversation is free. The Clarity Session and single sessions are paid by card when you book.</p>
-                        <p>Programmes and session blocks are invoiced after the first conversation and paid by bank transfer or card. If you pay in instalments, each one is a dated invoice.</p>
-                    </div>
-                    <div>
-                        <h3>Sessions or a programme?</h3>
-                        <p>Six single sessions cost the same as The Next Move, which also includes the transition map, the workbook and a written 90 day plan.</p>
-                        <p>If you have a specific move in mind, the programme is usually the better choice.</p>
-                    </div>
-                    <div>
-                        <h3>If your employer pays</h3>
-                        <p>The prices are the same. We agree objectives together at the start, and what we discuss stays confidential.</p>
-                        <p><a href="/for-organisations/" class="inline-link">Coaching for organisations</a></p>
-                    </div>
-                </div>
+{{> fees-table }}
+                <p class="muted-note fees-policy">{{ policies.reschedule }} More in the <a href="/faq/#fees">FAQ</a>.</p>
             </div>
         </section>
 

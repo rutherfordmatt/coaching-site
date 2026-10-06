@@ -168,15 +168,26 @@ def h_testimonials(ctx, _):
     return f'<div class="testimonials-grid testimonials-grid--{count}">{"".join(out)}</div>'
 
 
+def faq_items():
+    return [item for group in FAQ for item in group["items"]]
+
+
 def h_faq_list(ctx, _):
-    out = []
-    for item in FAQ:
-        answer = render(item["answer"], ctx)
+    jump = "".join(f'<li><a href="#{g["id"]}">{g["group"]}</a></li>' for g in FAQ)
+    out = [f'<nav class="faq-jump" aria-label="Question groups"><ul>{jump}</ul></nav>']
+    for group in FAQ:
+        intro = render(group.get("intro", ""), ctx)
+        items = "".join(f"""
+                <div class="faq-item" id="{item['id']}">
+                    <h3>{item['question']}</h3>
+                    {render(item['answer'], ctx)}
+                </div>""" for item in group["items"])
         out.append(f"""
-            <div class="faq-item" id="{item['id']}">
-                <h2>{item['question']}</h2>
-                {answer}
-            </div>""")
+            <section class="faq-group" id="{group['id']}" aria-labelledby="{group['id']}-title">
+                <h2 id="{group['id']}-title">{group['group']}</h2>
+                {intro}
+                {items}
+            </section>""")
     return "\n".join(out)
 
 
@@ -340,7 +351,7 @@ def schema(kind, ctx):
                 "@type": "Question",
                 "name": item["question"],
                 "acceptedAnswer": {"@type": "Answer", "text": strip_tags(render(item["answer"], ctx))},
-            } for item in FAQ],
+            } for item in faq_items()],
         }
     raise ValueError(f"Unknown schema kind: {kind}")
 

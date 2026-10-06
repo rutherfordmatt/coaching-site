@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v=a906ae31">
+    <link rel="stylesheet" href="/styles.css?v=873ebf53">
     <script defer src="https://analytics.stff.me/script.js" data-website-id="3a83373e-0ff3-446c-867f-f787745cc92f" data-domains="mattrutherfordcoaching.com"></script>
     <script type="application/ld+json">
 {
@@ -78,7 +78,7 @@
       "name": "How do I pay, and can I pay in instalments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The first conversation is free. The Clarity Session and single sessions are paid by card when you book. Programmes and session blocks are invoiced after the first conversation and paid by bank transfer or card.You can pay The Next Move in two payments of €600 and The Leadership Engagement in three payments of €1,000. Each instalment is a dated invoice, so you know in advance when each one is due."
+        "text": "The free conversation costs nothing. The Clarity Session and single sessions are paid by card when you book. Programmes and session blocks are invoiced after the free conversation, and paid by bank transfer or card.Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice."
       }
     },
     {
@@ -91,18 +91,18 @@
     },
     {
       "@type": "Question",
-      "name": "Is what we discuss confidential, including from my employer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "What is your cancellation and rescheduling policy?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "If you need to move a session, give me at least 48 hours notice and you can reschedule without charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is what we discuss confidential, including from my employer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose."
       }
     },
     {
@@ -152,61 +152,92 @@
 
         <div class="content-layout content-layout--single">
             <div class="faq">
+                <nav class="faq-jump" aria-label="Question groups"><ul><li><a href="#getting-started">Getting started</a></li><li><a href="#fees">Fees and payment</a></li><li><a href="#working-together">Working together</a></li></ul></nav>
+
+            <section class="faq-group" id="getting-started" aria-labelledby="getting-started-title">
+                <h2 id="getting-started-title">Getting started</h2>
                 
-            <div class="faq-item" id="free-conversation">
-                <h2>What happens in the free conversation?</h2>
-                <p>It is 45 minutes, online. You tell me where you are and what you want to move on, and I ask questions until I understand it. By the end we will both know whether coaching would help and, if it would, which package fits.</p><p>If you want to go ahead, I send you a short written proposal afterwards: the package, what we will work on, dates and price. If you want something to bring, try the <a href="https://thevaluesfinder.com">Values Finder</a> beforehand.</p>
-            </div>
+                
+                <div class="faq-item" id="free-conversation">
+                    <h3>What happens in the free conversation?</h3>
+                    <p>It is 45 minutes, online. You tell me where you are and what you want to move on, and I ask questions until I understand it. By the end we will both know whether coaching would help and, if it would, which package fits.</p><p>If you want to go ahead, I send you a short written proposal afterwards: the package, what we will work on, dates and price. If you want something to bring, try the <a href="https://thevaluesfinder.com">Values Finder</a> beforehand.</p>
+                </div>
+                <div class="faq-item" id="sales-call">
+                    <h3>Is it a sales call?</h3>
+                    <p>No. It is a conversation about your situation, and I will not push you to buy anything. If I am not the right coach for what you need, I will say so and point you to someone who is.</p>
+                </div>
+                <div class="faq-item" id="who">
+                    <h3>Who do you work with?</h3>
+                    <p>People making progress in their careers, from senior individual contributor up to executive, in any sector. The usual reasons people get in touch are stepping up to manage, starting in a new role, looking for the next one, or leading through change.</p>
+                </div>
+                <div class="faq-item" id="leader-already">
+                    <h3>Do I need to be a leader already?</h3>
+                    <p>No. Many of the people I work with are senior individual contributors thinking about, or just starting, their first management role. <a href="/coaching/the-next-move/">The Next Move</a> is built for exactly that.</p>
+                </div>
+                <div class="faq-item" id="online">
+                    <h3>Are sessions online or in person?</h3>
+                    <p>Online by default, over video. In person in Dublin by arrangement. I work with clients in Ireland, the UK and Europe.</p>
+                </div>
+            </section>
 
-            <div class="faq-item" id="sales-call">
-                <h2>Is it a sales call?</h2>
-                <p>No. It is a conversation about your situation, and I will not push you to buy anything. If I am not the right coach for what you need, I will say so and point you to someone who is.</p>
-            </div>
+            <section class="faq-group" id="fees" aria-labelledby="fees-title">
+                <h2 id="fees-title">Fees and payment</h2>
+                                <div class="fees">
+                    <div class="table-wrap">
+                        <table class="fees-table">
+                            <caption class="visually-hidden">Prices and how to pay</caption>
+                            <thead>
+                                <tr><th scope="col">What</th><th scope="col">Price</th><th scope="col">How you pay</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">First conversation</th><td>Free</td><td>Nothing to pay</td></tr>
+                                <tr><th scope="row"><a href="/coaching/clarity-session/">The Clarity Session</a></th><td>€350</td><td>Card, when you book</td></tr>
+                                <tr><th scope="row"><a href="/coaching/ongoing-partnership/">Single session</a></th><td>€200</td><td>Card, when you book</td></tr>
+                                <tr><th scope="row"><a href="/coaching/ongoing-partnership/">Block of four or eight sessions</a></th><td>€720 or €1,360</td><td>Invoice</td></tr>
+                                <tr><th scope="row"><a href="/coaching/the-next-move/">The Next Move</a></th><td>€1,200</td><td>Invoice: one payment, or two of €600</td></tr>
+                                <tr><th scope="row"><a href="/coaching/leadership-engagement/">The Leadership Engagement</a></th><td>€3,000</td><td>Invoice: one payment, or three of €1,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="fees-notes">
+                        <li>Invoices are sent after the free conversation and paid by bank transfer or card. Each instalment is a dated invoice.</li>
+                        <li>The same prices apply whether you pay or your employer does.</li>
+                        <li>Opening rates, reviewed January 2027.</li>
+                    </ul>
+                </div>
 
-            <div class="faq-item" id="who">
-                <h2>Who do you work with?</h2>
-                <p>People making progress in their careers, from senior individual contributor up to executive, in any sector. The usual reasons people get in touch are stepping up to manage, starting in a new role, looking for the next one, or leading through change.</p>
-            </div>
+                
+                <div class="faq-item" id="payment">
+                    <h3>How do I pay, and can I pay in instalments?</h3>
+                    <p>The free conversation costs nothing. The Clarity Session and single sessions are paid by card when you book. Programmes and session blocks are invoiced after the free conversation, and paid by bank transfer or card.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>
+                </div>
+                <div class="faq-item" id="employer">
+                    <h3>Can my employer pay, and how do I ask?</h3>
+                    <p>Yes, and the price is the same whoever pays. Many employers have a learning and development budget, and some managers can approve coaching from a team budget. Ask your manager or your HR team. I can send you a short proposal to forward, with the objectives, the package and the price.</p><p>When an employer pays, we start with a three-way conversation to agree objectives. There is more on the <a href="/for-organisations/">For organisations</a> page.</p>
+                </div>
+                <div class="faq-item" id="cancellation">
+                    <h3>What is your cancellation and rescheduling policy?</h3>
+                    <p>If you need to move a session, give me at least 48 hours notice and you can reschedule without charge.</p>
+                </div>
+            </section>
 
-            <div class="faq-item" id="leader-already">
-                <h2>Do I need to be a leader already?</h2>
-                <p>No. Many of the people I work with are senior individual contributors thinking about, or just starting, their first management role. <a href="/coaching/the-next-move/">The Next Move</a> is built for exactly that.</p>
-            </div>
-
-            <div class="faq-item" id="online">
-                <h2>Are sessions online or in person?</h2>
-                <p>Online by default, over video. In person in Dublin by arrangement. I work with clients in Ireland, the UK and Europe.</p>
-            </div>
-
-            <div class="faq-item" id="payment">
-                <h2>How do I pay, and can I pay in instalments?</h2>
-                <p>The first conversation is free. The Clarity Session and single sessions are paid by card when you book. Programmes and session blocks are invoiced after the first conversation and paid by bank transfer or card.</p><p>You can pay The Next Move in two payments of €600 and The Leadership Engagement in three payments of €1,000. Each instalment is a dated invoice, so you know in advance when each one is due.</p>
-            </div>
-
-            <div class="faq-item" id="employer">
-                <h2>Can my employer pay, and how do I ask?</h2>
-                <p>Yes, and the price is the same whoever pays. Many employers have a learning and development budget, and some managers can approve coaching from a team budget. Ask your manager or your HR team. I can send you a short proposal to forward, with the objectives, the package and the price.</p><p>When an employer pays, we start with a three-way conversation to agree objectives. There is more on the <a href="/for-organisations/">For organisations</a> page.</p>
-            </div>
-
-            <div class="faq-item" id="confidential">
-                <h2>Is what we discuss confidential, including from my employer?</h2>
-                <p>Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.</p><p>The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose.</p>
-            </div>
-
-            <div class="faq-item" id="cancellation">
-                <h2>What is your cancellation and rescheduling policy?</h2>
-                <p>If you need to move a session, give me at least 48 hours notice and you can reschedule without charge.</p>
-            </div>
-
-            <div class="faq-item" id="accredited">
-                <h2>Are you accredited?</h2>
-                <p>I am a registered member of the <a href="https://www.associationforcoaching.com/members/?id=82268264">Association for Coaching</a> and hold a Diploma in Executive and Business Coaching (2024). Individual accreditation with the Association for Coaching is planned for 2027.</p>
-            </div>
-
-            <div class="faq-item" id="team-coaching">
-                <h2>Do you offer team coaching?</h2>
-                <p>Not at the moment. I work one to one. If your organisation wants coaching for several people, I can put together a proposal for each of them individually.</p>
-            </div>
+            <section class="faq-group" id="working-together" aria-labelledby="working-together-title">
+                <h2 id="working-together-title">Working together</h2>
+                
+                
+                <div class="faq-item" id="confidential">
+                    <h3>Is what we discuss confidential, including from my employer?</h3>
+                    <p>Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.</p><p>The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose.</p>
+                </div>
+                <div class="faq-item" id="accredited">
+                    <h3>Are you accredited?</h3>
+                    <p>I am a registered member of the <a href="https://www.associationforcoaching.com/members/?id=82268264">Association for Coaching</a> and hold a Diploma in Executive and Business Coaching (2024). Individual accreditation with the Association for Coaching is planned for 2027.</p>
+                </div>
+                <div class="faq-item" id="team-coaching">
+                    <h3>Do you offer team coaching?</h3>
+                    <p>Not at the moment. I work one to one. If your organisation wants coaching for several people, I can put together a proposal for each of them individually.</p>
+                </div>
+            </section>
             </div>
         </div>
 
@@ -272,6 +303,6 @@
         <p class="footer-copy">&copy; 2026 Matt Rutherford Coaching</p>
     </footer>
 
-    <script src="/site.js?v=a906ae31" defer></script>
+    <script src="/site.js?v=873ebf53" defer></script>
 </body>
 </html>
