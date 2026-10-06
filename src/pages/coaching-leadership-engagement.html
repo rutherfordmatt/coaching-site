@@ -6,19 +6,9 @@
   "schema": ["service:leadership-engagement"]
 }
 -->
-        <section class="page-hero">
-            <div class="page-hero-inner">
-                <p class="section-label">Coaching package</p>
-                <h1>{{ package leadership-engagement.name }}</h1>
-                <p class="page-lede">{{ package leadership-engagement.who }}</p>
-                <div class="hero-actions">
-                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
-                    <a href="/coaching/" class="btn btn-outline">See the packages</a>
-                </div>
-            </div>
-        </section>
+{{ package_hero leadership-engagement }}
 
-        <div class="content-layout">
+        <div class="content-layout content-layout--single">
             <div class="prose">
                 <h2>Who it is for</h2>
                 <p>You already lead people. The role has grown, or is about to, or you are leading through a change that will test you and your team. You want a structured space to work on how you lead, over long enough for it to show.</p>
@@ -50,7 +40,6 @@
                 <p>If your employer is paying, we start with a three-way agreement with your sponsor, and agree the objectives up front. The sponsor gets progress against those objectives, not the content of our sessions. The price is the same, and I can send a proposal on request.</p>
                 <p><a href="/for-organisations/">Coaching for organisations</a></p>
             </div>
-            {{ package_facts leadership-engagement }}
         </div>
 
 {{> first-step }}

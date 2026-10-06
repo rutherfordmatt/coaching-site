@@ -6,19 +6,9 @@
   "schema": ["service:the-next-move"]
 }
 -->
-        <section class="page-hero">
-            <div class="page-hero-inner">
-                <p class="section-label">Coaching package</p>
-                <h1>{{ package the-next-move.name }}</h1>
-                <p class="page-lede">{{ package the-next-move.who }}</p>
-                <div class="hero-actions">
-                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
-                    <a href="/coaching/" class="btn btn-outline">See the packages</a>
-                </div>
-            </div>
-        </section>
+{{ package_hero the-next-move }}
 
-        <div class="content-layout">
+        <div class="content-layout content-layout--single">
             <div class="prose">
                 <h2>Who it is for</h2>
                 <p>Senior individual contributors, new and recent managers, and experienced professionals in transition. You have a specific move to make, and you want to make it well rather than just get through it.</p>
@@ -51,7 +41,6 @@
                 <p>The Next Move is also available to employers in two forms: as new-manager coaching for learning and development teams, and as individual outplacement support for someone leaving the organisation. The price is the same.</p>
                 <p><a href="/for-organisations/">Coaching for organisations</a></p>
             </div>
-            {{ package_facts the-next-move }}
         </div>
 
 {{> first-step }}

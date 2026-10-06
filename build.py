@@ -70,59 +70,73 @@ def booking_links():
 
 # ─── Helpers callable from templates ───
 
+def price_html(p):
+    note = f'<span class="price-note">{p["priceNote"]}</span>' if p.get("priceNote") else ""
+    return f'<span class="price">{p["price"]}</span>{note}'
+
+
 def h_package_cards(ctx, style):
+    """Cards use CSS subgrid, so every child is one row and the rows line up
+    across cards. Keep the number of children the same for every package."""
     book = ctx["book"]
     cards = []
     for p in PACKAGES:
-        price = f'<span class="price">{p["price"]}</span>'
-        if p.get("priceNote"):
-            price += f' <span class="price-note">{p["priceNote"]}</span>'
         if style == "compact":
             cards.append(f"""
             <article class="package-card package-card--compact">
                 <h3><a href="{p['url']}">{p['name']}</a></h3>
                 <p class="package-who">{p['who']}</p>
-                <p class="package-price">{price}</p>
+                <p class="package-price">{price_html(p)}</p>
                 <p class="package-length">{p['length']}</p>
-                <a href="{p['url']}" class="text-link">About {p['name']}<span aria-hidden="true"> &rarr;</span></a>
+                <a href="{p['url']}" class="text-link">View package<span class="visually-hidden">: {p['name']}</span><span aria-hidden="true"> &rarr;</span></a>
             </article>""")
         else:
             items = "".join(f"<li>{i}</li>" for i in p["includes"])
-            note = f'<p class="package-note">{p["note"]}</p>' if p.get("note") else ""
             cards.append(f"""
             <article class="package-card" id="{p['slug']}">
                 <h3><a href="{p['url']}">{p['name']}</a></h3>
                 <p class="package-who">{p['who']}</p>
-                <p class="package-price">{price}</p>
+                <p class="package-price">{price_html(p)}</p>
                 <p class="package-length">{p['length']}</p>
-                <h4 class="package-sub">What is included</h4>
-                <ul class="feature-list">{items}</ul>
-                {note}
+                <div>
+                    <h4 class="package-sub">What is included</h4>
+                    <ul class="feature-list">{items}</ul>
+                </div>
+                <p class="package-note">{p.get('note', '')}</p>
                 <div class="package-actions">
-                    <a href="{book[p['cta']['booking']]}" class="btn btn-primary">{p['cta']['label']}</a>
-                    <a href="{p['url']}" class="text-link">Details<span class="visually-hidden"> of {p['name']}</span><span aria-hidden="true"> &rarr;</span></a>
+                    <a href="{book[p['booking']]}" class="btn btn-primary">Book this package<span class="visually-hidden">: {p['name']}</span></a>
+                    <p class="booking-note">{p['bookingNote']}</p>
+                    <a href="{p['url']}" class="text-link">View package<span class="visually-hidden">: {p['name']}</span><span aria-hidden="true"> &rarr;</span></a>
                 </div>
             </article>""")
     return "\n".join(cards)
 
 
-def h_package_facts(ctx, slug):
+def h_package_hero(ctx, slug):
+    """Header for a package page: back link, name, price, facts and the one
+    booking action that matches how the package is bought."""
     p = PACKAGES_BY_SLUG[slug]
     book = ctx["book"]
-    note = f'<span class="price-note">{p["priceNote"]}</span>' if p.get("priceNote") else ""
-    extra = "".join(f"<li>{x}</li>" for x in p.get("priceList", []))
-    extra = f'<ul class="price-list">{extra}</ul>' if extra else ""
+    secondary = ""
+    if p.get("secondary"):
+        secondary = f'<a href="{book["conversation"]}" class="text-link">{p["secondary"]}<span aria-hidden="true"> &rarr;</span></a>'
     return f"""
-    <aside class="facts" aria-label="{p['name']} at a glance">
-        <p class="facts-price"><span class="price">{p['price']}</span> {note}</p>
-        {extra}
-        <dl class="facts-list">
-            <dt>Length</dt><dd>{p['length']}</dd>
-            <dt>Payment</dt><dd>{p['payment']}</dd>
-        </dl>
-        <a href="{book[p['cta']['booking']]}" class="btn btn-primary">{p['cta']['label']}</a>
-        {'' if p['cta']['booking'] == 'conversation' else f'<a href="{book["conversation"]}" class="btn btn-outline">Book a free conversation</a>'}
-    </aside>"""
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <a href="/coaching/" class="back-link"><span aria-hidden="true">&larr; </span>All packages</a>
+                <h1>{p['name']}</h1>
+                <p class="page-lede">{p['who']}</p>
+                <p class="package-price package-price--hero">{price_html(p)}</p>
+                <dl class="hero-facts">
+                    <div><dt>Length</dt><dd>{p['length']}</dd></div>
+                    <div><dt>Payment</dt><dd>{p['payment']}</dd></div>
+                </dl>
+                <div class="hero-actions">
+                    <a href="{book[p['booking']]}" class="btn btn-primary">{p['primary']}</a>
+                    {secondary}
+                </div>
+            </div>
+        </section>"""
 
 
 def h_package_includes(ctx, slug):
@@ -209,7 +223,7 @@ def h_jsonld(ctx, _):
 
 HELPERS = {
     "package_cards": h_package_cards,
-    "package_facts": h_package_facts,
+    "package_hero": h_package_hero,
     "package_includes": h_package_includes,
     "package": h_package,
     "testimonials": h_testimonials,

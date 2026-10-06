@@ -15,7 +15,10 @@
       "A 30 minute follow-up call three weeks later"
     ],
     "note": "The fee is credited against The Next Move or The Leadership Engagement if you continue within 30 days.",
-    "cta": { "label": "Book a Clarity Session", "booking": "clarity" },
+    "booking": "clarity",
+    "bookingNote": "Paid by card when you book.",
+    "primary": "Book the Clarity Session",
+    "secondary": "Not sure? Start with a free conversation",
     "offers": [{ "name": "The Clarity Session", "price": "350" }]
   },
   {
@@ -33,7 +36,11 @@
       "Messaging access between sessions",
       "A written 90 day plan you leave with"
     ],
-    "cta": { "label": "Book a free conversation", "booking": "conversation" },
+    "note": "",
+    "booking": "conversation",
+    "bookingNote": "Starts with a free 45 minute conversation.",
+    "primary": "Start with a free conversation",
+    "secondary": "",
     "offers": [{ "name": "The Next Move", "price": "1200" }]
   },
   {
@@ -51,7 +58,11 @@
       "Messaging access between sessions",
       "A written close-out"
     ],
-    "cta": { "label": "Book a free conversation", "booking": "conversation" },
+    "note": "",
+    "booking": "conversation",
+    "bookingNote": "Starts with a free 45 minute conversation.",
+    "primary": "Start with a free conversation",
+    "secondary": "",
     "offers": [{ "name": "The Leadership Engagement", "price": "3000" }]
   },
   {
@@ -61,10 +72,8 @@
     "who": "For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.",
     "price": "€200",
     "priceNote": "per session",
-    "priceList": [
-      "Block of four: €720",
-      "Block of eight: €1,360"
-    ],
+    "blockFour": "€720",
+    "blockEight": "€1,360",
     "length": "60 minute sessions, booked singly or in blocks",
     "payment": "Single sessions are paid by card when you book. Blocks are invoiced.",
     "includes": [
@@ -72,7 +81,11 @@
       "Blocks are valid for six months",
       "Blocks include messaging between sessions and priority scheduling"
     ],
-    "cta": { "label": "Book a single session", "booking": "coaching" },
+    "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
+    "booking": "coaching",
+    "bookingNote": "Books one session, paid by card. Blocks start with a free conversation.",
+    "primary": "Book a session",
+    "secondary": "For a block, start with a free conversation",
     "offers": [
       { "name": "Ongoing Partnership, single session", "price": "200" },
       { "name": "Ongoing Partnership, block of four sessions", "price": "720" },
