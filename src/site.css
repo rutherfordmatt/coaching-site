@@ -586,6 +586,7 @@ p  { color: var(--text-muted); line-height: 1.85; }
 }
 
 .fees-policy { margin-top: 1.4rem; }
+.privacy-updated { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .fees-policy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
 @media (max-width: 600px) {
