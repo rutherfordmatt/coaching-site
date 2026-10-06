@@ -871,13 +871,18 @@ p  { color: var(--text-muted); line-height: 1.85; }
 .track h3, .stage h3 { margin-top: 0; }
 .track p, .stage p { font-size: 0.92rem; margin-bottom: 0; }
 
-.side-note {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 2.2rem;
+.suits-list {
+    list-style: none;
+    margin: 0 0 1rem !important;
+    border-top: 1px solid var(--border);
 }
-.side-note h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-.side-note p { font-size: 0.92rem; margin-bottom: 1.2rem; }
+.suits-list li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+}
+.prose .suits-list h3 { margin: 0 0 0.4rem; font-size: 1.35rem; }
+.suits-list p { margin: 0; font-size: 0.95rem; }
 
 /* ─── FAQ ─── */
 .faq-jump ul {
@@ -1176,7 +1181,6 @@ textarea { resize: vertical; min-height: 140px; }
     .hero-content { padding: 2.5rem 1.25rem; }
     .package-card { padding: 2.5rem 1.6rem; }
     .package-card::after { left: 1.6rem; right: 1.6rem; }
-    .side-note { padding: 1.8rem 1.4rem; }
     .btn { white-space: normal; }
     .previously p { font-size: 1.1rem; padding: 1.4rem 1.25rem; }
 }
