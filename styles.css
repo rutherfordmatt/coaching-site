@@ -242,7 +242,7 @@ p  { color: var(--text-muted); line-height: 1.85; }
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .hero-tagline span { margin: 0 0.5rem; opacity: 0.35; }
 
