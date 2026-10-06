@@ -82,12 +82,13 @@ p  { color: var(--text-muted); line-height: 1.85; }
     margin-bottom: 1.2rem;
 }
 
-.inline-link, .prose a, .faq-item a, .author-role a, .package-note a, .muted-note a {
+/* Body-text links. :not(.btn) stops buttons inside prose picking these up. */
+.inline-link, .prose a:not(.btn):not(.text-link), .faq-item a:not(.btn), .author-role a, .package-note a, .muted-note a {
     color: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-.inline-link:hover, .prose a:hover, .faq-item a:hover { color: var(--accent); }
+.inline-link:hover, .prose a:not(.btn):not(.text-link):hover, .faq-item a:not(.btn):hover { color: var(--accent); }
 
 .text-link {
     font-size: 0.78rem;
