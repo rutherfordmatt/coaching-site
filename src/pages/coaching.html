@@ -1,0 +1,62 @@
+<!--
+{
+  "path": "/coaching/",
+  "title": "Coaching Packages and Prices | Matt Rutherford Coaching, Dublin",
+  "description": "Four career and leadership coaching packages with published prices, from a single Clarity Session to a six month Leadership Engagement. Online, or in person in Dublin.",
+  "schema": ["graph"],
+  "priority": "0.9"
+}
+-->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <p class="section-label">Coaching</p>
+                <h1>Coaching for the next stage of your career.</h1>
+                <p class="page-lede">From individual contributor to the leadership table, and every move in between. Four packages, one price list, and a free conversation before any of them.</p>
+                <div class="hero-actions">
+                    <a href="{{ book.conversation }}" class="btn btn-primary">Book a free conversation</a>
+                    <a href="#packages" class="btn btn-outline">See the packages</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="packages" aria-labelledby="packages-title">
+            <div class="section-header">
+                <p class="section-label">The packages</p>
+                <h2 id="packages-title">Four ways to work together</h2>
+                <p>{{ policies.openingRates }} One price list: the same prices apply whether you pay or your employer does.</p>
+            </div>
+            <div class="packages-grid">
+                {{ package_cards full }}
+            </div>
+            <div class="section-footer">
+                <p class="muted-note">Not sure which fits? That is what the free conversation is for.</p>
+            </div>
+        </section>
+
+        <section class="section--white" id="pricing" aria-labelledby="pricing-title">
+            <div class="section">
+                <div class="section-header">
+                    <p class="section-label">Prices and payment</p>
+                    <h2 id="pricing-title">How paying works</h2>
+                </div>
+                <div class="notes-grid">
+                    <div>
+                        <h3>Paying</h3>
+                        <p>The conversation is free. The Clarity Session and single sessions are paid by card when you book.</p>
+                        <p>Programmes and session blocks are invoiced after the first conversation and paid by bank transfer or card. If you pay in instalments, each one is a dated invoice.</p>
+                    </div>
+                    <div>
+                        <h3>Sessions or a programme?</h3>
+                        <p>Six single sessions cost the same as The Next Move, which also includes the transition map, the workbook and a written 90 day plan.</p>
+                        <p>If you have a specific move in mind, the programme is usually the better choice.</p>
+                    </div>
+                    <div>
+                        <h3>If your employer pays</h3>
+                        <p>The prices are the same. We agree objectives together at the start, and what we discuss stays confidential.</p>
+                        <p><a href="/for-organisations/" class="inline-link">Coaching for organisations</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{{> first-step }}
