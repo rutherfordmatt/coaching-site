@@ -28,8 +28,7 @@
   "croNumber": "[CRO_NUMBER]",
 
   "policies": {
-    "reschedule": "If you need to move a session, give me at least 48 hours notice and you can reschedule without charge.",
-    "openingRates": "Opening rates, reviewed January 2027."
+    "reschedule": "If you need to move a session, give me at least 48 hours notice and you can reschedule without charge."
   },
 
   "photos": {
