@@ -1,0 +1,22 @@
+[
+  {
+    "id": "outplacement",
+    "question": "What does outplacement coaching include?",
+    "answer": "<p>Six one-to-one sessions over twelve weeks with The Next Move, focused on what comes next: the person's story, their CV and LinkedIn, interviews and the offer, ending with a written 90 day plan. It is confidential, and the first session is within two weeks of the go-ahead.</p>"
+  },
+  {
+    "id": "progress",
+    "question": "How do you report progress?",
+    "answer": "<p>Against the objectives the three of us agree at the start. You get progress against those objectives, not the content of sessions. For The Leadership Engagement I also write a mid-point review, shared as agreed at the start.</p>"
+  },
+  {
+    "id": "purchase-orders",
+    "question": "Can you work with our purchase order process?",
+    "answer": "<p>Yes. I invoice the organisation directly, payable by bank transfer or card. Send the purchase order number with the go-ahead and I will put it on the invoice.</p>"
+  },
+  {
+    "id": "several-people",
+    "question": "Can you coach several people in our organisation?",
+    "answer": "<p>Yes, one to one. I don't offer team coaching, but I can put together a single proposal covering each person individually.</p>"
+  }
+]
