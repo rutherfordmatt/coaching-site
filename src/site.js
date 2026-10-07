@@ -85,11 +85,24 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.package-card, .testimonial, .map-item, .step').forEach(el => {
+        const faded = document.querySelectorAll('.package-card, .testimonial, .map-item, .step');
+        faded.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, background 0.3s, box-shadow 0.3s';
             observer.observe(el);
         });
+
+        // Fail visible: if the observer has not fired after two seconds,
+        // show whatever is still hidden rather than leave it blank.
+        setTimeout(() => {
+            faded.forEach(el => {
+                if (el.style.opacity === '0') {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                    observer.unobserve(el);
+                }
+            });
+        }, 2000);
     }
 })();
