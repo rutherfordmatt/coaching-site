@@ -1,0 +1,13 @@
+# Coolify builds the site image with `docker build` from the repo root and
+# nginx serves whatever ends up in it. Everything listed here stays out of
+# the image, so only the built site (HTML, CSS, JS, images, txt/xml) is served.
+.git
+.gitignore
+.dockerignore
+.claude
+**/.DS_Store
+src
+*.py
+**/*.py
+*.md
+**/*.md
