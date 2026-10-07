@@ -1,0 +1,37 @@
+[
+  {
+    "id": "what-job-next",
+    "question": "How do I work out what job I want next?",
+    "answer": "<p>Start with what you want more and less of, and the three things the next role must have. Talk to people doing jobs you think you might want, and ask what their week is actually like. The answer usually comes from those conversations, not from scrolling job ads.</p>"
+  },
+  {
+    "id": "cv-or-linkedin",
+    "question": "Should I update my CV or LinkedIn first?",
+    "answer": "<p>Neither. Write your two-line story first, then update both from it so they say the same thing. If you only have time for one, do LinkedIn, because that is where people will look you up.</p>"
+  },
+  {
+    "id": "senior-search-length",
+    "question": "How long does a job search take at a senior level?",
+    "answer": "<p>Usually longer than at earlier stages, because there are fewer roles and more of them are filled through networks and search firms. It depends on your field and the market, so plan for months rather than weeks. A senior job search moves faster when you know exactly what you are looking for.</p>"
+  },
+  {
+    "id": "direct-or-network",
+    "question": "Is it better to apply directly or through my network?",
+    "answer": "<p>Through your network, where you can. A warm introduction gets you read, and often tells you about roles before they are advertised. Apply directly as well for roles that fit closely, and say who you know there if you know someone.</p>"
+  },
+  {
+    "id": "career-or-role",
+    "question": "How do I know if I should change career rather than role?",
+    "answer": "<p>Ask whether you are tired of the job or tired of the work. If it is the organisation, the manager or the pace, a new role may fix it. If it is the work itself, a career change is worth exploring properly, with small tests before a big leap.</p>"
+  },
+  {
+    "id": "coach-worth-it",
+    "question": "Is a career coach worth it if I already know what I want?",
+    "answer": "<p>Sometimes not. If you know what you want and the market wants it, a sharp CV and your network may be enough. Coaching is worth it when you want a clearer story, better interviews or a better offer, or when the search is taking longer than it should.</p>"
+  },
+  {
+    "id": "recruiter",
+    "question": "How is this different from a recruiter?",
+    "answer": "<p>A recruiter works for the employer and is paid when they fill a role, so they are looking for a match for a job they already have. I work for you, on what you want and how to get it, whichever job that turns out to be. Good recruiters are worth knowing, and I will often suggest talking to one.</p>"
+  }
+]
