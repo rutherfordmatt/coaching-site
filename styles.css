@@ -529,6 +529,25 @@ p  { color: var(--text-muted); line-height: 1.85; }
     transform: translateY(-0.3em);
 }
 
+/* ─── Start with your situation: quiet wayfinding under the cards ─── */
+.situation-links {
+    max-width: 760px;
+    margin: 3.5rem auto 0;
+    text-align: center;
+}
+.situation-links-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+.situation-links ul { list-style: none; }
+.situation-links li { font-size: 0.92rem; line-height: 2; }
+.situation-links a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+.situation-links a:hover { color: var(--accent); }
+
 /* ─── Pricing policy ─── */
 .section--narrow { max-width: 860px; }
 .pricing-policy { max-width: 760px; margin: 0 auto; }
@@ -1020,7 +1039,7 @@ textarea { resize: vertical; min-height: 140px; }
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     gap: 3rem;
     align-items: start;
 }
@@ -1057,6 +1076,15 @@ textarea { resize: vertical; min-height: 140px; }
     font-size: 0.85rem;
     line-height: 2.1;
 }
+.footer-heading {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.5rem;
+}
+.footer-nav--situations ul { columns: 1; }
 .footer-copy {
     max-width: 1100px;
     margin: 3.5rem auto 0;
