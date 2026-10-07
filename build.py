@@ -612,6 +612,12 @@ def check(pages):
             if frag and target in scans and frag not in scans[target].ids:
                 problems.append(f"{dest.relative_to(ROOT)}: link {href} points at a missing id")
 
+    # Search results cut titles at about 60 characters and descriptions at 155.
+    for page, dest in pages:
+        for field, limit in (("title", 60), ("description", 155)):
+            if len(page[field]) > limit:
+                warnings.append(f"{dest.relative_to(ROOT)}: {field} is {len(page[field])} characters (limit {limit})")
+
     titles = [p["title"] for p, _ in pages]
     descs = [p["description"] for p, _ in pages]
     for label, values in (("title", titles), ("description", descs)):
