@@ -303,6 +303,44 @@ def service_node(p):
     }
 
 
+# The three offers on /for-organisations/. Prices come from the package
+# each one is built on, so they cannot drift from the price list.
+ORG_SERVICES = [
+    ("new-manager-coaching", "New-manager coaching", "the-next-move",
+     "The Next Move for a manager in their first year: six sessions over twelve weeks, a transition map and a written 90 day plan."),
+    ("individual-outplacement", "Individual outplacement", "the-next-move",
+     "The Next Move for someone leaving: six sessions over twelve weeks on what comes next, from their story, CV and LinkedIn to interviews and the offer."),
+    ("leadership-coaching", "Leadership coaching", "leadership-engagement",
+     "The Leadership Engagement for more senior people: six months, structured feedback at the start and a written mid-point review."),
+]
+
+
+def org_service_nodes():
+    url = SITE + "/for-organisations/"
+    nodes = []
+    for key, name, slug, description in ORG_SERVICES:
+        sid = f"{url}#{key}"
+        nodes.append({
+            "@type": "Service",
+            "@id": sid,
+            "name": name,
+            "serviceType": "Career and leadership coaching",
+            "description": description,
+            "url": url,
+            "provider": {"@id": SITE + "/#business"},
+            "areaServed": area_served(),
+            "offers": [{
+                "@type": "Offer",
+                "name": name,
+                "price": PACKAGES_BY_SLUG[slug]["offers"][0]["price"],
+                "priceCurrency": "EUR",
+                "url": url,
+                "itemOffered": {"@id": sid},
+            }],
+        })
+    return nodes
+
+
 def area_served():
     return [
         {"@type": "City", "name": "Dublin"},
@@ -368,6 +406,8 @@ def schema(kind, ctx):
         node = service_node(p)
         node["@context"] = "https://schema.org"
         return node
+    if kind == "organisations":
+        return {"@context": "https://schema.org", "@graph": org_service_nodes()}
     if kind == "article":
         page = ctx["page"]
         return {
