@@ -221,6 +221,14 @@ def h_newsletter_li(ctx, _):
     return f'<li><a href="{url}">Newsletter</a></li>' if is_set(url) else ""
 
 
+def h_byline(ctx, _):
+    """Visible author and date for article pages, matching their Article schema."""
+    page = ctx["page"]
+    date = datetime.date.fromisoformat(page.get("dateModified", page["datePublished"]))
+    return (f'<p class="byline">By <a href="/about/">{CONFIG["personName"]}</a>, {CONFIG["label"]}'
+            f' &middot; Updated <time datetime="{date.isoformat()}">{date.day} {date:%B %Y}</time></p>')
+
+
 def h_values_note(ctx, _):
     """The Values Finder line under the first-step button. A page that
     already offers the Values Finder just above sets hideValuesNote."""
@@ -252,6 +260,8 @@ def h_jsonld(ctx, _):
     blocks = []
     for kind in ctx["page"].get("schema", []):
         blocks.append(schema(kind, ctx))
+    if ctx["page"]["path"] != "/":
+        blocks.append(breadcrumb(ctx["page"]))
     return "\n".join(
         '<script type="application/ld+json">\n'
         + json.dumps(b, indent=2, ensure_ascii=False)
@@ -270,6 +280,7 @@ HELPERS = {
     "newsletter_li": h_newsletter_li,
     "page_faq": h_page_faq,
     "values_note": h_values_note,
+    "byline": h_byline,
     "cro_line": h_cro_line,
     "photo": h_photo,
     "jsonld": h_jsonld,
@@ -397,14 +408,43 @@ def person_node():
             "dateCreated": "2024",
         },
         "knowsAbout": ["Career coaching", "Leadership coaching", "Change management", "Career transition"],
-        "sameAs": [c["links"]["linkedin"], c["links"]["acDirectory"]],
+        "sameAs": [c["links"]["linkedin"], c["links"]["acDirectory"], c["links"]["personalSite"], c["links"]["newsletter"]],
+    }
+
+
+def website_node():
+    return {
+        "@type": "WebSite",
+        "@id": SITE + "/#website",
+        "name": CONFIG["businessName"],
+        "url": SITE + "/",
+        "inLanguage": "en-IE",
+        "publisher": {"@id": SITE + "/#business"},
+    }
+
+
+def breadcrumb(page):
+    """Home > (Coaching >) this page. Package pages sit under /coaching/;
+    every other page sits directly under home and names itself in its
+    front matter as crumb."""
+    trail = [("Home", SITE + "/")]
+    pkg = next((p for p in PACKAGES if p["url"] == page["path"]), None)
+    if pkg:
+        trail += [("Coaching", SITE + "/coaching/"), (pkg["name"], SITE + pkg["url"])]
+    else:
+        trail.append((page["crumb"], page["canonical"]))
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "item": u}
+                            for i, (n, u) in enumerate(trail, 1)],
     }
 
 
 def schema(kind, ctx):
     if kind == "graph":
         return {"@context": "https://schema.org", "@graph":
-                [business_node(), person_node()] + [service_node(p) for p in PACKAGES]}
+                [website_node(), business_node(), person_node()] + [service_node(p) for p in PACKAGES]}
     if kind.startswith("service:"):
         p = PACKAGES_BY_SLUG[kind.split(":", 1)[1]]
         node = service_node(p)
