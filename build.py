@@ -6,7 +6,7 @@ so the nav, footer, booking links, prices and packages live in one place
 instead of being copied into every page.
 
     python3 build.py          build, then run the checks
-    python3 build.py --og     also regenerate og-image.png (needs Google Chrome)
+    python3 build.py --og     also regenerate the Open Graph images in og/ (needs Google Chrome)
 
 Edit src/config.json for links, booking URLs, email and policy wording, and
 src/content/*.json for packages, testimonials and FAQ. Pages are in
@@ -547,7 +547,10 @@ def build():
         page["canonical"] = SITE + page["path"]
         page["ogTitle"] = page.get("ogTitle", page["title"])
         page.setdefault("ogType", "website")
-        page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle")}
+        page["og"] = og_card(page)
+        page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
+        page["ogImageAlt"] = f"{strip_tags(page['og']['headline'])}. {CONFIG['businessName']}."
+        page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle", "ogImageAlt")}
 
         ctx = dict(CONFIG)
         ctx.update(book=booking_links(), page=page, assetVersion=version)
@@ -568,8 +571,91 @@ def build():
     (ROOT / "styles.css").write_bytes((SRC / "site.css").read_bytes())
     (ROOT / "site.js").write_bytes((SRC / "site.js").read_bytes())
     write_sitemap(pages)
+    write_llms_txt(pages)
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     return pages
+
+
+# ─── Open Graph cards ───
+
+def og_slug(page):
+    return page["path"].strip("/").replace("/", "-") or "home"
+
+
+def og_card(page):
+    """What the page's 1200x630 share image says. Package pages are built
+    from the package; other pages set og.label and og.headline in their
+    front matter, and fall back to the home card."""
+    pkg = next((p for p in PACKAGES if p["url"] == page["path"]), None)
+    if pkg:
+        card = {"label": "Coaching package", "headline": pkg["name"],
+                "tagline": f"{pkg['price']}, {pkg['length'][0].lower()}{pkg['length'][1:]}"}
+    elif page.get("og"):
+        card = {"tagline": CONFIG["businessName"], **page["og"]}
+    else:
+        card = {"label": CONFIG["label"], "headline": CONFIG["businessName"],
+                "tagline": "Make your next move with clarity."}
+    n = len(card["headline"])
+    card["size"] = "96px" if n <= 28 else "76px" if n <= 48 else "62px"
+    return card
+
+
+def build_og_images(pages):
+    import tempfile
+    (ROOT / "og").mkdir(exist_ok=True)
+    template = (SRC / "og-image.html").read_text(encoding="utf-8")
+    with tempfile.TemporaryDirectory() as tmp:
+        for page, _ in pages:
+            src = pathlib.Path(tmp) / f"{og_slug(page)}.html"
+            src.write_text(render(template, {"og": page["og"]}), encoding="utf-8")
+            out = ROOT / "og" / f"{og_slug(page)}.png"
+            subprocess.run([
+                CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+                "--force-device-scale-factor=1", "--window-size=1200,630",
+                "--virtual-time-budget=5000", f"--screenshot={out}", src.as_uri(),
+            ], check=True, capture_output=True)
+    # The home card doubles as the site-wide image used in the schema.
+    (ROOT / "og-image.png").write_bytes((ROOT / "og" / "home.png").read_bytes())
+    print(f"Wrote {len(pages)} Open Graph images to og/")
+
+
+# ─── llms.txt: a plain summary of the site for language models ───
+
+def write_llms_txt(pages):
+    by_path = {p["path"]: p for p, _ in pages}
+    def line(path, note=None):
+        p = by_path[path]
+        return f"- [{p.get('crumb') or p['og']['headline']}]({SITE}{path}): {note or p['description']}"
+    packages = "\n".join(
+        f"- [{p['name']}]({SITE}{p['url']}): {strip_tags(p['who'])} {p['price']} ({p['priceNote']}). {p['length']}."
+        for p in PACKAGES)
+    situations = "\n".join(line(p) for p in ("/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/"))
+    more = "\n".join(line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/"))
+    text = f"""# {CONFIG['businessName']}
+
+> {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
+
+Prices are published and the same whoever pays, including when an employer funds the coaching. The first conversation is free: 45 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
+
+## Packages
+
+{packages}
+
+## Situations
+
+{situations}
+
+## More
+
+{more}
+
+## Optional
+
+- [Privacy statement]({SITE}/privacy/)
+- [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 15 minute exercise to work out what matters to you at work.
+- [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
+"""
+    (ROOT / "llms.txt").write_text(text, encoding="utf-8")
 
 
 def write_sitemap(pages):
@@ -702,6 +788,10 @@ def check(pages):
             if len(page[field]) > limit:
                 warnings.append(f"{dest.relative_to(ROOT)}: {field} is {len(page[field])} characters (limit {limit})")
 
+    for page, dest in pages:
+        if not (ROOT / "og" / f"{og_slug(page)}.png").exists():
+            problems.append(f"{dest.relative_to(ROOT)}: og/{og_slug(page)}.png is missing; run build.py --og")
+
     titles = [p["title"] for p, _ in pages]
     descs = [p["description"] for p, _ in pages]
     for label, values in (("title", titles), ("description", descs)):
@@ -721,21 +811,10 @@ def placeholders():
     return found
 
 
-def build_og_image():
-    src = SRC / "og-image.html"
-    subprocess.run([
-        CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-        "--force-device-scale-factor=1", "--window-size=1200,630",
-        "--virtual-time-budget=5000",
-        f"--screenshot={ROOT / 'og-image.png'}", src.as_uri(),
-    ], check=True, capture_output=True)
-    print("Wrote og-image.png")
-
-
 def main():
     pages = build()
     if "--og" in sys.argv:
-        build_og_image()
+        build_og_images(pages)
     print(f"Built {len(pages)} pages:")
     for page, dest in pages:
         print(f"  {page['path']:<40} {dest.relative_to(ROOT)}  ({dest.stat().st_size / 1024:.1f} KB)")

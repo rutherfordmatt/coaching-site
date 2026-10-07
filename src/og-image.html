@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Source for /og-image.png (1200x630). Regenerate with: python3 build.py --og -->
+<!-- Template for the Open Graph images in og/ (1200x630), one per page. Regenerate with: python3 build.py --og -->
 <html lang="en-IE">
 <head>
 <meta charset="UTF-8">
@@ -33,7 +33,7 @@
     .name {
         font-family: 'Cormorant Garamond', Georgia, serif;
         font-weight: 400;
-        font-size: 96px;
+        font-size: {{ og.size }};
         line-height: 1.02;
         color: #1A1A1A;
         margin-bottom: 30px;
@@ -58,10 +58,10 @@
 </style>
 </head>
 <body>
-    <p class="label">Career and Leadership Coach</p>
-    <p class="name">Matt Rutherford Coaching</p>
+    <p class="label">{{ og.label }}</p>
+    <p class="name">{{ og.headline }}</p>
     <div class="rule"></div>
-    <p class="tagline">Make your next move with clarity.</p>
+    <p class="tagline">{{ og.tagline }}</p>
     <p class="place">Dublin, Ireland</p>
 </body>
 </html>
