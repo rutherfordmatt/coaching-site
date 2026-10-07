@@ -1,0 +1,37 @@
+[
+  {
+    "id": "feel-like-a-manager",
+    "question": "How long does it take to feel like a manager?",
+    "answer": "<p>Longer than you would like, often the best part of a year. You can do the job well long before it feels natural, so don't wait for the feeling before you act like a manager.</p>"
+  },
+  {
+    "id": "hands-on-work",
+    "question": "Should I still do some of the hands-on work?",
+    "answer": "<p>Some, if the team is small and it keeps you close to the work. Keep it to the parts nobody else can do, and never let it crowd out your one-to-ones. If you are doing the work because it feels more comfortable, that is the sign to stop.</p>"
+  },
+  {
+    "id": "former-peers",
+    "question": "How do I manage people who used to be my peers?",
+    "answer": "<p>Name the change early, one to one, rather than pretending nothing has happened. Be the same person in a different job: fair, consistent and clear about what you expect. Some relationships will change, and that is part of the role, not a failure.</p>"
+  },
+  {
+    "id": "first-week",
+    "question": "What should I do in my first week as a manager?",
+    "answer": "<p>Listen. Book a one-to-one with everyone on the team, ask your manager what good looks like, and change nothing yet. The first week is for learning how the team works, not for proving you can run it.</p>"
+  },
+  {
+    "id": "coaching-worth-it",
+    "question": "Is coaching worth it for a first-time manager?",
+    "answer": "<p>It can be, because the first year sets habits that last and many new managers get very little support. Coaching gives you somewhere to think through the hard conversations before you have them. If your company runs a good management programme, start with that and decide afterwards.</p>"
+  },
+  {
+    "id": "employer-pay",
+    "question": "Can my employer pay for this?",
+    "answer": "<p>Often, yes. Many organisations have a learning and development budget for new managers, and the price is the same whoever pays. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"
+  },
+  {
+    "id": "not-sure-about-managing",
+    "question": "What if I'm not sure I want to manage people at all?",
+    "answer": "<p>That is worth knowing, and it is a common feeling in the first months. Give it long enough to tell a hard start from the wrong job. If it is the wrong job, a senior specialist route is a good career, not a step back.</p>"
+  }
+]
