@@ -5,7 +5,7 @@
     "items": [
       {
         "id": "free-conversation",
-        "question": "What happens in the free conversation?",
+        "question": "What happens in the first conversation?",
         "answer": "<p>It is 45 minutes, online. You tell me where you are and what you want to move on, and I ask questions until I understand it. By the end we will both know whether coaching would help and, if it would, which package fits.</p><p>If you want to go ahead, I send you a short written proposal afterwards: the package, what we will work on, dates and price. If you want something to bring, try the <a href=\"{{ links.valuesFinder }}\">Values Finder</a> beforehand.</p>"
       },
       {
@@ -37,7 +37,7 @@
       {
         "id": "payment",
         "question": "How do I pay, and can I pay in instalments?",
-        "answer": "<p>The free conversation costs nothing. The Clarity Session and single sessions are paid by card when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead. Programmes and session blocks are invoiced after the free conversation, and paid by bank transfer or card.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>"
+        "answer": "<p>Our first conversation is free. The Clarity Session and single sessions are paid by card when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead. Programmes and session blocks are invoiced after the first conversation, and paid by bank transfer or card.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>"
       },
       {
         "id": "employer",

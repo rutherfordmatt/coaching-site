@@ -29,7 +29,7 @@
     "price": "€1,200",
     "priceNote": "or two payments of €600",
     "length": "Six 60 minute sessions over twelve weeks",
-    "payment": "Invoiced after the free conversation. One payment, or two of €600.",
+    "payment": "Invoiced after the first conversation. One payment, or two of €600.",
     "includes": [
       "A transition map of your situation, built in the first session",
       "A workbook between sessions",
@@ -38,7 +38,7 @@
     ],
     "note": "",
     "booking": "conversation",
-    "bookingNote": "Starts with a free 45 minute conversation.",
+    "bookingNote": "Starts with a 45 minute first conversation.",
     "primary": "Start with a free conversation",
     "secondary": "",
     "offers": [{ "name": "The Next Move", "price": "1200" }]
@@ -51,7 +51,7 @@
     "price": "€3,000",
     "priceNote": "or three payments of €1,000",
     "length": "Eight 90 minute sessions over six months",
-    "payment": "Invoiced after the free conversation. One payment, or three of €1,000.",
+    "payment": "Invoiced after the first conversation. One payment, or three of €1,000.",
     "includes": [
       "Structured 360 feedback gathered at the start from your manager, peers and team",
       "A written mid-point review",
@@ -60,7 +60,7 @@
     ],
     "note": "",
     "booking": "conversation",
-    "bookingNote": "Starts with a free 45 minute conversation.",
+    "bookingNote": "Starts with a 45 minute first conversation.",
     "primary": "Start with a free conversation",
     "secondary": "",
     "offers": [{ "name": "The Leadership Engagement", "price": "3000" }]
@@ -83,7 +83,7 @@
     ],
     "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
     "booking": "coaching",
-    "bookingNote": "Books one session, paid by card. Blocks start with a free conversation.",
+    "bookingNote": "Books one session, paid by card. Blocks start with the first conversation.",
     "primary": "Book a session",
     "secondary": "For a block, start with a free conversation",
     "offers": [
