@@ -1,0 +1,22 @@
+[
+  {
+    "id": "who-for",
+    "question": "Who is The Leadership Engagement for?",
+    "answer": "<p>Experienced managers and senior leaders whose role has grown, or who are leading through a change. You already lead people, and you want to work on how you do it over long enough for the change to show.</p>"
+  },
+  {
+    "id": "feedback",
+    "question": "How does the 360 feedback work?",
+    "answer": "<p>At the start I gather structured feedback from your manager, peers and team, and you agree who is asked. I share it with you summarised and anonymised, so no comment can be traced to the person who made it, and we use it to set what the six months are for.</p>"
+  },
+  {
+    "id": "six-months",
+    "question": "Why six months?",
+    "answer": "<p>Because changing how you lead takes repetition. Fortnightly sessions at the start give us room to work on the hard things, and monthly sessions later let you practise in between and bring back what happened.</p>"
+  },
+  {
+    "id": "confidential",
+    "question": "Is it confidential if my employer pays?",
+    "answer": "<p>Yes. Your sponsor gets progress against the objectives we agree together in a three-way conversation at the start, and the mid-point review as agreed. They do not get the content of our sessions or of the feedback.</p>"
+  }
+]

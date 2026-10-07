@@ -3,7 +3,7 @@
   "path": "/coaching/clarity-session/",
   "title": "The Clarity Session, €350 | Matt Rutherford Coaching, Dublin",
   "description": "One decision or situation, worked through properly in a single 90 minute coaching session, with a written summary and a follow-up call. €350.",
-  "schema": ["service:clarity-session"]
+  "schema": ["service:clarity-session", "faq:clarity-session"]
 }
 -->
 {{ package_hero clarity-session }}
@@ -38,6 +38,11 @@
 
                 <h2>If you want to keep going</h2>
                 <p>{{ package clarity-session.note }}</p>
+
+                <h2>Questions people ask</h2>
+                <div class="faq-list">
+                    {{ page_faq clarity-session }}
+                </div>
             </div>
         </div>
 

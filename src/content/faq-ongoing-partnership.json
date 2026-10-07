@@ -1,0 +1,22 @@
+[
+  {
+    "id": "how-often",
+    "question": "How often are sessions?",
+    "answer": "<p>As often as suits you. Some people book every two weeks, others once a month or when something comes up. Blocks are valid for six months, so you can set your own pace.</p>"
+  },
+  {
+    "id": "block-or-single",
+    "question": "Should I book a block or single sessions?",
+    "answer": "<p>Single sessions suit you if you want to try coaching, or only need to think something through now and then. A block of four saves 10% and a block of eight saves 15%, and both include messaging between sessions and priority scheduling.</p>"
+  },
+  {
+    "id": "what-to-talk-about",
+    "question": "What can we talk about?",
+    "answer": "<p>Whatever is on your mind at work: a decision, a difficult relationship, a change you are leading, or where your career is going. There is no fixed programme; you bring the agenda.</p>"
+  },
+  {
+    "id": "programme-instead",
+    "question": "When is a programme the better choice?",
+    "answer": "<p>When you have a specific move to make. Six single sessions cost the same as <a href=\"/coaching/the-next-move/\">The Next Move</a>, which also includes the transition map, the workbook and a written 90 day plan.</p>"
+  }
+]
