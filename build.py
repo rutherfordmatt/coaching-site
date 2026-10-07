@@ -120,6 +120,9 @@ def h_package_hero(ctx, slug):
     secondary = ""
     if p.get("secondary"):
         secondary = f'<a href="{book["conversation"]}" class="text-link">{p["secondary"]}<span aria-hidden="true"> &rarr;</span></a>'
+    extra = ""
+    if p.get("heroFact"):
+        extra = f'<div><dt>{p["heroFact"][0]}</dt><dd>{p["heroFact"][1]}</dd></div>'
     return f"""
         <section class="page-hero">
             <div class="page-hero-inner">
@@ -130,6 +133,7 @@ def h_package_hero(ctx, slug):
                 <dl class="hero-facts">
                     <div><dt>Length</dt><dd>{p['length']}</dd></div>
                     <div><dt>Payment</dt><dd>{p['payment']}</dd></div>
+                    {extra}
                 </dl>
                 <div class="hero-actions">
                     <a href="{book[p['booking']]}" class="btn btn-primary">{p['primary']}</a>

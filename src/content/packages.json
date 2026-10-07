@@ -15,6 +15,7 @@
       "A 30 minute follow-up call three weeks later"
     ],
     "note": "The fee is credited against The Next Move or The Leadership Engagement if you continue within 30 days.",
+    "heroFact": ["If you continue", "The fee is credited against The Next Move or The Leadership Engagement within 30 days."],
     "booking": "clarity",
     "bookingNote": "Paid by card when you book.",
     "primary": "Book the Clarity Session",
@@ -77,9 +78,9 @@
     "length": "60 minute sessions, booked singly or in blocks",
     "payment": "Single sessions are paid by card when you book. Blocks are invoiced.",
     "includes": [
-      "60 minute sessions, booked singly or in blocks of four (€720) or eight (€1,360)",
-      "Blocks are valid for six months",
-      "Blocks include messaging between sessions and priority scheduling"
+      "60 minute sessions, booked singly or in blocks",
+      "A block of four for €720, saving 10%, or eight for €1,360, saving 15%",
+      "Blocks are valid for six months and include messaging between sessions and priority scheduling"
     ],
     "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
     "booking": "coaching",
