@@ -545,6 +545,7 @@ def build():
         page.setdefault("schema", [])
         page.setdefault("bodyClass", "")
         page["canonical"] = SITE + page["path"]
+        page["sources"] = page_sources(src, raw)
         page["ogTitle"] = page.get("ogTitle", page["title"])
         page.setdefault("ogType", "website")
         page["og"] = og_card(page)
@@ -658,10 +659,39 @@ Prices are published and the same whoever pays, including when an employer funds
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
 
 
-def write_sitemap(pages):
+def page_sources(src, raw):
+    """The files whose content a page shows: its own source, plus the
+    package and FAQ data it pulls in. Shared layout and partials are left
+    out so a footer tweak does not mark every page as changed."""
+    files = [src]
+    if re.search(r"\{\{\s*package", raw) or "/coaching/" in raw[:200]:
+        files.append(SRC / "content" / "packages.json")
+    if "faq_list" in raw:
+        files.append(SRC / "content" / "faq.json")
+    files += [SRC / "content" / f"faq-{name}.json" for name in re.findall(r"page_faq\s+([\w-]+)", raw)]
+    return files
+
+
+def last_changed(files):
+    """Date of the last commit touching any of these files, or today if any
+    of them has uncommitted changes (or git is unavailable)."""
     today = datetime.date.today().isoformat()
+    paths = [str(f.relative_to(ROOT)) for f in files]
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", *paths], cwd=ROOT,
+                               capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            return today
+        date = subprocess.run(["git", "log", "-1", "--format=%cs", "--", *paths], cwd=ROOT,
+                              capture_output=True, text=True, check=True).stdout.strip()
+        return date or today
+    except (OSError, subprocess.CalledProcessError):
+        return today
+
+
+def write_sitemap(pages):
     urls = "".join(
-        f"  <url>\n    <loc>{SITE}{p['path']}</loc>\n    <lastmod>{today}</lastmod>\n"
+        f"  <url>\n    <loc>{SITE}{p['path']}</loc>\n    <lastmod>{last_changed(p['sources'])}</lastmod>\n"
         f"    <priority>{p.get('priority', '0.7')}</priority>\n  </url>\n"
         for p, _ in pages if not p.get("noindex"))
     (ROOT / "sitemap.xml").write_text(
