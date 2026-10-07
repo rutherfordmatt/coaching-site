@@ -319,6 +319,8 @@ p  { color: var(--text-muted); line-height: 1.85; }
     margin-bottom: 2.5rem;
 }
 .page-lede:last-child { margin-bottom: 0; }
+/* A one-sentence lede that should sit on one line on desktop (the FAQ) */
+.page-lede--wide { max-width: none; }
 
 /* ─── Generic sections ─── */
 .section {
