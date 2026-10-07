@@ -7,7 +7,7 @@
     "price": "€350",
     "priceNote": "opening offer",
     "length": "One 90 minute session and a 30 minute follow-up",
-    "payment": "Paid by card when you book.",
+    "payment": "Payable when you book.",
     "includes": [
       "A short written brief from you beforehand",
       "One 90 minute session",
@@ -17,7 +17,7 @@
     "note": "The fee is credited against The Next Move or The Leadership Engagement if you continue within 30 days.",
     "heroFact": ["If you continue", "The fee is credited against The Next Move or The Leadership Engagement within 30 days."],
     "booking": "clarity",
-    "bookingNote": "Paid by card when you book.",
+    "bookingNote": "Payable when you book.",
     "primary": "Book the Clarity Session",
     "secondary": "Not sure? Start with a free conversation",
     "offers": [{ "name": "The Clarity Session", "price": "350" }]
@@ -30,7 +30,7 @@
     "price": "€1,200",
     "priceNote": "or two payments of €600",
     "length": "Six 60 minute sessions over twelve weeks",
-    "payment": "Invoiced after the first conversation. One payment, or two of €600.",
+    "payment": "Payable when you book. One payment, or two of €600.",
     "includes": [
       "A transition map of your situation, built in the first session",
       "A workbook between sessions",
@@ -52,7 +52,7 @@
     "price": "€3,000",
     "priceNote": "or three payments of €1,000",
     "length": "Eight 90 minute sessions over six months",
-    "payment": "Invoiced after the first conversation. One payment, or three of €1,000.",
+    "payment": "Payable when you book. One payment, or three of €1,000.",
     "includes": [
       "Structured 360 feedback gathered at the start from your manager, peers and team",
       "A written mid-point review",
@@ -76,7 +76,7 @@
     "blockFour": "€720",
     "blockEight": "€1,360",
     "length": "60 minute sessions, booked singly or in blocks",
-    "payment": "Single sessions are paid by card when you book. Blocks are invoiced.",
+    "payment": "Payable when you book, singly or as a block.",
     "includes": [
       "60 minute sessions, booked singly or in blocks",
       "A block of four for €720, saving 10%, or eight for €1,360, saving 15%",
@@ -84,7 +84,7 @@
     ],
     "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
     "booking": "coaching",
-    "bookingNote": "Books one session, paid by card. Blocks start with the first conversation.",
+    "bookingNote": "Books one session. Blocks start with the first conversation.",
     "primary": "Book a session",
     "secondary": "For a block, start with a free conversation",
     "offers": [
