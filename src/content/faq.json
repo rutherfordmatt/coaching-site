@@ -16,12 +16,17 @@
       {
         "id": "who",
         "question": "Who do you work with?",
-        "answer": "<p>People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are stepping up to manage, starting in a new role, looking for the next one, or leading through change.</p>"
+        "answer": "<p>People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are <a href=\"/next-role/\">looking for the next role</a>, <a href=\"/new-manager/\">stepping up to manage</a>, <a href=\"/new-role/\">starting a new role</a>, <a href=\"/leading-through-change/\">leading through change</a>, or <a href=\"/laid-off/\">having just been laid off</a>.</p>"
       },
       {
         "id": "leader-already",
         "question": "Do I need to be a leader already?",
         "answer": "<p>No. Many of the people I work with are experienced professionals thinking about, or just starting, their first management role. <a href=\"/coaching/the-next-move/\">The Next Move</a> is built for exactly that.</p>"
+      },
+      {
+        "id": "how-many-sessions",
+        "question": "How many sessions will I need?",
+        "answer": "<p>It depends on what you want to change. A single decision can often be worked through in one <a href=\"/coaching/clarity-session/\">Clarity Session</a>. A specific career move usually takes the six sessions of <a href=\"/coaching/the-next-move/\">The Next Move</a>, and changing how you lead takes the eight sessions over six months of <a href=\"/coaching/leadership-engagement/\">The Leadership Engagement</a>. We work out which fits in the first conversation.</p>"
       },
       {
         "id": "online",
@@ -34,6 +39,11 @@
     "group": "Fees and payment",
     "id": "fees",
     "items": [
+      {
+        "id": "cost",
+        "question": "How much does career coaching cost?",
+        "answer": "<p>Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the <a href=\"/coaching/\">packages page</a>: {{ package clarity-session.price }} for a Clarity Session, {{ package ongoing-partnership.price }} for a single session, {{ package the-next-move.price }} for The Next Move and {{ package leadership-engagement.price }} for The Leadership Engagement. Blocks of four or eight sessions are {{ package ongoing-partnership.blockFour }} and {{ package ongoing-partnership.blockEight }}, and the price is the same whoever pays.</p>"
+      },
       {
         "id": "payment",
         "question": "How do I pay, and can I pay in instalments?",
@@ -59,6 +69,11 @@
         "id": "confidential",
         "question": "Is what we discuss confidential, including from my employer?",
         "answer": "<p>Yes. What we discuss stays between us. If your employer is paying, they get progress against the objectives we agreed together, not the content of our sessions, and we agree what is shared before anything is.</p><p>The only exceptions are the ones the Association for Coaching code of ethics sets out, such as a serious risk of harm to you or someone else, or a legal requirement to disclose.</p>"
+      },
+      {
+        "id": "coaching-therapy-mentoring",
+        "question": "How is coaching different from therapy or mentoring?",
+        "answer": "<p>Coaching looks forward: it works on what you want to do next and how, starting from where you are now. Therapy works on your wellbeing, often including the past, and if that is what you need I will say so and suggest you find a therapist. A mentor shares their own path; I bring experience too, but the work is built around your situation and your decisions.</p>"
       },
       {
         "id": "accredited",
