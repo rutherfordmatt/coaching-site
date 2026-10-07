@@ -1,0 +1,37 @@
+[
+  {
+    "id": "tell-my-team",
+    "question": "How do I tell my team about a reorganisation?",
+    "answer": "<p>In person if you can, as close to the announcement as possible, and before they hear it elsewhere. Say what is changing, what it means for them, what is not decided yet and when they will hear more. Then make time for one-to-ones, because the real questions come afterwards.</p>"
+  },
+  {
+    "id": "dont-know",
+    "question": "What do I say when I don't know what is going to happen?",
+    "answer": "<p>Say that you don't know, what you do know, and when you expect to know more. People can work with uncertainty; what they struggle with is silence or false reassurance. Keep your promise about when you will update them, even if the update is that nothing has changed.</p>"
+  },
+  {
+    "id": "people-staying",
+    "question": "How do I keep the people who are staying?",
+    "answer": "<p>Talk to them one to one, early, about what the change means for them and what you need from them. Be honest about the workload, and fix what you can. The people you most want to keep usually have other options, so don't assume they are fine because they are quiet.</p>"
+  },
+  {
+    "id": "disagree",
+    "question": "How do I lead a change I disagree with?",
+    "answer": "<p>Make your case once, in private, to the people who decided. If the decision stands, your job is to make it work well for your team, without pretending you designed it and without undermining it. If over time you find you can't do that, that is a decision about your role, and worth taking seriously.</p>"
+  },
+  {
+    "id": "what-is-leadership-coaching",
+    "question": "What does leadership coaching involve?",
+    "answer": "<p>Regular sessions over several months, working on how you lead in your actual situation rather than in theory. In The Leadership Engagement it starts with structured feedback from the people around you and includes a written mid-point review. You bring the decisions and the conversations, and we work through them together.</p>"
+  },
+  {
+    "id": "360-shared",
+    "question": "Is the 360 feedback shared with my manager?",
+    "answer": "<p>The feedback is gathered for you, and we agree at the start what, if anything, is shared and with whom. If your employer is paying, they get progress against the objectives we agreed together, not the content of the feedback or our sessions. Nothing is shared without you knowing first.</p>"
+  },
+  {
+    "id": "employer-pay",
+    "question": "Can my employer pay for leadership coaching?",
+    "answer": "<p>Usually, yes. The price is the same whoever pays, and we start with a three-way conversation to agree the objectives. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"
+  }
+]
