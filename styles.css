@@ -83,12 +83,12 @@ p  { color: var(--text-muted); line-height: 1.85; }
 }
 
 /* Body-text links. :not(.btn) stops buttons inside prose picking these up. */
-.inline-link, .prose a:not(.btn):not(.text-link), .faq-item a:not(.btn), .author-role a, .package-note a, .muted-note a {
+.inline-link, .prose a:not(.btn):not(.text-link), .faq-item a:not(.btn), .author-role a, .package-note a, .muted-note a, .checklist a {
     color: inherit;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-.inline-link:hover, .prose a:not(.btn):not(.text-link):hover, .faq-item a:not(.btn):hover { color: var(--accent); }
+.inline-link:hover, .prose a:not(.btn):not(.text-link):hover, .faq-item a:not(.btn):hover, .checklist a:hover { color: var(--accent); }
 
 .text-link {
     font-size: 0.78rem;
@@ -819,6 +819,16 @@ p  { color: var(--text-muted); line-height: 1.85; }
 .prose .feature-list { margin-bottom: 1.5rem; }
 .prose .feature-list li { font-size: 0.95rem; }
 .prose strong { color: var(--text); font-weight: 600; }
+
+/* Checklists inside prose: the home page style, without the list indent */
+.prose .checklist { margin: 0 0 2rem; line-height: inherit; }
+.prose .checklist li { margin: 0; }
+.prose .checklist strong { font-weight: 500; }
+.prose-cta { margin: 1.5rem 0 2.2rem; }
+.prose .faq-item:first-child { padding-top: 0.4rem; }
+.page-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.page-foot p { font-size: 0.95rem; margin-bottom: 0.6rem; }
+.page-foot p:last-child { margin-bottom: 0; }
 
 .tracks, .stages {
     display: grid;

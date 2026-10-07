@@ -172,6 +172,20 @@ def faq_items():
     return [item for group in FAQ for item in group["items"]]
 
 
+def page_faq(name):
+    """A page's own FAQ, from src/content/faq-<name>.json: a flat list of
+    {id, question, answer}. The main FAQ in faq.json is grouped."""
+    return load_json(SRC / "content" / f"faq-{name}.json")
+
+
+def h_page_faq(ctx, name):
+    return "".join(f"""
+                <div class="faq-item" id="{item['id']}">
+                    <h3>{item['question']}</h3>
+                    {render(item['answer'], ctx)}
+                </div>""" for item in page_faq(name))
+
+
 def h_faq_list(ctx, _):
     jump = "".join(f'<li><a href="#{g["id"]}">{g["group"]}</a></li>' for g in FAQ)
     out = [f'<nav class="faq-jump" aria-label="Question groups"><ul>{jump}</ul></nav>']
@@ -201,6 +215,15 @@ def h_newsletter(ctx, _):
 def h_newsletter_li(ctx, _):
     url = CONFIG["links"]["newsletter"]
     return f'<li><a href="{url}">Newsletter</a></li>' if is_set(url) else ""
+
+
+def h_values_note(ctx, _):
+    """The Values Finder line under the first-step button. A page that
+    already offers the Values Finder just above sets hideValuesNote."""
+    if ctx["page"].get("hideValuesNote"):
+        return ""
+    return (f'<p class="muted-note">Want something to bring? Try the '
+            f'<a href="{CONFIG["links"]["valuesFinder"]}">Values Finder</a> beforehand.</p>')
 
 
 def h_cro_line(ctx, _):
@@ -241,6 +264,8 @@ HELPERS = {
     "faq_list": h_faq_list,
     "newsletter": h_newsletter,
     "newsletter_li": h_newsletter_li,
+    "page_faq": h_page_faq,
+    "values_note": h_values_note,
     "cro_line": h_cro_line,
     "photo": h_photo,
     "jsonld": h_jsonld,
@@ -343,6 +368,32 @@ def schema(kind, ctx):
         node = service_node(p)
         node["@context"] = "https://schema.org"
         return node
+    if kind == "article":
+        page = ctx["page"]
+        return {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": page["headline"],
+            "description": page["description"],
+            "url": page["canonical"],
+            "mainEntityOfPage": page["canonical"],
+            "image": SITE + "/og-image.png",
+            "datePublished": page["datePublished"],
+            "dateModified": page.get("dateModified", page["datePublished"]),
+            "inLanguage": "en-IE",
+            "author": {"@type": "Person", "@id": SITE + "/#matt", "name": CONFIG["personName"], "url": SITE + "/about/"},
+            "publisher": {"@type": "Organization", "@id": SITE + "/#business", "name": CONFIG["businessName"], "logo": {"@type": "ImageObject", "url": SITE + "/favicon.svg"}},
+        }
+    if kind.startswith("faq:"):
+        return {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": item["question"],
+                "acceptedAnswer": {"@type": "Answer", "text": strip_tags(render(item["answer"], ctx))},
+            } for item in page_faq(kind.split(":", 1)[1])],
+        }
     if kind == "faq":
         return {
             "@context": "https://schema.org",
@@ -411,6 +462,7 @@ def build():
         page.setdefault("bodyClass", "")
         page["canonical"] = SITE + page["path"]
         page["ogTitle"] = page.get("ogTitle", page["title"])
+        page.setdefault("ogType", "website")
         page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle")}
 
         ctx = dict(CONFIG)

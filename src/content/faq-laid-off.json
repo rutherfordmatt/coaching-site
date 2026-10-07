@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sign-severance",
+    "question": "Should I sign the severance agreement straight away?",
+    "answer": "<p>No. Read it, take the time you are given, and get it checked if anything is unclear. Signing quickly rarely gets you anything you would not get by signing next week.</p>"
+  },
+  {
+    "id": "how-long",
+    "question": "How long does it take to find a job after being laid off?",
+    "answer": "<p>It depends on your field, your level and the market, so be wary of anyone who gives you a single number. What shortens it is knowing what you are looking for before you start, and using your network rather than only job boards. Plan your money for longer than you expect.</p>"
+  },
+  {
+    "id": "linkedin",
+    "question": "What do I say on LinkedIn?",
+    "answer": "<p>Nothing, until you are ready. When you are, a short, factual post works: your role was made redundant, what you are proud of, and what you are looking for next. You do not owe anyone the full story.</p>"
+  },
+  {
+    "id": "tell-people",
+    "question": "Should I tell people I was laid off?",
+    "answer": "<p>Yes, when you are ready, and in your own words. Being laid off is common and says very little about you, and a lot of good roles come through someone who knew you were looking. Keep it to your two lines and move on to what you want next.</p>"
+  },
+  {
+    "id": "coach-after-redundancy",
+    "question": "Is it worth getting a coach after redundancy?",
+    "answer": "<p>Not always. If you know what you want and the market wants it, a good CV and your network may be enough. A career coach after redundancy is worth it when you are not sure what comes next, you have not looked for a job in years, or you want someone outside the situation to think it through with.</p>"
+  },
+  {
+    "id": "employer-outplacement",
+    "question": "Can my employer pay for outplacement coaching?",
+    "answer": "<p>Often, yes. Some employers include outplacement support in a redundancy package, and others will fund it if you ask, ideally before you sign. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"
+  },
+  {
+    "id": "different-job",
+    "question": "What if I don't want to go back to the same kind of job?",
+    "answer": "<p>That is common, and worth taking seriously rather than acting on straight away. Give yourself time to work out what you actually want before you apply for anything different. It is exactly the kind of question we can work through together.</p>"
+  }
+]
