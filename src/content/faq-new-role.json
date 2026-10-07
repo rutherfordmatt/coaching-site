@@ -1,0 +1,37 @@
+[
+  {
+    "id": "first-week",
+    "question": "What should I do in my first week in a new job?",
+    "answer": "<p>Meet people, learn names and listen. Ask your manager how they like to work and what they want from you in the first month. Change nothing yet.</p>"
+  },
+  {
+    "id": "making-changes",
+    "question": "How long should I wait before making changes?",
+    "answer": "<p>Long enough to understand why things are the way they are: a few weeks for small things, a couple of months for anything bigger. Fix what is genuinely broken straight away. Everything else can wait until you know who it affects.</p>"
+  },
+  {
+    "id": "promoted-over-peers",
+    "question": "How do I handle a promotion over my former peers?",
+    "answer": "<p>Talk to each of them one to one, early, and say plainly that the relationship has changed. Be fair and consistent, and don't make up for the change by trying to be everyone's friend. Some people will take time to adjust, and that is normal.</p>"
+  },
+  {
+    "id": "not-what-i-was-told",
+    "question": "What if the job is not what I was told it would be?",
+    "answer": "<p>Write down the differences, then raise them with your manager early and calmly, as a question about priorities rather than a complaint. Often the gap closes once it is said out loud. If it does not, you will have a clearer decision to make, and you will have it sooner.</p>"
+  },
+  {
+    "id": "coaching-worth-it",
+    "question": "Is coaching worth it when starting a new role?",
+    "answer": "<p>Often, because the first 90 days in a new role shape the next few years and you rarely get time to think them through. Coaching gives you a neutral place to test your read of the organisation. If your new employer gives you a strong onboarding and a good manager, you may not need it.</p>"
+  },
+  {
+    "id": "when-to-start",
+    "question": "When is the right time to start coaching, before or after I start?",
+    "answer": "<p>Just before, or in the first few weeks. Starting before lets us plan the first 90 days; starting soon after lets us work with what you are finding. Either is better than three months in, when the patterns have set.</p>"
+  },
+  {
+    "id": "employer-pay",
+    "question": "Can my employer pay?",
+    "answer": "<p>Many do, especially for a promotion or a senior hire, and the price is the same whoever pays. Ask your new manager or HR team, ideally before you start. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"
+  }
+]
