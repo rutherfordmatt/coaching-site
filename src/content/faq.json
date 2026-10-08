@@ -50,6 +50,11 @@
         "answer": "<p>Our first conversation is free. Other packages are payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>"
       },
       {
+        "id": "alumni-rate",
+        "question": "Is there a discount for continuing after a programme?",
+        "answer": "<p>Yes. If you have completed The Next Move or The Leadership Engagement, you can continue with <a href=\"/coaching/ongoing-partnership/\">Ongoing Partnership</a> in blocks of four for €640 or eight for €1,280, which is €160 a session.</p>"
+      },
+      {
         "id": "employer",
         "question": "Can my employer pay, and how do I ask?",
         "answer": "<p>Yes, and the price is the same whoever pays. Many employers have a learning and development budget, and some managers can approve coaching from a team budget. Ask your manager or your HR team. I can send you a short proposal to forward, with the objectives, the package and the price.</p><p>When an employer pays, we start with a three-way conversation to agree objectives. There is more on the <a href=\"/for-organisations/\">For organisations</a> page.</p>"

@@ -75,6 +75,13 @@ def price_html(p):
     return f'<span class="price">{p["price"]}</span>{note}'
 
 
+def card_price_html(p):
+    """Cards can add a cardNote line under the price. It sits inside the
+    price paragraph so every card keeps the same number of children."""
+    extra = f'<span class="price-note">{p["cardNote"]}</span>' if p.get("cardNote") else ""
+    return price_html(p) + extra
+
+
 def h_package_cards(ctx, style):
     """Cards use CSS subgrid, so every child is one row and the rows line up
     across cards. Keep the number of children the same for every package."""
@@ -86,7 +93,7 @@ def h_package_cards(ctx, style):
             <article class="package-card package-card--compact">
                 <h3><a href="{p['url']}">{p['name']}</a></h3>
                 <p class="package-who">{p['who']}</p>
-                <p class="package-price">{price_html(p)}</p>
+                <p class="package-price">{card_price_html(p)}</p>
                 <p class="package-length">{p['length']}</p>
                 <a href="{p['url']}" class="text-link">View package<span class="visually-hidden">: {p['name']}</span><span aria-hidden="true"> &rarr;</span></a>
             </article>""")
@@ -96,7 +103,7 @@ def h_package_cards(ctx, style):
             <article class="package-card" id="{p['slug']}">
                 <h3><a href="{p['url']}">{p['name']}</a></h3>
                 <p class="package-who">{p['who']}</p>
-                <p class="package-price">{price_html(p)}</p>
+                <p class="package-price">{card_price_html(p)}</p>
                 <p class="package-length">{p['length']}</p>
                 <div>
                     <h4 class="package-sub">What is included</h4>

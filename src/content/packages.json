@@ -75,6 +75,7 @@
     "priceNote": "per session",
     "blockFour": "€720",
     "blockEight": "€1,360",
+    "cardNote": "After a programme: blocks at €160 a session.",
     "length": "60 minute sessions, booked singly or in blocks",
     "payment": "Payable when you book, singly or as a block.",
     "includes": [
@@ -90,7 +91,9 @@
     "offers": [
       { "name": "Ongoing Partnership, single session", "price": "200" },
       { "name": "Ongoing Partnership, block of four sessions", "price": "720" },
-      { "name": "Ongoing Partnership, block of eight sessions", "price": "1360" }
+      { "name": "Ongoing Partnership, block of eight sessions", "price": "1360" },
+      { "name": "Ongoing Partnership, alumni block of four sessions", "price": "640" },
+      { "name": "Ongoing Partnership, alumni block of eight sessions", "price": "1280" }
     ]
   }
 ]
