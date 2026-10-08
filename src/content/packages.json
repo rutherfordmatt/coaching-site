@@ -39,7 +39,7 @@
     ],
     "note": "",
     "booking": "conversation",
-    "bookingNote": "Starts with a 45 minute first conversation.",
+    "bookingNote": "Starts with a 30 minute first conversation.",
     "primary": "Start with a free conversation",
     "secondary": "",
     "offers": [{ "name": "The Next Move", "price": "1200" }]
@@ -61,7 +61,7 @@
     ],
     "note": "",
     "booking": "conversation",
-    "bookingNote": "Starts with a 45 minute first conversation.",
+    "bookingNote": "Starts with a 30 minute first conversation.",
     "primary": "Start with a free conversation",
     "secondary": "",
     "offers": [{ "name": "The Leadership Engagement", "price": "3000" }]

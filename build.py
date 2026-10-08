@@ -643,7 +643,7 @@ def write_llms_txt(pages):
 
 > {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
-Prices are published and the same whoever pays, including when an employer funds the coaching. The first conversation is free: 45 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
+Prices are published and the same whoever pays, including when an employer funds the coaching. The first conversation is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 
 ## Packages
 
