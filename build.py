@@ -297,6 +297,8 @@ HELPERS = {
 # ─── Structured data ───
 
 def strip_tags(text):
+    # Block boundaries become spaces so paragraphs do not run together.
+    text = re.sub(r"</(p|li|h[1-6]|div)>|<br\s*/?>", " ", text)
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", text))).strip()
 
 
@@ -372,6 +374,12 @@ def area_served():
     ]
 
 
+def price_range():
+    """Lowest to highest published price, from the package offers."""
+    prices = [int(o["price"]) for p in PACKAGES for o in p["offers"]]
+    return f"€{min(prices):,}-€{max(prices):,}"
+
+
 def business_node():
     c = CONFIG
     return {
@@ -383,6 +391,7 @@ def business_node():
         "logo": SITE + "/favicon.svg",
         "description": c["positioning"],
         "email": c["email"],
+        "priceRange": price_range(),
         "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
         "areaServed": area_served(),
         "founder": {"@id": SITE + "/#matt"},
@@ -472,7 +481,8 @@ def schema(kind, ctx):
             "datePublished": page["datePublished"],
             "dateModified": page.get("dateModified", page["datePublished"]),
             "inLanguage": "en-IE",
-            "author": {"@type": "Person", "@id": SITE + "/#matt", "name": CONFIG["personName"], "url": SITE + "/about/"},
+            "author": {"@type": "Person", "@id": SITE + "/#matt", "name": CONFIG["personName"], "url": SITE + "/about/",
+                       "sameAs": [CONFIG["links"]["linkedin"], CONFIG["links"]["acDirectory"]]},
             "publisher": {"@type": "Organization", "@id": SITE + "/#business", "name": CONFIG["businessName"], "logo": {"@type": "ImageObject", "url": SITE + "/favicon.svg"}},
         }
     if kind.startswith("faq:"):
@@ -580,7 +590,8 @@ def build():
     (ROOT / "site.js").write_bytes((SRC / "site.js").read_bytes())
     write_sitemap(pages)
     write_llms_txt(pages)
-    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+    write_robots_txt()
+    write_llms_full_txt(pages)
     return pages
 
 
@@ -627,6 +638,24 @@ def build_og_images(pages):
     print(f"Wrote {len(pages)} Open Graph images to og/")
 
 
+# ─── robots.txt ───
+
+# Search and AI crawlers named one by one, so it is clear they are welcome
+# rather than merely not excluded by the wildcard.
+CRAWLERS = [
+    "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+    "ClaudeBot", "Claude-Web", "Claude-SearchBot", "Claude-User", "anthropic-ai",
+    "PerplexityBot", "Perplexity-User",
+    "Google-Extended", "Googlebot", "Bingbot", "Applebot", "Applebot-Extended", "CCBot",
+]
+
+
+def write_robots_txt():
+    blocks = "".join(f"User-agent: {bot}\nAllow: /\n\n" for bot in CRAWLERS)
+    (ROOT / "robots.txt").write_text(
+        f"{blocks}User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+
+
 # ─── llms.txt: a plain summary of the site for language models ───
 
 def write_llms_txt(pages):
@@ -636,14 +665,17 @@ def write_llms_txt(pages):
         return f"- [{p.get('crumb') or p['og']['headline']}]({SITE}{path}): {note or p['description']}"
     packages = "\n".join(
         f"- [{p['name']}]({SITE}{p['url']}): {strip_tags(p['who'])} {p['price']} ({p['priceNote']}). {p['length']}."
+        + (f" Blocks of four for {p['blockFour']} or eight for {p['blockEight']}." if p.get("blockFour") else "")
+        + (f" {p['cardNote']}" if p.get("cardNote") else "")
         for p in PACKAGES)
     situations = "\n".join(line(p) for p in ("/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/"))
-    more = "\n".join(line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/"))
+    more = "\n".join([f"- [Home]({SITE}/): {by_path['/']['description']}"]
+                     + [line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/")])
     text = f"""# {CONFIG['businessName']}
 
 > {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
-Prices are published and the same whoever pays, including when an employer funds the coaching. The first conversation is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
+Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Ongoing Partnership at €160 a session. The first conversation is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 
 ## Packages
 
@@ -659,11 +691,106 @@ Prices are published and the same whoever pays, including when an employer funds
 
 ## Optional
 
-- [Privacy statement]({SITE}/privacy/)
+- [Privacy statement]({SITE}/privacy/): {by_path['/privacy/']['description']}
+- [Full text of every page]({SITE}/llms-full.txt): the same pages as plain text, in one file.
 - [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 15 minute exercise to work out what matters to you at work.
 - [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
+
+
+# ─── llms-full.txt: the text of every page in one file ───
+
+class TextScan(HTMLParser):
+    """Turns the <main> of a built page into plain Markdown-style text:
+    headings, paragraphs, list items and links. Forms, scripts, images and
+    anything hidden from screen readers or from sight are left out."""
+
+    BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "dt", "dd", "div", "blockquote", "figcaption", "summary"}
+    SKIP = {"script", "style", "form", "svg", "noscript", "button"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_main = self.skip = 0
+        self.skip_stack = []
+        self.blocks, self.buf, self.prefix, self.href = [], [], "", None
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "main":
+            self.in_main += 1
+        if not self.in_main or tag in VOID:
+            return
+        hidden = (tag in self.SKIP or a.get("aria-hidden") == "true"
+                  or "visually-hidden" in (a.get("class") or "") or "hidden" in a)
+        self.skip_stack.append(hidden)
+        if hidden:
+            self.skip += 1
+        if self.skip:
+            return
+        if tag in self.BLOCK:
+            self.flush()
+            self.prefix = {"h1": "# ", "h2": "## ", "h3": "### ", "h4": "#### ", "li": "- "}.get(tag, "")
+        if "price-note" in (a.get("class") or ""):
+            self.buf.append("\0")  # notes sit on their own line on the page
+        if tag == "a" and a.get("href"):
+            href = a["href"]
+            self.href = SITE + href if href.startswith("/") else href
+            self.buf.append("[")
+
+    def handle_endtag(self, tag):
+        if tag == "main":
+            self.flush()
+            self.in_main -= 1
+            return
+        if not self.in_main or tag in VOID or not self.skip_stack:
+            return
+        if self.skip_stack.pop():
+            self.skip -= 1
+            return
+        if self.skip:
+            return
+        if tag == "a" and self.href:
+            self.buf.append(f"]({self.href})")
+            self.href = None
+        if tag in self.BLOCK:
+            self.flush()
+
+    def handle_data(self, data):
+        if self.in_main and not self.skip:
+            self.buf.append(data)
+
+    def flush(self):
+        text = re.sub(r"\s+", " ", "".join(self.buf)).strip()
+        text = re.sub(r"\s*\0\s*(?=[A-Z])", ". ", text).replace("\0", " ")
+        text = re.sub(r"\[\s*\]\([^)]*\)", "", text).replace("[ ", "[").replace(" ]", "]")
+        if text:
+            self.blocks.append(self.prefix + text)
+        self.buf, self.prefix = [], ""
+
+
+def page_text(dest):
+    scan = TextScan()
+    scan.feed(dest.read_text(encoding="utf-8"))
+    return "\n\n".join(scan.blocks)
+
+
+LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/clarity-session/", "/coaching/the-next-move/",
+                   "/coaching/leadership-engagement/", "/coaching/ongoing-partnership/",
+                   "/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/",
+                   "/about/", "/faq/", "/for-organisations/", "/privacy/"]
+
+
+def write_llms_full_txt(pages):
+    by_path = {p["path"]: (p, d) for p, d in pages}
+    order = LLMS_FULL_ORDER + sorted(set(by_path) - set(LLMS_FULL_ORDER))
+    parts = [f"# {CONFIG['businessName']}: full text\n\n"
+             f"> The text of every page on {SITE}, generated from the site on each build. "
+             f"The short index is at {SITE}/llms.txt."]
+    for path in order:
+        page, dest = by_path[path]
+        parts.append(f"---\n\nURL: {page['canonical']}\nTitle: {page['title']}\n\n{page_text(dest)}")
+    (ROOT / "llms-full.txt").write_text("\n\n".join(parts) + "\n", encoding="utf-8")
 
 
 def page_sources(src, raw):
