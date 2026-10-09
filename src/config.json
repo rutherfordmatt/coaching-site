@@ -26,6 +26,11 @@
     "personalSite": "https://www.mattrutherford.co.uk/"
   },
 
+  "analytics": {
+    "websiteId": "3a83373e-0ff3-446c-867f-f787745cc92f",
+    "domains": "mattrutherfordcoaching.com"
+  },
+
   "croNumber": "[CRO_NUMBER]",
 
   "policies": {

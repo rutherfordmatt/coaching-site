@@ -7,10 +7,13 @@ instead of being copied into every page.
 
     python3 build.py          build, then run the checks
     python3 build.py --og     also regenerate the Open Graph images in og/ (needs Google Chrome)
+    python3 build.py --staging  build for the staging site, with src/config.staging.json
+                                laid over config.json (see STAGING.md)
 
 Edit src/config.json for links, booking URLs, email and policy wording, and
-src/content/*.json for packages, testimonials and FAQ. Pages are in
-src/pages, shared blocks in src/partials. Never edit the generated .html files
+src/content/*.json for packages, testimonials, FAQ and the Clarity Check.
+Pages are in src/pages, shared blocks in src/partials. A page can name its
+own stylesheets and scripts in src/ with "css" and "js" in its front matter. Never edit the generated .html files
 in the repo root directly; they are overwritten on every build.
 
 Template syntax:
@@ -54,11 +57,27 @@ def esc(value):
 
 # ─── Data ───
 
+def overlay(base, extra):
+    """Lay one config over another, merging nested objects key by key."""
+    for k, v in extra.items():
+        if isinstance(v, dict) and isinstance(base.get(k), dict):
+            overlay(base[k], v)
+        else:
+            base[k] = v
+    return base
+
+
+STAGING = "--staging" in sys.argv
 CONFIG = load_json(SRC / "config.json")
+if STAGING:
+    # Staging: its own hostname, analytics site and booking tag, and nothing indexed.
+    overlay(CONFIG, load_json(SRC / "config.staging.json"))
 PACKAGES = load_json(SRC / "content" / "packages.json")
 TESTIMONIALS = load_json(SRC / "content" / "testimonials.json")
 FAQ = load_json(SRC / "content" / "faq.json")
 PACKAGES_BY_SLUG = {p["slug"]: p for p in PACKAGES}
+CLARITY_FILE = SRC / "content" / "clarity-check.json"
+CLARITY = load_json(CLARITY_FILE)
 SITE = CONFIG["siteUrl"].rstrip("/")
 
 
@@ -263,6 +282,51 @@ def h_photo(ctx, args):
             f'alt="{esc(p["alt"])}">')
 
 
+def h_clarity_tiles(ctx, _):
+    """The five situation tiles on the Clarity Check landing page."""
+    return "".join(f"""
+                    <li><button type="button" class="cc-tile" data-situation="{esc(s['id'])}">
+                        <span class="cc-tile-label">{esc(s['label'])}</span>
+                        <span class="cc-tile-blurb">{esc(s['tileBlurb'])}</span>
+                    </button></li>""" for s in CLARITY["situations"])
+
+
+def h_clarity_data(ctx, _):
+    """Everything the Clarity Check script needs, embedded so the page makes
+    no extra request. Package names and URLs come from packages.json and
+    exercise links from config.json, so neither is copied into the content."""
+    links = {}
+    for r in CLARITY["results"].values():
+        for target in r.get("exerciseLinks", {}).values():
+            links[target] = lookup(CONFIG, target)
+    data = {
+        "content": CLARITY,
+        "packages": {p["slug"]: {"name": p["name"], "url": p["url"]} for p in PACKAGES},
+        "links": links,
+        "booking": ctx["book"]["conversation"],
+        "newsletter": CONFIG["links"]["newsletter"],
+        "utmMedium": CONFIG.get("utmMedium", ""),
+    }
+    body = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    return f'<script type="application/json" id="cc-data">{body}</script>'
+
+
+def file_version(name):
+    return hashlib.sha1((SRC / name).read_bytes()).hexdigest()[:8]
+
+
+def h_page_css(ctx, _):
+    """Extra stylesheets named in a page's front matter. Each file carries
+    its own version, so adding one does not change any other page."""
+    return "".join(f'\n    <link rel="stylesheet" href="/{n}?v={file_version(n)}">'
+                   for n in ctx["page"].get("css", []))
+
+
+def h_page_js(ctx, _):
+    return "".join(f'\n    <script src="/{n}?v={file_version(n)}" defer></script>'
+                   for n in ctx["page"].get("js", []))
+
+
 def h_jsonld(ctx, _):
     blocks = []
     for kind in ctx["page"].get("schema", []):
@@ -290,6 +354,10 @@ HELPERS = {
     "byline": h_byline,
     "cro_line": h_cro_line,
     "photo": h_photo,
+    "clarity_tiles": h_clarity_tiles,
+    "clarity_data": h_clarity_data,
+    "page_css": h_page_css,
+    "page_js": h_page_js,
     "jsonld": h_jsonld,
 }
 
@@ -569,6 +637,8 @@ def build():
         page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
         page["ogImageAlt"] = f"{strip_tags(page['og']['headline'])}. {CONFIG['businessName']}."
         page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle", "ogImageAlt")}
+        page["robots"] = CONFIG.get("robots") or (
+            "noindex, follow" if page.get("noindex") else "index, follow, max-snippet:-1, max-image-preview:large")
 
         ctx = dict(CONFIG)
         ctx.update(book=booking_links(), page=page, assetVersion=version)
@@ -588,11 +658,18 @@ def build():
 
     (ROOT / "styles.css").write_bytes((SRC / "site.css").read_bytes())
     (ROOT / "site.js").write_bytes((SRC / "site.js").read_bytes())
+    for name in page_assets(pages):
+        (ROOT / name).write_bytes((SRC / name).read_bytes())
     write_sitemap(pages)
     write_llms_txt(pages)
     write_robots_txt()
     write_llms_full_txt(pages)
     return pages
+
+
+def page_assets(pages):
+    """Every stylesheet and script named in any page's front matter."""
+    return sorted({n for p, _ in pages for n in p.get("css", []) + p.get("js", [])})
 
 
 # ─── Open Graph cards ───
@@ -651,6 +728,9 @@ CRAWLERS = [
 
 
 def write_robots_txt():
+    if STAGING:
+        (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+        return
     blocks = "".join(f"User-agent: {bot}\nAllow: /\n\n" for bot in CRAWLERS)
     (ROOT / "robots.txt").write_text(
         f"{blocks}User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
@@ -783,7 +863,8 @@ LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/clarity-session/", "/coaching/t
 
 def write_llms_full_txt(pages):
     by_path = {p["path"]: (p, d) for p, d in pages}
-    order = LLMS_FULL_ORDER + sorted(set(by_path) - set(LLMS_FULL_ORDER))
+    order = [p for p in LLMS_FULL_ORDER + sorted(set(by_path) - set(LLMS_FULL_ORDER))
+             if not by_path[p][0].get("noindex")]
     parts = [f"# {CONFIG['businessName']}: full text\n\n"
              f"> The text of every page on {SITE}, generated from the site on each build. "
              f"The short index is at {SITE}/llms.txt."]
@@ -918,7 +999,8 @@ def check(pages):
         if re.search(r"\s&\s", visible):
             warnings.append(f"{name}: visible '&' in copy; the house style is 'and'")
 
-    for f in [d for _, d in pages] + [ROOT / "styles.css", ROOT / "site.js"]:
+    assets = [ROOT / n for n in page_assets(pages)]
+    for f in [d for _, d in pages] + [ROOT / "styles.css", ROOT / "site.js"] + assets + [CLARITY_FILE]:
         body = f.read_text(encoding="utf-8")
         for dash, label in (("—", "em-dash"), ("–", "en-dash")):
             if dash in body:
@@ -956,6 +1038,8 @@ def check(pages):
         if not (ROOT / "og" / f"{og_slug(page)}.png").exists():
             problems.append(f"{dest.relative_to(ROOT)}: og/{og_slug(page)}.png is missing; run build.py --og")
 
+    problems += check_clarity(pages)
+
     titles = [p["title"] for p, _ in pages]
     descs = [p["description"] for p, _ in pages]
     for label, values in (("title", titles), ("description", descs)):
@@ -963,6 +1047,29 @@ def check(pages):
             problems.append(f"duplicate {label}: {v}")
 
     return problems, warnings
+
+
+def check_clarity(pages):
+    """The Clarity Check content must pass its own tests (which run
+    validate() from the scoring file), name only real packages and point
+    each situation at a built page."""
+    problems = []
+    test = SRC / "clarity-check-scoring.test.js"
+    try:
+        run = subprocess.run(["node", str(test)], capture_output=True, text=True)
+        if run.returncode != 0:
+            fails = [l.strip() for l in run.stdout.splitlines() if l.startswith(("FAIL", "      "))]
+            problems.append(f"{test.relative_to(ROOT)} failed: " + " | ".join(fails or [run.stderr.strip()]))
+    except OSError:
+        problems.append("node is not installed, so the Clarity Check content tests could not run")
+    for slug in CLARITY["packages"]:
+        if slug not in PACKAGES_BY_SLUG:
+            problems.append(f"{CLARITY_FILE.relative_to(ROOT)}: package {slug} is not in packages.json")
+    built = {p["path"] for p, _ in pages}
+    for s in CLARITY["situations"]:
+        if s["page"] not in built:
+            problems.append(f"{CLARITY_FILE.relative_to(ROOT)}: situation {s['id']} points at {s['page']}, which is not a page")
+    return problems
 
 
 def placeholders():
@@ -979,7 +1086,7 @@ def main():
     pages = build()
     if "--og" in sys.argv:
         build_og_images(pages)
-    print(f"Built {len(pages)} pages:")
+    print(f"Built {len(pages)} pages{' for STAGING at ' + SITE if STAGING else ''}:")
     for page, dest in pages:
         print(f"  {page['path']:<40} {dest.relative_to(ROOT)}  ({dest.stat().st_size / 1024:.1f} KB)")
     problems, warnings = check(pages)

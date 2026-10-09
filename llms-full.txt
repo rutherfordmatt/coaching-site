@@ -1,10 +1,10 @@
 # Matt Rutherford Coaching: full text
 
-> The text of every page on https://mattrutherfordcoaching.com, generated from the site on each build. The short index is at https://mattrutherfordcoaching.com/llms.txt.
+> The text of every page on https://staging.mattrutherfordcoaching.com, generated from the site on each build. The short index is at https://staging.mattrutherfordcoaching.com/llms.txt.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/
+URL: https://staging.mattrutherfordcoaching.com/
 Title: Career and Leadership Coach, Dublin | Matt Rutherford
 
 Career and Leadership Coach
@@ -13,7 +13,7 @@ Career and Leadership Coach
 
 Whether you're stepping up to manage, leading through change or working out your next move, I'll help you make it well.
 
-[Book a free conversation](https://calendly.com/mattrutherfordcoaching/conversation) [See the packages](https://mattrutherfordcoaching.com/coaching/)
+[Book a free conversation](https://calendly.com/mattrutherfordcoaching/conversation) [See the packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 Thirty years leading people at Meta, LinkedIn and Microsoft.
 
@@ -23,17 +23,17 @@ Is this you?
 
 If one of these sounds like you, our first conversation is the quickest way to find out how coaching can help.
 
-- You are [managing people for the first time](https://mattrutherfordcoaching.com/new-manager/), or about to.
+- You are [managing people for the first time](https://staging.mattrutherfordcoaching.com/new-manager/), or about to.
 
-- You are [leading people through a reorganisation](https://mattrutherfordcoaching.com/leading-through-change/) or restructuring.
+- You are [leading people through a reorganisation](https://staging.mattrutherfordcoaching.com/leading-through-change/) or restructuring.
 
-- You lead a team or a business, and you have a decision to make with [nobody neutral to think it through with](https://mattrutherfordcoaching.com/leading-through-change/).
+- You lead a team or a business, and you have a decision to make with [nobody neutral to think it through with](https://staging.mattrutherfordcoaching.com/leading-through-change/).
 
-- You have just been promoted or [started a new role](https://mattrutherfordcoaching.com/new-role/).
+- You have just been promoted or [started a new role](https://staging.mattrutherfordcoaching.com/new-role/).
 
-- You want your career to move forward, but you are not sure yet [what the next step is](https://mattrutherfordcoaching.com/next-role/).
+- You want your career to move forward, but you are not sure yet [what the next step is](https://staging.mattrutherfordcoaching.com/next-role/).
 
-- You have been [laid off](https://mattrutherfordcoaching.com/laid-off/), or you are ready to leave, and you are deciding what comes next.
+- You have been [laid off](https://staging.mattrutherfordcoaching.com/laid-off/), or you are ready to leave, and you are deciding what comes next.
 
 Coaching packages
 
@@ -41,7 +41,7 @@ Coaching packages
 
 Every programme starts by mapping your situation and ends with a written plan, and every price is on the page.
 
-### [The Clarity Session](https://mattrutherfordcoaching.com/coaching/clarity-session/)
+### [The Clarity Session](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/)
 
 One decision, one situation, worked through properly in a single sitting.
 
@@ -49,9 +49,9 @@ One decision, one situation, worked through properly in a single sitting.
 
 One 90 minute session and a 30 minute follow-up
 
-[View package](https://mattrutherfordcoaching.com/coaching/clarity-session/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/)
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/)
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/)
 
 For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one.
 
@@ -59,9 +59,9 @@ For people making a specific career move: stepping up into management, landing t
 
 Six 60 minute sessions over twelve weeks
 
-[View package](https://mattrutherfordcoaching.com/coaching/the-next-move/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/)
 
-### [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/)
+### [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
 
 For experienced managers and senior leaders growing into a bigger role or leading through change.
 
@@ -69,9 +69,9 @@ For experienced managers and senior leaders growing into a bigger role or leadin
 
 Eight 90 minute sessions over six months
 
-[View package](https://mattrutherfordcoaching.com/coaching/leadership-engagement/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
 
-### [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/)
+### [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/)
 
 For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.
 
@@ -79,9 +79,9 @@ For people who want a standing thinking partner, or who want to start with a ses
 
 60 minute sessions, booked singly or in blocks
 
-[View package](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/)
 
-[See the packages](https://mattrutherfordcoaching.com/coaching/)
+[See the packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 Client voices
 
@@ -145,7 +145,7 @@ AC [Association for Coaching](https://www.associationforcoaching.com/members/?id
 
 2024 Coaching diploma
 
-[More about me](https://mattrutherfordcoaching.com/about/)
+[More about me](https://staging.mattrutherfordcoaching.com/about/)
 
 Get in touch
 
@@ -167,7 +167,7 @@ If you would rather write first, or you are asking on behalf of someone else, us
 
 ---
 
-URL: https://mattrutherfordcoaching.com/coaching/
+URL: https://staging.mattrutherfordcoaching.com/coaching/
 Title: Coaching Packages and Prices, Dublin | Matt Rutherford
 
 For individuals
@@ -184,7 +184,7 @@ The packages
 
 You can book the Clarity Session or a single session straight away. If you are not sure which fits, start with our first conversation and we will work it out together.
 
-### [The Clarity Session](https://mattrutherfordcoaching.com/coaching/clarity-session/)
+### [The Clarity Session](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/)
 
 One decision, one situation, worked through properly in a single sitting.
 
@@ -208,9 +208,9 @@ The fee is credited against The Next Move or The Leadership Engagement if you co
 
 Payable when you book.
 
-[View package](https://mattrutherfordcoaching.com/coaching/clarity-session/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/)
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/)
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/)
 
 For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one.
 
@@ -232,9 +232,9 @@ Six 60 minute sessions over twelve weeks
 
 Starts with a 30 minute first conversation.
 
-[View package](https://mattrutherfordcoaching.com/coaching/the-next-move/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/)
 
-### [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/)
+### [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
 
 For experienced managers and senior leaders growing into a bigger role or leading through change.
 
@@ -256,9 +256,9 @@ Eight 90 minute sessions over six months
 
 Starts with a 30 minute first conversation.
 
-[View package](https://mattrutherfordcoaching.com/coaching/leadership-engagement/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
 
-### [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/)
+### [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/)
 
 For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme.
 
@@ -280,19 +280,19 @@ Six single sessions cost the same as The Next Move, which also includes the tran
 
 Books one session. Blocks start with the first conversation.
 
-[View package](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/)
+[View package](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/)
 
 Start with your situation
 
-- [Just been laid off](https://mattrutherfordcoaching.com/laid-off/)
+- [Just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/)
 
-- [Managing people for the first time](https://mattrutherfordcoaching.com/new-manager/)
+- [Managing people for the first time](https://staging.mattrutherfordcoaching.com/new-manager/)
 
-- [Starting a new role or promotion](https://mattrutherfordcoaching.com/new-role/)
+- [Starting a new role or promotion](https://staging.mattrutherfordcoaching.com/new-role/)
 
-- [Leading through change](https://mattrutherfordcoaching.com/leading-through-change/)
+- [Leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/)
 
-- [Looking for your next role](https://mattrutherfordcoaching.com/next-role/)
+- [Looking for your next role](https://staging.mattrutherfordcoaching.com/next-role/)
 
 Prices and payment
 
@@ -314,7 +314,7 @@ How you pay.
 
 - The Next Move can be paid in two instalments and The Leadership Engagement in three, each a dated invoice.
 
-If you need to move a session, give me at least 48 hours notice and you can reschedule without charge. More in the [FAQ](https://mattrutherfordcoaching.com/faq/#fees).
+If you need to move a session, give me at least 48 hours notice and you can reschedule without charge. More in the [FAQ](https://staging.mattrutherfordcoaching.com/faq/#fees).
 
 The first step
 
@@ -346,10 +346,10 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/coaching/clarity-session/
+URL: https://staging.mattrutherfordcoaching.com/coaching/clarity-session/
 Title: The Clarity Session, €350 | Matt Rutherford Coaching, Dublin
 
-[All packages](https://mattrutherfordcoaching.com/coaching/)
+[All packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 # The Clarity Session
 
@@ -415,7 +415,7 @@ You send a short written brief beforehand, then we spend 90 minutes online worki
 
 ### What kind of decision is it good for?
 
-One with a clear question at its centre: an offer to weigh, a conversation to prepare for, a restructure to respond to, or a choice you keep putting off. If the question is bigger than one decision, such as what you want from the next few years, [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/) is usually the better fit.
+One with a clear question at its centre: an offer to weigh, a conversation to prepare for, a restructure to respond to, or a choice you keep putting off. If the question is bigger than one decision, such as what you want from the next few years, [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/) is usually the better fit.
 
 ### Can one session really help?
 
@@ -437,10 +437,10 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/coaching/the-next-move/
+URL: https://staging.mattrutherfordcoaching.com/coaching/the-next-move/
 Title: The Next Move: Career Transition Coaching | Matt Rutherford
 
-[All packages](https://mattrutherfordcoaching.com/coaching/)
+[All packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 # The Next Move
 
@@ -480,27 +480,27 @@ In the first session we build your transition map. Then we choose the track toge
 
 ### Stepping up
 
-Your first management role, from before you start through your first year, including your first 90 days. New to managing? Read [how to start well](https://mattrutherfordcoaching.com/new-manager/).
+Your first management role, from before you start through your first year, including your first 90 days. New to managing? Read [how to start well](https://staging.mattrutherfordcoaching.com/new-manager/).
 
 ### Landing the next role
 
-Your story, your CV and LinkedIn, interviews, and the offer. Looking by choice? Read [finding your next role](https://mattrutherfordcoaching.com/next-role/). Just been laid off? Read [what to do this week](https://mattrutherfordcoaching.com/laid-off/).
+Your story, your CV and LinkedIn, interviews, and the offer. Looking by choice? Read [finding your next role](https://staging.mattrutherfordcoaching.com/next-role/). Just been laid off? Read [what to do this week](https://staging.mattrutherfordcoaching.com/laid-off/).
 
 ### Starting well
 
-You have been promoted, moved sideways, or joined a new employer. Read [how to use your first 90 days](https://mattrutherfordcoaching.com/new-role/).
+You have been promoted, moved sideways, or joined a new employer. Read [how to use your first 90 days](https://staging.mattrutherfordcoaching.com/new-role/).
 
 ## Paying
 
 €1,200, or two payments of €600. Payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead. Each instalment is a dated invoice.
 
-When the programme ends, you can continue with [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/) at an alumni rate of €160 a session.
+When the programme ends, you can continue with [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/) at an alumni rate of €160 a session.
 
 ## For employers
 
 The Next Move is also available to employers in two forms: as new-manager coaching for learning and development teams, and as individual outplacement support for someone leaving the organisation. The price is the same.
 
-[Coaching for organisations](https://mattrutherfordcoaching.com/for-organisations/)
+[Coaching for organisations](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
 ## Questions people ask
 
@@ -518,7 +518,7 @@ Yes. The Landing the next role track is built for that: your story, your CV and 
 
 ### Can my employer pay for it?
 
-Yes, at the same price. Employers use The Next Move as new-manager coaching and as individual outplacement support. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+Yes, at the same price. Employers use The Next Move as new-manager coaching and as individual outplacement support. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 The first step
 
@@ -550,10 +550,10 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/coaching/leadership-engagement/
+URL: https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/
 Title: The Leadership Engagement | Matt Rutherford Coaching
 
-[All packages](https://mattrutherfordcoaching.com/coaching/)
+[All packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 # The Leadership Engagement
 
@@ -573,7 +573,7 @@ Payable when you book. One payment, or three of €1,000.
 
 ## Who it is for
 
-You already lead people. The role has grown, or is about to, or you are [leading through a change](https://mattrutherfordcoaching.com/leading-through-change/) that will test you and your team. You want a structured space to work on how you lead, over long enough for it to show.
+You already lead people. The role has grown, or is about to, or you are [leading through a change](https://staging.mattrutherfordcoaching.com/leading-through-change/) that will test you and your team. You want a structured space to work on how you lead, over long enough for it to show.
 
 ## What is included
 
@@ -605,13 +605,13 @@ A written close-out: what changed, what is next, and what to keep doing.
 
 €3,000, or three payments of €1,000. Payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead. Each instalment is a dated invoice.
 
-When the programme ends, you can continue with [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/) at an alumni rate of €160 a session.
+When the programme ends, you can continue with [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/) at an alumni rate of €160 a session.
 
 ## For employers
 
 If your employer is paying, we start with a three-way agreement with your sponsor, and agree the objectives up front. The sponsor gets progress against those objectives, not the content of our sessions. The price is the same, and I can send a proposal on request.
 
-[Coaching for organisations](https://mattrutherfordcoaching.com/for-organisations/)
+[Coaching for organisations](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
 ## Questions people ask
 
@@ -661,10 +661,10 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/coaching/ongoing-partnership/
+URL: https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/
 Title: Ongoing Partnership: Sessions from €200 | Matt Rutherford
 
-[All packages](https://mattrutherfordcoaching.com/coaching/)
+[All packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 # Ongoing Partnership
 
@@ -698,11 +698,11 @@ Some people want a regular, neutral place to think out loud about their work, wi
 
 Single sessions and blocks are payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead.
 
-If you have completed [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/) or [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/), you continue at an alumni rate: blocks of four for €640 or eight for €1,280, which is €160 a session. It is the same work with someone who already knows your map.
+If you have completed [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/) or [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/), you continue at an alumni rate: blocks of four for €640 or eight for €1,280, which is €160 a session. It is the same work with someone who already knows your map.
 
 ## Sessions or a programme?
 
-Six single sessions cost the same as [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/), which also includes the transition map, the workbook and a written 90 day plan. If you have a specific move in mind, the programme is usually the better choice. We can talk it through in the first conversation.
+Six single sessions cost the same as [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/), which also includes the transition map, the workbook and a written 90 day plan. If you have a specific move in mind, the programme is usually the better choice. We can talk it through in the first conversation.
 
 ## Questions people ask
 
@@ -720,7 +720,7 @@ Whatever is on your mind at work: a decision, a difficult relationship, a change
 
 ### When is a programme the better choice?
 
-When you have a specific move to make. Six single sessions cost the same as [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/), which also includes the transition map, the workbook and a written 90 day plan.
+When you have a specific move to make. Six single sessions cost the same as [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/), which also includes the transition map, the workbook and a written 90 day plan.
 
 Not sure yet?
 
@@ -734,7 +734,7 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/laid-off/
+URL: https://staging.mattrutherfordcoaching.com/laid-off/
 Title: Just been laid off? What to do next | Matt Rutherford
 
 After a layoff
@@ -743,7 +743,7 @@ After a layoff
 
 Being laid off is a shock, and it is survivable. Most of what you're feeling right now, from anger to numbness to the odd flash of relief, is normal, and you don't need to decide anything today. I was made redundant myself in 2026, so this isn't theory.
 
-By [Matt Rutherford](https://mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
+By [Matt Rutherford](https://staging.mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
 
 ## The first 72 hours
 
@@ -797,7 +797,7 @@ Our first conversation is free: 30 minutes, online, and not a sales call. You te
 
 When you are ready to look forward, the Landing the next role track is redundancy coaching built for this, whether you were caught in a round of tech layoffs or a quiet restructure. Online, or in person in Dublin.
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/): Landing the next role
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Landing the next role
 
 Six sessions over twelve weeks.
 
@@ -805,9 +805,9 @@ Your story, your CV and LinkedIn, interviews and the offer, and a written 90 day
 
 €1,200 for the programme: €200 a session, or two payments of €600.
 
-[If your company is offering outplacement support, I can be that support.](https://mattrutherfordcoaching.com/for-organisations/)
+[If your company is offering outplacement support, I can be that support.](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
-[If you are looking by choice rather than after a layoff, there is a page for that.](https://mattrutherfordcoaching.com/next-role/)
+[If you are looking by choice rather than after a layoff, there is a page for that.](https://staging.mattrutherfordcoaching.com/next-role/)
 
 ## Questions people ask
 
@@ -833,7 +833,7 @@ Not always. If you know what you want and the market wants it, a good CV and you
 
 ### Can my employer pay for outplacement coaching?
 
-Often, yes. Some employers include outplacement support in a redundancy package, and others will fund it if you ask, ideally before you sign. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+Often, yes. Some employers include outplacement support in a redundancy package, and others will fund it if you ask, ideally before you sign. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 ### What if I don't want to go back to the same kind of job?
 
@@ -871,7 +871,7 @@ We agree the dates and begin.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/new-manager/
+URL: https://staging.mattrutherfordcoaching.com/new-manager/
 Title: New Manager Coaching, Dublin | Matt Rutherford Coaching
 
 Stepping up to manage
@@ -880,7 +880,7 @@ Stepping up to manage
 
 Being good at the work is why you got the job, and it is not what the job is now. The first year as a manager sets habits that last, so it is worth starting deliberately. Nobody is born knowing how to run a one-to-one.
 
-By [Matt Rutherford](https://mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
+By [Matt Rutherford](https://staging.mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
 
 ## Your first 90 days
 
@@ -936,7 +936,7 @@ Our first conversation is free: 30 minutes, online, and not a sales call. Tell m
 
 New manager coaching works best early. The Stepping up track is built around your team and your first year, online or in person in Dublin.
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/): Stepping up
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Stepping up
 
 Six 60 minute sessions over twelve weeks.
 
@@ -944,7 +944,7 @@ A transition map of your situation, a written 90 day plan, and messaging between
 
 €1,200 for the programme: €200 a session, or two payments of €600.
 
-[If your company funds coaching for new managers, this is the programme I offer them.](https://mattrutherfordcoaching.com/for-organisations/)
+[If your company funds coaching for new managers, this is the programme I offer them.](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
 ## Questions people ask
 
@@ -970,7 +970,7 @@ It can be, because the first year sets habits that last and many new managers ge
 
 ### Can my employer pay for this?
 
-Often, yes. Many organisations have a learning and development budget for new managers, and the price is the same whoever pays. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+Often, yes. Many organisations have a learning and development budget for new managers, and the price is the same whoever pays. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 ### What if I'm not sure I want to manage people at all?
 
@@ -1008,7 +1008,7 @@ We agree the dates and begin.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/new-role/
+URL: https://staging.mattrutherfordcoaching.com/new-role/
 Title: New Role? Coaching for the First 90 Days | Matt Rutherford
 
 Starting well
@@ -1017,7 +1017,7 @@ Starting well
 
 The first three months set how people see you for the next three years, and most people spend them trying to look busy. There is a better use of them. You don't have to prove yourself in week one. You have to understand the place.
 
-By [Matt Rutherford](https://mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
+By [Matt Rutherford](https://staging.mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
 
 ## Before you start
 
@@ -1075,7 +1075,7 @@ Our first conversation is free: 30 minutes, online, and not a sales call. Tell m
 
 The Starting well track is new role and promotion coaching for the first 90 days, whether you have been promoted, moved sideways or joined a new employer. Online, or in person in Dublin.
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/): Starting well
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Starting well
 
 Six 60 minute sessions over twelve weeks.
 
@@ -1083,7 +1083,7 @@ A transition map of your situation, a written 90 day plan, and messaging between
 
 €1,200 for the programme: €200 a session, or two payments of €600.
 
-[Some employers fund coaching for a promotion or a new senior hire.](https://mattrutherfordcoaching.com/for-organisations/)
+[Some employers fund coaching for a promotion or a new senior hire.](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
 ## Questions people ask
 
@@ -1113,7 +1113,7 @@ Just before, or in the first few weeks. Starting before lets us plan the first 9
 
 ### Can my employer pay?
 
-Many do, especially for a promotion or a senior hire, and the price is the same whoever pays. Ask your new manager or HR team, ideally before you start. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+Many do, especially for a promotion or a senior hire, and the price is the same whoever pays. Ask your new manager or HR team, ideally before you start. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 The [Values Finder](https://thevaluesfinder.com) is a 15 minute exercise if you want to be clear about what matters to you before you set your priorities.
 
@@ -1147,7 +1147,7 @@ We agree the dates and begin.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/leading-through-change/
+URL: https://staging.mattrutherfordcoaching.com/leading-through-change/
 Title: Leading Through Change: Coaching Leaders | Matt Rutherford
 
 Leading through change
@@ -1156,7 +1156,7 @@ Leading through change
 
 I spent years leading organisational change at Meta, most recently as Global Head of Change Management. I know what it is like to carry a reorganisation you did not design, to a team who did not ask for it. Leading through change is mostly about what you do between the announcements.
 
-By [Matt Rutherford](https://mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
+By [Matt Rutherford](https://staging.mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
 
 ## What people actually need from you
 
@@ -1220,7 +1220,7 @@ Our first conversation is free: 30 minutes, online, and not a sales call. Tell m
 
 For leaders carrying a change over months, I offer executive and leadership coaching, online and in person in Dublin, built around the change you are actually leading.
 
-### [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/)
+### [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
 
 Eight 90 minute sessions over six months.
 
@@ -1228,9 +1228,9 @@ Structured 360 feedback at the start from your manager, peers and team, a writte
 
 €3,000 for six months: eight sessions, or three payments of €1,000.
 
-If you want a standing thinking partner through a change rather than a programme, [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/) sessions can be booked singly or in blocks.
+If you want a standing thinking partner through a change rather than a programme, [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/) sessions can be booked singly or in blocks.
 
-Most leaders doing this work have it funded by their organisation. [Here is how that works.](https://mattrutherfordcoaching.com/for-organisations/)
+Most leaders doing this work have it funded by their organisation. [Here is how that works.](https://staging.mattrutherfordcoaching.com/for-organisations/)
 
 ## Questions people ask
 
@@ -1260,7 +1260,7 @@ The feedback is gathered for you, and we agree at the start what, if anything, i
 
 ### Can my employer pay for leadership coaching?
 
-Usually, yes. The price is the same whoever pays, and we start with a three-way conversation to agree the objectives. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+Usually, yes. The price is the same whoever pays, and we start with a three-way conversation to agree the objectives. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 The [Values Finder](https://thevaluesfinder.com) is a 15 minute exercise if you want to be clear about what matters to you while a lot around you is moving.
 
@@ -1294,7 +1294,7 @@ We agree the dates and begin.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/next-role/
+URL: https://staging.mattrutherfordcoaching.com/next-role/
 Title: Your Next Role: Career Coaching, Dublin | Matt Rutherford
 
 Landing the next role
@@ -1303,9 +1303,9 @@ Landing the next role
 
 Most people start with the job boards and end up with a CV that could be anyone's. The order that works is the other way round: what you want, then your story, then the search. A job search is a project. Most people run it like a lottery.
 
-By [Matt Rutherford](https://mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
+By [Matt Rutherford](https://staging.mattrutherfordcoaching.com/about/), Career and Leadership Coach · Updated 7 October 2026
 
-If you are here after a redundancy, start with [what to do if you have just been laid off](https://mattrutherfordcoaching.com/laid-off/).
+If you are here after a redundancy, start with [what to do if you have just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/).
 
 ## Before you look
 
@@ -1361,7 +1361,7 @@ Our first conversation is free: 30 minutes, online, and not a sales call. Tell m
 
 I coach professionals and senior people through this, online and in person in Dublin, including when the next move is a career change.
 
-### [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/): Landing the next role
+### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Landing the next role
 
 Six 60 minute sessions over twelve weeks.
 
@@ -1431,7 +1431,7 @@ We agree the dates and begin.
 
 ---
 
-URL: https://mattrutherfordcoaching.com/about/
+URL: https://staging.mattrutherfordcoaching.com/about/
 Title: About Matt Rutherford: Career and Leadership Coach, Dublin
 
 # Matt Rutherford
@@ -1484,15 +1484,15 @@ The people whose support, decisions or opinion will shape the move.
 
 People making progress in their careers, from experienced professionals to executives, in any sector, usually at one of five moments:
 
-- [Looking for the next role](https://mattrutherfordcoaching.com/next-role/)
+- [Looking for the next role](https://staging.mattrutherfordcoaching.com/next-role/)
 
-- [Managing people for the first time](https://mattrutherfordcoaching.com/new-manager/)
+- [Managing people for the first time](https://staging.mattrutherfordcoaching.com/new-manager/)
 
-- [Starting a new role or a promotion](https://mattrutherfordcoaching.com/new-role/)
+- [Starting a new role or a promotion](https://staging.mattrutherfordcoaching.com/new-role/)
 
-- [Leading through change](https://mattrutherfordcoaching.com/leading-through-change/)
+- [Leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/)
 
-- [Just been laid off](https://mattrutherfordcoaching.com/laid-off/)
+- [Just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/)
 
 ## Training and standards
 
@@ -1506,18 +1506,18 @@ I also write [Stuff that MattRs](https://www.mattrutherford.co.uk/newsletter/), 
 
 I live in Dublin. Sessions are online by default, and in person by arrangement. I work with clients in Ireland, the UK and Europe.
 
-[Book a free conversation](https://calendly.com/mattrutherfordcoaching/conversation) [See the packages](https://mattrutherfordcoaching.com/coaching/)
+[Book a free conversation](https://calendly.com/mattrutherfordcoaching/conversation) [See the packages](https://staging.mattrutherfordcoaching.com/coaching/)
 
 ---
 
-URL: https://mattrutherfordcoaching.com/faq/
+URL: https://staging.mattrutherfordcoaching.com/faq/
 Title: FAQ: Prices, Payment, Confidentiality | Matt Rutherford
 
 FAQ
 
 # Questions people ask
 
-If your question is not here, ask it in the first conversation, or [send me a message](https://mattrutherfordcoaching.com/#contact).
+If your question is not here, ask it in the first conversation, or [send me a message](https://staging.mattrutherfordcoaching.com/#contact).
 
 - [Getting started](#getting-started)
 
@@ -1539,15 +1539,15 @@ No. It is a conversation about your situation, and I will not push you to buy an
 
 ### Who do you work with?
 
-People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are [looking for the next role](https://mattrutherfordcoaching.com/next-role/), [stepping up to manage](https://mattrutherfordcoaching.com/new-manager/), [starting a new role](https://mattrutherfordcoaching.com/new-role/), [leading through change](https://mattrutherfordcoaching.com/leading-through-change/), or [having just been laid off](https://mattrutherfordcoaching.com/laid-off/).
+People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are [looking for the next role](https://staging.mattrutherfordcoaching.com/next-role/), [stepping up to manage](https://staging.mattrutherfordcoaching.com/new-manager/), [starting a new role](https://staging.mattrutherfordcoaching.com/new-role/), [leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/), or [having just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/).
 
 ### Do I need to be a leader already?
 
-No. Many of the people I work with are experienced professionals thinking about, or just starting, their first management role. [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/) is built for exactly that.
+No. Many of the people I work with are experienced professionals thinking about, or just starting, their first management role. [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/) is built for exactly that.
 
 ### How many sessions will I need?
 
-It depends on what you want to change. A single decision can often be worked through in one [Clarity Session](https://mattrutherfordcoaching.com/coaching/clarity-session/). A specific career move usually takes the six sessions of [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/), and changing how you lead takes the eight sessions over six months of [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/). We work out which fits in the first conversation.
+It depends on what you want to change. A single decision can often be worked through in one [Clarity Session](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/). A specific career move usually takes the six sessions of [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/), and changing how you lead takes the eight sessions over six months of [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/). We work out which fits in the first conversation.
 
 ### Are sessions online or in person?
 
@@ -1557,7 +1557,7 @@ Online by default, over Google Meet. In person by arrangement: in Dublin, or fur
 
 ### How much does career coaching cost?
 
-Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the [packages page](https://mattrutherfordcoaching.com/coaching/): €350 for a Clarity Session, €200 for a single session, €1,200 for The Next Move and €3,000 for The Leadership Engagement. Blocks of four or eight sessions are €720 and €1,360, and the price is the same whoever pays.
+Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the [packages page](https://staging.mattrutherfordcoaching.com/coaching/): €350 for a Clarity Session, €200 for a single session, €1,200 for The Next Move and €3,000 for The Leadership Engagement. Blocks of four or eight sessions are €720 and €1,360, and the price is the same whoever pays.
 
 ### How do I pay, and can I pay in instalments?
 
@@ -1567,13 +1567,13 @@ Yes to instalments: The Next Move can be paid in two payments of €600, and The
 
 ### Is there a discount for continuing after a programme?
 
-Yes. If you have completed The Next Move or The Leadership Engagement, you can continue with [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/) in blocks of four for €640 or eight for €1,280, which is €160 a session.
+Yes. If you have completed The Next Move or The Leadership Engagement, you can continue with [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/) in blocks of four for €640 or eight for €1,280, which is €160 a session.
 
 ### Can my employer pay, and how do I ask?
 
 Yes, and the price is the same whoever pays. Many employers have a learning and development budget, and some managers can approve coaching from a team budget. Ask your manager or your HR team. I can send you a short proposal to forward, with the objectives, the package and the price.
 
-When an employer pays, we start with a three-way conversation to agree objectives. There is more on the [For organisations](https://mattrutherfordcoaching.com/for-organisations/) page.
+When an employer pays, we start with a three-way conversation to agree objectives. There is more on the [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/) page.
 
 ### What is your cancellation and rescheduling policy?
 
@@ -1629,7 +1629,7 @@ Want something to bring? Try the [Values Finder](https://thevaluesfinder.com) be
 
 ---
 
-URL: https://mattrutherfordcoaching.com/for-organisations/
+URL: https://staging.mattrutherfordcoaching.com/for-organisations/
 Title: Coaching for Organisations | Matt Rutherford Coaching
 
 For organisations
@@ -1638,7 +1638,7 @@ For organisations
 
 For HR and learning and development teams sponsoring coaching, and for managers approving it from a team budget.
 
-[Request a proposal](https://mattrutherfordcoaching.com/?subject=Proposal%20request&situation=sponsor#contact)
+[Request a proposal](https://staging.mattrutherfordcoaching.com/?subject=Proposal%20request&situation=sponsor#contact)
 
 ## Who it suits
 
@@ -1658,15 +1658,15 @@ People leaving deserve good support. Individual outplacement coaching helps them
 
 ### New-manager coaching
 
-The Next Move for a manager in their first year: six sessions over twelve weeks, a transition map and a written 90 day plan. €1,200. [What a new manager can expect](https://mattrutherfordcoaching.com/new-manager/).
+The Next Move for a manager in their first year: six sessions over twelve weeks, a transition map and a written 90 day plan. €1,200. [What a new manager can expect](https://staging.mattrutherfordcoaching.com/new-manager/).
 
 ### Individual outplacement
 
-The Next Move for someone leaving: six sessions over twelve weeks on what comes next, from their story, CV and LinkedIn to interviews and the offer. €1,200. There is also [a page you can share with them](https://mattrutherfordcoaching.com/laid-off/).
+The Next Move for someone leaving: six sessions over twelve weeks on what comes next, from their story, CV and LinkedIn to interviews and the offer. €1,200. There is also [a page you can share with them](https://staging.mattrutherfordcoaching.com/laid-off/).
 
 ### Leadership coaching
 
-[The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/) for more senior people: six months, structured feedback at the start and a written mid-point review. €3,000. [More on leading through change](https://mattrutherfordcoaching.com/leading-through-change/).
+[The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/) for more senior people: six months, structured feedback at the start and a written mid-point review. €3,000. [More on leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/).
 
 ## Confidentiality, plainly
 
@@ -1676,7 +1676,7 @@ For The Leadership Engagement, I also write a mid-point review of progress again
 
 ## Cost and invoicing
 
-The same [published prices](https://mattrutherfordcoaching.com/coaching/) as for individuals: there is one price list, whoever pays. For more than one person, I will put together a single proposal.
+The same [published prices](https://staging.mattrutherfordcoaching.com/coaching/) as for individuals: there is one price list, whoever pays. For more than one person, I will put together a single proposal.
 
 I invoice the organisation directly, payable by bank transfer or card. If you need a purchase order number on the invoice, send it with the go-ahead and I will include it.
 
@@ -1720,13 +1720,13 @@ Within two weeks
 
 Coaching begins, with the first session within two weeks.
 
-[Request a proposal](https://mattrutherfordcoaching.com/?subject=Proposal%20request&situation=sponsor#contact)
+[Request a proposal](https://staging.mattrutherfordcoaching.com/?subject=Proposal%20request&situation=sponsor#contact)
 
 Prefer to talk it through first? [Book a free conversation](https://calendly.com/mattrutherfordcoaching/conversation).
 
 ---
 
-URL: https://mattrutherfordcoaching.com/privacy/
+URL: https://staging.mattrutherfordcoaching.com/privacy/
 Title: Privacy Statement | Matt Rutherford Coaching
 
 Privacy
@@ -1775,9 +1775,13 @@ I keep the sponsor's contact details, the objectives agreed in the three-way con
 
 The [Values Finder](https://thevaluesfinder.com) is a separate site with its own [privacy notice](https://thevaluesfinder.com/privacy.html). Your answers stay in your own browser. If you ask it to email your report, it is sent through the email service Resend and not kept afterwards. If you tick the box, it adds you to my newsletter. I only see your results if you choose to send them to me.
 
+### The Clarity Check
+
+[CONFIRM: draft wording for the Clarity Check] The Clarity Check runs in your browser. Anything you write in it stays there and is never sent to me. The answers you choose from the lists, and the result you are shown, are counted in my analytics with nothing that identifies you, so that I can improve the questions. If you go on to book a conversation, the booking link tells Calendly which result you saw.
+
 ### Website analytics
 
-This site uses Umami, a privacy-focused analytics tool that I host myself, on the same server as this site in Finland. It counts page views, which pages are visited, the referring site, browser, device type and country. It does not use cookies and does not build a profile of you.
+This site uses Umami, a privacy-focused analytics tool that I host myself, on the same server as this site in Finland. It counts page views, which pages are visited, the referring site, browser, device type and country, and a few events such as which answers are chosen in the Clarity Check. [CONFIRM: events wording] It does not use cookies and does not build a profile of you.
 
 ### Fonts and hosting
 

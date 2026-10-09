@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.meta.title }}</title>
     <meta name="description" content="{{ page.meta.description }}">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="{{ page.robots }}">
     <link rel="canonical" href="{{ page.canonical }}">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
@@ -27,8 +27,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css?v={{ assetVersion }}">
-    <script defer src="https://analytics.stff.me/script.js" data-website-id="3a83373e-0ff3-446c-867f-f787745cc92f" data-domains="mattrutherfordcoaching.com"></script>
+    <link rel="stylesheet" href="/styles.css?v={{ assetVersion }}">{{ page_css }}
+    <script defer src="https://analytics.stff.me/script.js" data-website-id="{{ analytics.websiteId }}" data-domains="{{ analytics.domains }}"></script>
     {{ jsonld }}
 </head>
 <body class="{{ page.bodyClass }}">
@@ -38,6 +38,6 @@
 {{ content }}
     </main>
 {{> footer }}
-    <script src="/site.js?v={{ assetVersion }}" defer></script>
+    <script src="/site.js?v={{ assetVersion }}" defer></script>{{ page_js }}
 </body>
 </html>

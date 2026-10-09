@@ -6,30 +6,30 @@ Prices are published and the same whoever pays, including when an employer funds
 
 ## Packages
 
-- [The Clarity Session](https://mattrutherfordcoaching.com/coaching/clarity-session/): One decision, one situation, worked through properly in a single sitting. €350 (opening offer). One 90 minute session and a 30 minute follow-up.
-- [The Next Move](https://mattrutherfordcoaching.com/coaching/the-next-move/): For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one. €1,200 (for the programme: €200 a session, or two payments of €600). Six 60 minute sessions over twelve weeks.
-- [The Leadership Engagement](https://mattrutherfordcoaching.com/coaching/leadership-engagement/): For experienced managers and senior leaders growing into a bigger role or leading through change. €3,000 (for six months: eight sessions, or three payments of €1,000). Eight 90 minute sessions over six months.
-- [Ongoing Partnership](https://mattrutherfordcoaching.com/coaching/ongoing-partnership/): For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme. €200 (per session). 60 minute sessions, booked singly or in blocks. Blocks of four for €720 or eight for €1,360. After a programme: blocks at €160 a session.
+- [The Clarity Session](https://staging.mattrutherfordcoaching.com/coaching/clarity-session/): One decision, one situation, worked through properly in a single sitting. €350 (opening offer). One 90 minute session and a 30 minute follow-up.
+- [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): For people making a specific career move: stepping up into management, landing the next role, or starting well in a new one. €1,200 (for the programme: €200 a session, or two payments of €600). Six 60 minute sessions over twelve weeks.
+- [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/): For experienced managers and senior leaders growing into a bigger role or leading through change. €3,000 (for six months: eight sessions, or three payments of €1,000). Eight 90 minute sessions over six months.
+- [Ongoing Partnership](https://staging.mattrutherfordcoaching.com/coaching/ongoing-partnership/): For people who want a standing thinking partner, or who want to start with a session or two before committing to a programme. €200 (per session). 60 minute sessions, booked singly or in blocks. Blocks of four for €720 or eight for €1,360. After a programme: blocks at €160 a session.
 
 ## Situations
 
-- [Just been laid off?](https://mattrutherfordcoaching.com/laid-off/): Just been laid off or made redundant? What to do in the first 72 hours and two weeks, what can wait, and a free conversation if it helps.
-- [New manager](https://mattrutherfordcoaching.com/new-manager/): First time manager? What to do in your first 90 days, what nobody tells you, where new managers come unstuck, and a free conversation if it helps.
-- [New role](https://mattrutherfordcoaching.com/new-role/): Starting a new job, a promotion or a new employer? How to use your first 90 days in a new role well, and a free conversation if it helps.
-- [Leading through change](https://mattrutherfordcoaching.com/leading-through-change/): Leading a team through a reorganisation or restructure? What people need from you, the order of things, looking after yourself, and a free conversation.
-- [Next role](https://mattrutherfordcoaching.com/next-role/): Looking for your next role? Career coaching for professionals: what you want, your story, the search and the offer, with a free conversation.
+- [Just been laid off?](https://staging.mattrutherfordcoaching.com/laid-off/): Just been laid off or made redundant? What to do in the first 72 hours and two weeks, what can wait, and a free conversation if it helps.
+- [New manager](https://staging.mattrutherfordcoaching.com/new-manager/): First time manager? What to do in your first 90 days, what nobody tells you, where new managers come unstuck, and a free conversation if it helps.
+- [New role](https://staging.mattrutherfordcoaching.com/new-role/): Starting a new job, a promotion or a new employer? How to use your first 90 days in a new role well, and a free conversation if it helps.
+- [Leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/): Leading a team through a reorganisation or restructure? What people need from you, the order of things, looking after yourself, and a free conversation.
+- [Next role](https://staging.mattrutherfordcoaching.com/next-role/): Looking for your next role? Career coaching for professionals: what you want, your story, the search and the offer, with a free conversation.
 
 ## More
 
-- [Home](https://mattrutherfordcoaching.com/): Stepping up to manage, leading through change or working out your next move? Career and leadership coaching to help you make the move well.
-- [About](https://mattrutherfordcoaching.com/about/): Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta. Now coaching in Dublin.
-- [FAQ](https://mattrutherfordcoaching.com/faq/): Answers on the free first conversation, who I work with, sessions online and in Dublin, payment and instalments, employer funding and confidentiality.
-- [For organisations](https://mattrutherfordcoaching.com/for-organisations/): One to one coaching paid for by your organisation: new-manager coaching, leadership coaching and individual outplacement support.
-- [Coaching](https://mattrutherfordcoaching.com/coaching/): Four career and leadership coaching packages with published prices, from a single Clarity Session to a six month Leadership Engagement.
+- [Home](https://staging.mattrutherfordcoaching.com/): Stepping up to manage, leading through change or working out your next move? Career and leadership coaching to help you make the move well.
+- [About](https://staging.mattrutherfordcoaching.com/about/): Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta. Now coaching in Dublin.
+- [FAQ](https://staging.mattrutherfordcoaching.com/faq/): Answers on the free first conversation, who I work with, sessions online and in Dublin, payment and instalments, employer funding and confidentiality.
+- [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/): One to one coaching paid for by your organisation: new-manager coaching, leadership coaching and individual outplacement support.
+- [Coaching](https://staging.mattrutherfordcoaching.com/coaching/): Four career and leadership coaching packages with published prices, from a single Clarity Session to a six month Leadership Engagement.
 
 ## Optional
 
-- [Privacy statement](https://mattrutherfordcoaching.com/privacy/): How Matt Rutherford Coaching collects, uses and protects your personal data under GDPR: what is collected, why, how long it is kept, and your rights.
-- [Full text of every page](https://mattrutherfordcoaching.com/llms-full.txt): the same pages as plain text, in one file.
+- [Privacy statement](https://staging.mattrutherfordcoaching.com/privacy/): How Matt Rutherford Coaching collects, uses and protects your personal data under GDPR: what is collected, why, how long it is kept, and your rights.
+- [Full text of every page](https://staging.mattrutherfordcoaching.com/llms-full.txt): the same pages as plain text, in one file.
 - [The Values Finder](https://thevaluesfinder.com): a free 15 minute exercise to work out what matters to you at work.
 - [Stuff that MattRs](https://www.mattrutherford.co.uk/newsletter/): Matt's weekly newsletter.

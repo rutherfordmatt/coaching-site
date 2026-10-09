@@ -1,0 +1,327 @@
+/*
+ * The Clarity Check page. Everything here is prefixed cc- and builds on the
+ * custom properties and classes in site.css, which this file does not change.
+ */
+
+/* ─── Landing: hero, tiles and start ─── */
+.cc-hero .page-hero-inner { padding-bottom: 4.5rem; }
+
+.cc-tiles-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+}
+
+.cc-tiles {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+.cc-tiles li { display: flex; }
+
+.cc-tile, .cc-option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+    min-height: 44px;
+    padding: 1.1rem 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.45;
+    text-align: left;
+    color: var(--text);
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+.cc-tile:hover, .cc-option:hover { border-color: var(--accent); }
+.cc-tile-label, .cc-option-label { font-weight: 500; }
+.cc-tile-blurb, .cc-option-blurb { font-size: 0.88rem; color: var(--text-muted); }
+
+.cc-start { margin-bottom: 2rem; }
+.cc-privacy-line {
+    max-width: 560px;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+.cc-privacy-line a, .cc-noscript a, .cc-cred a, .cc-quiet a, .cc-block a, .cc-also a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.cc-privacy-line a:hover, .cc-cred a:hover, .cc-quiet a:hover, .cc-block a:hover { color: var(--accent); }
+
+.cc-noscript {
+    max-width: 640px;
+    margin-bottom: 2rem;
+    padding: 1rem 1.2rem;
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+    color: var(--text);
+}
+
+.cc-cred {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+}
+
+/* ─── Landing: numbered items, parts, what it is not, closing ─── */
+.cc-numbered, .cc-parts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.cc-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.cc-numbered h3, .cc-parts h3 { margin-bottom: 0.8rem; }
+.cc-part-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+}
+
+.cc-not h2 { margin-bottom: 1.5rem; }
+.cc-not > p:not(.section-label) { max-width: 640px; margin-bottom: 2rem; }
+.cc-not-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 2rem;
+}
+.cc-not-list li {
+    padding-left: 1.4rem;
+    position: relative;
+    color: var(--text);
+}
+.cc-not-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 0.6rem;
+    height: 1.5px;
+    background: var(--accent);
+}
+
+.cc-closing { text-align: center; }
+.cc-closing h2 { margin-bottom: 1rem; }
+.cc-closing p { margin-bottom: 2rem; }
+
+/* ─── Question and result screens ─── */
+.cc-app {
+    padding-top: var(--nav-height);
+    background: var(--bg-alt);
+    min-height: 100vh;
+}
+.cc-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+}
+.cc-app :focus { outline: none; }
+.cc-app :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.cc-progress { margin-bottom: 2.5rem; }
+.cc-progress-text {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+}
+.cc-bar { height: 3px; background: var(--border); }
+.cc-bar span { display: block; height: 100%; background: var(--accent); transition: width 0.3s ease; }
+
+.cc-q {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    margin-bottom: 0.8rem;
+}
+.cc-helper { margin-bottom: 1.8rem; }
+.cc-q + .cc-options, .cc-q + .cc-text-label { margin-top: 1.8rem; }
+
+.cc-options { display: grid; gap: 0.75rem; }
+.cc-option[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--accent-light);
+}
+
+.cc-text-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+.cc-textarea {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    resize: vertical;
+}
+.cc-textarea:focus-visible { border-color: var(--accent); }
+.cc-text-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+}
+
+.cc-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 44px;
+    margin-top: 2rem;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.cc-back:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+.cc-app .btn { min-height: 44px; }
+
+/* ─── Result ─── */
+.cc-result .section-label { margin-bottom: 0.6rem; }
+.cc-situation-line { margin-bottom: 1.5rem; }
+.cc-headline {
+    font-size: clamp(2.1rem, 4.5vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+.cc-read { color: var(--text); margin-bottom: 1.2rem; }
+.cc-result strong { font-weight: 600; color: var(--text); }
+
+.cc-label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+}
+.cc-also {
+    margin: 2rem 0 0;
+    padding: 1.2rem 1.4rem;
+    border-left: 3px solid var(--accent);
+    background: var(--white);
+}
+.cc-also .cc-label { margin-bottom: 0.4rem; }
+.cc-block {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+}
+.cc-big-question {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--text);
+}
+.cc-exercise-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+}
+.cc-own dl { display: grid; gap: 0.4rem; }
+.cc-own dt { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+.cc-own dd {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+.cc-note { font-size: 0.9rem; font-style: italic; }
+
+.cc-invite {
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
+    background: var(--white);
+    border-top: 3px solid var(--accent);
+}
+.cc-invite h3 { margin-bottom: 1rem; }
+.cc-invite p { margin-bottom: 1rem; }
+.cc-invite-line { color: var(--text); }
+.cc-invite .btn { margin-top: 0.5rem; }
+
+.cc-quiet {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+.cc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 2rem;
+}
+.cc-actions .text-link { display: inline-block; padding: 0.8rem 0; line-height: 1.5; }
+.cc-restart { margin-top: 2.5rem; }
+
+/* ─── Phones ─── */
+@media (max-width: 960px) {
+    .cc-numbered, .cc-parts { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 600px) {
+    .cc-tiles { grid-template-columns: 1fr; }
+    .cc-not-list { grid-template-columns: 1fr; }
+    .cc-inner { padding: 2.5rem 1.25rem 4rem; }
+    .cc-invite { padding: 2rem 1.25rem; }
+    .cc-start .btn, .cc-closing .btn, .cc-invite .btn, .cc-text-actions .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cc-tile, .cc-option, .cc-bar span { transition: none; }
+}
+
+/* ─── Print: the result only ─── */
+@media print {
+    .cc-running .skip-link, .cc-running nav, .cc-running .site-footer,
+    .cc-running #cc-landing, .cc-actions, .cc-restart, .cc-invite .btn { display: none !important; }
+    .cc-app { padding-top: 0; background: none; min-height: 0; }
+    .cc-inner { max-width: none; padding: 0; }
+    .cc-also, .cc-invite { background: none; }
+    .cc-block, .cc-invite, .cc-also { break-inside: avoid; }
+    .cc-result a { text-decoration: none; color: inherit; }
+}
