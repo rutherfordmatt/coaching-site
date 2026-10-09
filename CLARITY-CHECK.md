@@ -18,7 +18,11 @@ the master copies of the content, scoring and tests are in Matt's
   and fails if they fail, so it needs Node.
 - `src/content/clarity-check.json`: all the wording. Copy a new version over
   it from the master folder when the wording changes; nothing else needs to
-  change.
+  change. One exception for now: the wording for keeping the result ("Copy my
+  result", "Share my result", "Copied", "Print or save as PDF", its help line
+  and the clipboard-blocked message) is in `KEEP` at the top of
+  `clarity-check.js`. Move it into the content file's labels the next time
+  that file is regenerated, and drop the old `labels.save`.
 
 Questions and results are always read through `questionFor()` and
 `buildResult()`, so the tile's group decides the wording, the options and the
@@ -29,18 +33,21 @@ possible results.
 Umami events, with ids only and never written answers: `cc-tile`,
 `cc-start`, `cc-answer`, `cc-text`, `cc-complete`, `cc-book`, `cc-package`,
 `cc-newsletter`, `cc-save` and `cc-restart`. `cc-start`, `cc-answer` and
-`cc-complete` also carry the group. The booking link carries
+`cc-complete` also carry the group, and `cc-save` carries `how`: `print`,
+`copy` or `share`. The booking link carries
 `utm_source=clarity-check` and `utm_content=<result>-<situation>` (plus
 `utm_medium=staging` on staging). The newsletter link on the result is
 `links.newsletterSignup`, which opens the sign-up box on mattrutherford.co.uk
-with `ref=clarity-check`.
+with `ref=clarity-check`. Those two links open in a new tab, so the result
+stays in view; links that stay on the site open in the same tab.
 
 ## Left out of version one
 
 No server, so: no emailed copy of the result, no newsletter tick box, no
 answers stored anywhere except as analytics events, and no written answers
-sent to Matt when someone books. "Save or print a copy" uses the browser's
-print dialog instead.
+sent to Matt when someone books. Visitors keep the result themselves: "Copy
+my result" copies it as plain text ("Share my result" opens the share sheet
+on phones and tablets), and "Print or save as PDF" opens the print dialog.
 
 The browser back button steps back one question within a visit. After a
 refresh there are no earlier steps in the browser's history, so it leaves the
