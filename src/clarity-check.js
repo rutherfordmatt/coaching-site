@@ -3,7 +3,9 @@
  *
  * The landing page is static HTML. This script swaps it for one question at a
  * time, then the result, which clarity-check-scoring.js (window.ClarityCheck)
- * builds from the answers. Wording comes from the JSON embedded in the page.
+ * builds from the answers. Wording comes from the JSON embedded in the page,
+ * always through ClarityCheck.questionFor() and buildResult(), which word
+ * questions and results for the visitor's group.
  *
  * Nothing leaves the browser except the Umami events in track(), and those
  * carry ids only. Written answers are kept in sessionStorage and on screen,
@@ -27,7 +29,7 @@
 
     // ─── State: which screen, the answers, and how far this run has got ───
 
-    const fresh = () => ({ step: LANDING, max: LANDING, via: null, answers: {}, texts: {} });
+    const fresh = () => ({ step: LANDING, max: LANDING, via: null, answers: {}, texts: {}, doneAt: null });
 
     function load() {
         try {
@@ -41,8 +43,23 @@
         try { sessionStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage blocked */ }
     }
 
+    const CC = window.ClarityCheck;
+    const questionFor = (id) => CC.questionFor(content, id, state.answers);
+    const group = () => CC.groupOf(content, state.answers) || 'none';
+
+    // A change of situation can change a question's options. Drop any saved
+    // answer that is no longer on offer, so nothing stale shows as selected.
+    function pruneAnswers() {
+        questions.forEach((q) => {
+            const chosen = state.answers[q.id];
+            if (q.type !== 'choice' || q.id === 'situation' || chosen == null) return;
+            if (!questionFor(q.id).options.some((o) => o.id === chosen)) delete state.answers[q.id];
+        });
+    }
+
     let state = load();
     state.step = Math.min(Math.max(state.step, LANDING), Math.min(state.max, RESULT));
+    pruneAnswers();
 
     // ─── Analytics: ids only, never wording, never written answers ───
 
@@ -150,16 +167,16 @@
             </div>`;
     }
 
-    function renderQuestion(q, i) {
+    function renderQuestion(base, i) {
+        const q = questionFor(base.id);
         const helper = q.helper ? `<p class="cc-helper" id="cc-helper">${esc(q.helper)}</p>` : '';
         let body;
 
         if (q.type === 'choice') {
-            const options = q.id === 'situation' ? content.situations : q.options;
             const chosen = state.answers[q.id];
-            body = `<div class="cc-options" role="group" aria-labelledby="cc-q">` + options.map((o) => `
+            body = `<div class="cc-options" role="group" aria-labelledby="cc-q">` + q.options.map((o) => `
                 <button type="button" class="cc-option" data-option="${esc(o.id)}" aria-pressed="${o.id === chosen}">
-                    <span class="cc-option-label">${esc(o.label)}</span>${o.tileBlurb ? `<span class="cc-option-blurb">${esc(o.tileBlurb)}</span>` : ''}
+                    <span class="cc-option-label">${esc(o.label)}</span>${o.blurb ? `<span class="cc-option-blurb">${esc(o.blurb)}</span>` : ''}
                 </button>`).join('') + `</div>`;
         } else {
             body = `
@@ -184,7 +201,8 @@
 
         app.querySelectorAll('[data-option]').forEach((btn) => btn.addEventListener('click', () => {
             state.answers[q.id] = btn.dataset.option;
-            track('cc-answer', { q: q.id, a: btn.dataset.option, n: i + 1 });
+            if (q.id === 'situation') pruneAnswers();
+            track('cc-answer', { q: q.id, a: btn.dataset.option, n: i + 1, group: group() });
             next(i);
         }));
 
@@ -209,8 +227,10 @@
             go(i + 1);
             return;
         }
-        const r = ClarityCheck.buildResult(content, state.answers);
+        const r = CC.buildResult(content, state.answers);
+        state.doneAt = new Date().toISOString();
         track('cc-complete', {
+            group: r.group || 'none',
             result: r.key,
             second: r.secondKey || 'none',
             situation: state.answers.situation || 'none',
@@ -220,14 +240,13 @@
     }
 
     function renderResult() {
-        const r = ClarityCheck.buildResult(content, state.answers);
-        const result = content.results[r.key];
+        const r = CC.buildResult(content, state.answers);
         const situation = r.situation ? r.situation.id : 'none';
         const pkg = data.packages[r.packageSlug];
 
         let exercise = rich(r.exercise);
-        Object.keys(result.exerciseLinks || {}).forEach((words) => {
-            const url = data.links[result.exerciseLinks[words]];
+        Object.keys(r.exerciseLinks || {}).forEach((words) => {
+            const url = data.links[r.exerciseLinks[words]];
             if (url) exercise = exercise.replace(esc(words), `<a href="${esc(url)}">${esc(words)}</a>`);
         });
 
@@ -253,7 +272,8 @@
             utm_medium: data.utmMedium,
             utm_content: r.key + '-' + situation,
         });
-        const newsletter = withParams(data.newsletter, { ref: 'clarity-check' });
+        const done = new Date(state.doneAt || Date.now());
+        const date = done.toLocaleDateString('en-IE', { day: 'numeric', month: 'long', year: 'numeric' });
         const pkgLink = `<a href="${esc(pkg.url)}" data-cc-package>${esc(pkg.name)}</a>`;
         const pageLink = r.situation
             ? ' ' + fill(content.situationLinkLine, 'pageLabel', `<a href="${esc(r.situation.page)}">${esc(r.situation.pageLabel)}</a>`)
@@ -262,10 +282,16 @@
         app.innerHTML = `
             <section class="cc-screen cc-result" aria-labelledby="cc-headline">
                 <div class="cc-inner">
-                    <p class="section-label">${esc(L.resultEyebrow)}</p>
-                    ${r.situation ? `<p class="cc-situation-line">${esc(r.situation.resultLine)}</p>` : ''}
-                    <h2 class="cc-headline" id="cc-headline">${rich(r.headline)}</h2>
-                    ${r.paragraphs.map((p) => `<p class="cc-read">${rich(p)}</p>`).join('')}
+                    <div class="cc-print-only cc-print-head" aria-hidden="true">
+                        <p class="cc-print-title">The Clarity Check</p>
+                        <p class="cc-print-meta">${esc(data.businessName)} &middot; ${esc(date)}</p>
+                    </div>
+                    <p class="section-label cc-eyebrow">${esc(L.resultEyebrow)}</p>
+                    <div class="cc-read-block">
+                        ${r.situation ? `<p class="cc-situation-line">${esc(r.situation.resultLine)}</p>` : ''}
+                        <h2 class="cc-headline" id="cc-headline">${rich(r.headline)}</h2>
+                        ${r.paragraphs.map((p) => `<p class="cc-read">${rich(p)}</p>`).join('')}
+                    </div>
                     ${also}
                     <div class="cc-block">
                         <h3 class="cc-label">${esc(L.question)}</h3>
@@ -277,6 +303,7 @@
                         <p>${exercise}</p>
                     </div>
                     ${ownWords}
+                    <p class="cc-print-only cc-print-close" aria-hidden="true">Bring this to a free conversation: mattrutherfordcoaching.com</p>
                     <div class="cc-invite">
                         <h3>${esc(content.invitation.heading)}</h3>
                         <p class="cc-invite-line">${esc(r.invitationLine)}</p>
@@ -286,7 +313,7 @@
                     <p class="cc-quiet">${fill(content.packageLine, 'package', pkgLink)}${pageLink}</p>
                     <div class="cc-actions">
                         <button type="button" class="btn btn-outline" data-cc-save>${esc(L.save)}</button>
-                        <a href="${esc(newsletter)}" class="text-link" data-cc-newsletter>${esc(L.newsletter)}<span aria-hidden="true"> &rarr;</span></a>
+                        <a href="${esc(data.newsletter)}" class="text-link" data-cc-newsletter>${esc(L.newsletter)}<span aria-hidden="true"> &rarr;</span></a>
                     </div>
                     <button type="button" class="cc-back cc-restart" data-cc-restart>${esc(L.restart)}</button>
                 </div>
@@ -312,16 +339,26 @@
     landing.querySelectorAll('[data-situation]').forEach((tile) => tile.addEventListener('click', () => {
         state.answers.situation = tile.dataset.situation;
         state.via = 'tile';
+        pruneAnswers();
         track('cc-tile', { situation: tile.dataset.situation });
-        track('cc-start', { via: 'tile' });
+        track('cc-start', { via: 'tile', group: group() });
         go(1);
     }));
 
     landing.querySelectorAll('[data-cc-start]').forEach((btn) => btn.addEventListener('click', () => {
         state.via = 'button';
-        track('cc-start', { via: 'button' });
+        track('cc-start', { via: 'button', group: group() });
         go(0);
     }));
+
+    // A saved PDF takes its file name from the page title.
+    let pageTitle = document.title;
+    window.addEventListener('beforeprint', () => {
+        if (state.step !== RESULT) return;
+        pageTitle = document.title;
+        document.title = 'Your Clarity Check result';
+    });
+    window.addEventListener('afterprint', () => { document.title = pageTitle; });
 
     history.replaceState({ cc: state.step, pos: 0 }, '');
     render(state.step !== LANDING);

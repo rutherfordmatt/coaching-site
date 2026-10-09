@@ -2,6 +2,7 @@
   "name": "The Clarity Check",
   "wording": "Result wording reviewed by Matt on 9 October 2026. He edits it in the document 'Clarity Check: result drafts'; this file is regenerated from there.",
   "emphasis": "Double asterisks around a word mean bold. Render them as <strong> and escape everything else.",
+  "groupsNote": "Each situation belongs to a group. The group limits which results are possible and picks the wording of some questions and results. Read questions and results through ClarityCheck.questionFor() and ClarityCheck.buildResult(), never straight from this file.",
   "parts": [
     "Where you are",
     "What is in the way",
@@ -23,6 +24,36 @@
     "leadership-engagement",
     "ongoing-partnership"
   ],
+  "groups": {
+    "arrived": {
+      "label": "Already in the new role",
+      "results": [
+        "transition",
+        "confidence",
+        "momentum",
+        "sounding"
+      ]
+    },
+    "deciding": {
+      "label": "Working out a move",
+      "results": [
+        "direction",
+        "decision",
+        "confidence",
+        "momentum",
+        "sounding"
+      ]
+    },
+    "leading": {
+      "label": "Leading through change",
+      "results": [
+        "decision",
+        "confidence",
+        "momentum",
+        "sounding"
+      ]
+    }
+  },
   "situations": [
     {
       "id": "manage",
@@ -31,9 +62,8 @@
       "resultLine": "You said you are managing people for the first time, or taking on a bigger team.",
       "page": "/new-manager/",
       "pageLabel": "the guide for new managers",
-      "scores": {
-        "transition": 1
-      }
+      "scores": {},
+      "group": "arrived"
     },
     {
       "id": "newrole",
@@ -42,9 +72,8 @@
       "resultLine": "You said you have just been promoted or started a new role.",
       "page": "/new-role/",
       "pageLabel": "the guide to starting a new role",
-      "scores": {
-        "transition": 1
-      }
+      "scores": {},
+      "group": "arrived"
     },
     {
       "id": "next",
@@ -53,9 +82,8 @@
       "resultLine": "You said you want your career to move forward and are not sure yet what the next step is.",
       "page": "/next-role/",
       "pageLabel": "the guide to landing the next role",
-      "scores": {
-        "direction": 1
-      }
+      "scores": {},
+      "group": "deciding"
     },
     {
       "id": "change",
@@ -64,9 +92,8 @@
       "resultLine": "You said you are leading people through change, or have a big decision to make.",
       "page": "/leading-through-change/",
       "pageLabel": "the guide to leading through change",
-      "scores": {
-        "sounding": 1
-      }
+      "scores": {},
+      "group": "leading"
     },
     {
       "id": "leaving",
@@ -75,9 +102,8 @@
       "resultLine": "You said you have been laid off, or are ready to leave, and are deciding what comes next.",
       "page": "/laid-off/",
       "pageLabel": "the guide for people who have been laid off",
-      "scores": {
-        "direction": 1
-      }
+      "scores": {},
+      "group": "deciding"
     }
   ],
   "questions": [
@@ -161,6 +187,55 @@
             "direction": 2
           }
         }
+      ],
+      "variants": [
+        {
+          "groups": [
+            "arrived",
+            "leading"
+          ],
+          "prompt": "If someone asked what you are trying to achieve in this role, how clearly could you answer?",
+          "options": [
+            {
+              "id": "sentence",
+              "label": "In one sentence",
+              "scores": {
+                "confidence": 1,
+                "momentum": 1
+              }
+            },
+            {
+              "id": "rough",
+              "label": "I have a rough idea",
+              "scores": {}
+            },
+            {
+              "id": "avoid",
+              "label": "I know what I want to avoid",
+              "scores": {
+                "confidence": 1
+              },
+              "scoresByGroup": {
+                "leading": {
+                  "decision": 1
+                }
+              }
+            },
+            {
+              "id": "cannot",
+              "label": "I could not answer yet",
+              "scores": {
+                "transition": 2
+              },
+              "scoresByGroup": {
+                "leading": {
+                  "decision": 1,
+                  "sounding": 1
+                }
+              }
+            }
+          ]
+        }
       ]
     },
     {
@@ -195,6 +270,9 @@
           "scores": {
             "decision": 1,
             "direction": 1
+          },
+          "scoresByGroup": {
+            "arrived": {}
           }
         }
       ]
@@ -225,6 +303,11 @@
           "label": "Being pulled in two directions",
           "scores": {
             "decision": 2
+          },
+          "scoresByGroup": {
+            "arrived": {
+              "transition": 2
+            }
           }
         },
         {
@@ -233,6 +316,15 @@
           "scores": {
             "momentum": 2
           }
+        }
+      ],
+      "variants": [
+        {
+          "groups": [
+            "arrived",
+            "leading"
+          ],
+          "prompt": "When you think about the months ahead in this role, what do you notice first?"
         }
       ]
     },
@@ -268,6 +360,16 @@
           "label": "I do not know where to begin",
           "scores": {
             "direction": 2
+          },
+          "scoresByGroup": {
+            "arrived": {
+              "transition": 1,
+              "sounding": 1
+            },
+            "leading": {
+              "decision": 1,
+              "sounding": 1
+            }
           }
         }
       ]
@@ -325,6 +427,11 @@
           "label": "Some of it",
           "scores": {
             "transition": 1
+          },
+          "scoresByGroup": {
+            "leading": {
+              "confidence": 1
+            }
           }
         },
         {
@@ -333,6 +440,12 @@
           "scores": {
             "transition": 1,
             "confidence": 1
+          },
+          "scoresByGroup": {
+            "leading": {
+              "confidence": 1,
+              "sounding": 1
+            }
           }
         },
         {
@@ -340,7 +453,48 @@
           "label": "It feels like starting again",
           "scores": {
             "transition": 2
+          },
+          "scoresByGroup": {
+            "leading": {
+              "confidence": 2
+            }
           }
+        }
+      ],
+      "variants": [
+        {
+          "groups": [
+            "deciding"
+          ],
+          "prompt": "How much of what you are good at did your most recent role use?",
+          "options": [
+            {
+              "id": "most",
+              "label": "Most of it",
+              "scores": {}
+            },
+            {
+              "id": "some",
+              "label": "Some of it",
+              "scores": {
+                "direction": 1
+              }
+            },
+            {
+              "id": "little",
+              "label": "Very little",
+              "scores": {
+                "direction": 2
+              }
+            },
+            {
+              "id": "unsure",
+              "label": "I am no longer sure what I am good at",
+              "scores": {
+                "confidence": 2
+              }
+            }
+          ]
         }
       ]
     },
@@ -356,14 +510,21 @@
           "label": "I do not have a clear picture of what I want",
           "scores": {
             "direction": 3
-          }
+          },
+          "groups": [
+            "deciding"
+          ]
         },
         {
           "id": "decision",
           "label": "I cannot choose between the options",
           "scores": {
             "decision": 3
-          }
+          },
+          "groups": [
+            "deciding",
+            "leading"
+          ]
         },
         {
           "id": "confidence",
@@ -377,7 +538,10 @@
           "label": "The new role asks for things I have not done before",
           "scores": {
             "transition": 3
-          }
+          },
+          "groups": [
+            "arrived"
+          ]
         },
         {
           "id": "momentum",
@@ -489,7 +653,20 @@
       "package": "the-next-move",
       "packageBySituation": {
         "change": "leadership-engagement"
-      }
+      },
+      "variants": [
+        {
+          "groups": [
+            "arrived",
+            "leading"
+          ],
+          "headline": "You have the role. You are not yet backing yourself in it.",
+          "paragraphs": [
+            "Your answers suggest the role itself is not the problem. You were chosen for it. What wobbles is your own account of why you are the right person, and an inner critic shows up when you have to describe your value.",
+            "This is very common in high performers who have been good at their job for a long time and are suddenly new at something. It is a storytelling challenge far more often than a skills gap."
+          ]
+        }
+      ]
     },
     "transition": {
       "name": "Transition",
@@ -502,10 +679,7 @@
       "exerciseTitle": "Stop, keep, start",
       "exercise": "Draw three columns: stop, keep and start. List what you did every week in your last role and sort each item into stop or keep. Under start, add three things the new role needs that the old one never asked of you. This is your growth plan, and it will help you focus.",
       "alsoInTheMix": "Some of this is also the plain shock of a job that works differently.",
-      "package": "the-next-move",
-      "packageBySituation": {
-        "change": "leadership-engagement"
-      }
+      "package": "the-next-move"
     },
     "momentum": {
       "name": "Momentum",

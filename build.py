@@ -288,6 +288,7 @@ def h_clarity_tiles(ctx, _):
                     <li><button type="button" class="cc-tile" data-situation="{esc(s['id'])}">
                         <span class="cc-tile-label">{esc(s['label'])}</span>
                         <span class="cc-tile-blurb">{esc(s['tileBlurb'])}</span>
+                        <span class="cc-tile-arrow" aria-hidden="true">&rarr;</span>
                     </button></li>""" for s in CLARITY["situations"])
 
 
@@ -304,7 +305,8 @@ def h_clarity_data(ctx, _):
         "packages": {p["slug"]: {"name": p["name"], "url": p["url"]} for p in PACKAGES},
         "links": links,
         "booking": ctx["book"]["conversation"],
-        "newsletter": CONFIG["links"]["newsletter"],
+        "newsletter": CONFIG["links"]["newsletterSignup"],
+        "businessName": CONFIG["businessName"],
         "utmMedium": CONFIG.get("utmMedium", ""),
     }
     body = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
