@@ -14,14 +14,19 @@
     margin-bottom: 1.2rem;
 }
 
+/* Four tiles: one row of four on a wide screen, two rows of two below
+   that. Never three and one. */
 .cc-tiles {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 .cc-tiles li { display: flex; }
+@media (min-width: 900px) {
+    .cc-tiles { grid-template-columns: repeat(4, 1fr); }
+}
 
 .cc-tile, .cc-option {
     display: flex;
@@ -237,13 +242,34 @@
     line-height: 1.3;
     color: var(--text);
 }
+/* The one thing the visitor can act on, so it gets a panel of its own.
+   The title scales like the question but always a step below it. */
+.cc-exercise {
+    margin-top: 3rem;
+    padding: 2rem 2.2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+}
 .cc-exercise-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
     font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 0.6rem;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.8rem;
 }
+.cc-exercise-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+.cc-exercise a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.cc-exercise a:hover { color: var(--accent); }
 .cc-own dl { display: grid; gap: 0.4rem; }
 .cc-own dt { font-size: 0.85rem; font-weight: 500; color: var(--text); }
 .cc-own dd {
@@ -285,7 +311,18 @@
     .cc-numbered { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 600px) {
-    .cc-tiles { grid-template-columns: 1fr; }
+    .cc-tile { padding: 1rem 1rem 2.4rem; }
+    .cc-tile-arrow { right: 1rem; }
+    .cc-exercise { padding: 1.5rem 1.25rem; }
+    /* Tighter on phones so a question and its answers fit on one screen.
+       Answers stay at least 44px tall. */
+    .cc-app .cc-inner { padding-top: 1.75rem; }
+    .cc-progress { margin-bottom: 1.5rem; }
+    .cc-q { margin-bottom: 0.6rem; }
+    .cc-helper { margin-bottom: 1.2rem; }
+    .cc-q + .cc-options, .cc-q + .cc-text-label { margin-top: 1.2rem; }
+    .cc-options { gap: 0.55rem; }
+    .cc-option { padding: 0.75rem 1rem; }
     .cc-inner { padding: 2.5rem 1.25rem 4rem; }
     .cc-invite { padding: 2rem 1.25rem; }
     .cc-closing .btn, .cc-invite .btn, .cc-text-actions .btn { width: 100%; }
@@ -326,13 +363,15 @@
     .cc-also { margin-top: 6mm; padding: 0 0 0 4mm; background: none; border-left: 1pt solid #999; }
     .cc-block { margin-top: 7mm; padding-top: 0; border-top: none; }
     .cc-label { font-size: 8pt; color: #555; margin-bottom: 2mm; }
-    .cc-big-question { font-size: 14pt; padding: 3mm 4mm; border: 0.75pt solid #999; }
-    .cc-exercise-title { font-size: 13pt; margin-bottom: 1.5mm; }
+    .cc-big-question { font-size: 14pt; padding: 3mm 4mm; border: 1pt solid #888; }
+    .cc-exercise { margin-top: 7mm; padding: 4mm 5mm; background: none; border: 0.5pt solid #aaa; border-radius: 0; }
+    .cc-exercise-title { font-size: 13pt; margin-bottom: 1.5mm; color: #000; }
+    .cc-exercise-text { font-size: 11.5pt; line-height: 1.5; }
     .cc-own dl { gap: 1mm; }
     .cc-own dd { margin-bottom: 3mm; }
     .cc-note { font-size: 10pt; }
     .cc-print-close { margin-top: 9mm; padding-top: 4mm; border-top: 0.5pt solid #999; font-size: 10.5pt; color: #000; }
 
-    .cc-print-head, .cc-read-block, .cc-also, .cc-block, .cc-print-close { break-inside: avoid; }
+    .cc-print-head, .cc-read-block, .cc-also, .cc-block, .cc-exercise, .cc-print-close { break-inside: avoid; }
     .cc-label, .cc-exercise-title, .cc-headline { break-after: avoid; }
 }

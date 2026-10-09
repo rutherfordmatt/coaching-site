@@ -40,9 +40,9 @@ test("there are twelve questions: ten choice, two written", () => {
     assert.equal(content.questions.filter((q) => q.type === "text").length, 2);
 });
 
-test("every situation belongs to a group", () => {
+test("there are four situations and each belongs to a group", () => {
     const groups = Object.fromEntries(content.situations.map((s) => [s.id, s.group]));
-    assert.deepEqual(groups, { manage: "arrived", newrole: "arrived", next: "deciding", change: "leading", leaving: "deciding" });
+    assert.deepEqual(groups, { manage: "arrived", newrole: "arrived", next: "deciding", change: "leading" });
 });
 
 test("before a situation is chosen, nothing is ruled out", () => {
@@ -68,7 +68,7 @@ test("someone already in a new role is never told they lack a direction or canno
 });
 
 test("someone still deciding is never told they have already made the move", () => {
-    ["next", "leaving"].forEach((sid) => {
+    ["next"].forEach((sid) => {
         everyAnswerSet(sid, (a) => {
             const s = CC.score(content, a);
             assert.notEqual(s.top, "transition");
@@ -111,13 +111,30 @@ test("questions are worded for the group", () => {
 
 test("the situation question carries the line shown under each tile", () => {
     const q = CC.questionFor(content, "situation", {});
-    assert.equal(q.options.length, 5);
+    assert.equal(q.options.length, 4);
     q.options.forEach((o) => {
         const s = content.situations.find((x) => x.id === o.id);
         assert.equal(o.label, s.label);
         assert.equal(o.blurb, s.tileBlurb);
         assert.ok(o.blurb.length > 10);
     });
+});
+
+test("question 5 gives every group five answers that each point somewhere different", () => {
+    ["newrole", "next", "change"].forEach((sid) => {
+        const q = CC.questionFor(content, "feeling", { situation: sid });
+        assert.equal(q.options.length, 5, sid);
+        const targets = q.options.map((o) => Object.keys(o.scores).join("+"));
+        assert.equal(targets.filter((t) => t === "").length, 1, sid + " should have one answer that counts for nothing");
+        assert.equal(new Set(targets).size, 5, sid + " has two answers pointing the same way: " + targets.join(", "));
+        const allowed = content.groups[content.situations.find((s) => s.id === sid).group].results;
+        targets.filter(Boolean).forEach((t) => assert.ok(allowed.includes(t), sid + " is offered an answer for " + t));
+    });
+    const labels = (sid) => CC.questionFor(content, "feeling", { situation: sid }).options.map((o) => o.label);
+    assert.ok(labels("newrole").includes("Doubt about whether I belong here"));
+    assert.ok(labels("newrole").includes("How different the work is from what I was good at"));
+    assert.ok(!labels("change").includes("How different the work is from what I was good at"));
+    assert.ok(labels("next").includes("A blank. I cannot picture it yet"));
 });
 
 test("question 9 only offers what a group can act on", () => {
@@ -145,19 +162,28 @@ test("the Confidence result is worded for someone who already has the role", () 
 });
 
 test("a tie goes to the result named by the tie-break question", () => {
-    // Decision gets 3 from two other questions; Momentum gets 3 from question 9 alone.
-    const s = CC.score(content, { situation: "next", clear: "options", howlong: "months", harder: "momentum" });
-    assert.equal(s.totals.decision, 3);
-    assert.equal(s.totals.momentum, 3);
+    // Decision gets 5 from three other questions; Momentum gets 5 from question 9 and one other.
+    const s = CC.score(content, { situation: "next", clear: "options", feeling: "torn", time: "loop", howlong: "year", harder: "momentum" });
+    assert.equal(s.totals.decision, 5);
+    assert.equal(s.totals.momentum, 5);
     assert.equal(s.top, "momentum");
     assert.equal(s.second, "decision");
 });
 
-test("a runner-up below the threshold is not reported", () => {
-    const s = CC.score(content, { situation: "next", harder: "direction", feeling: "doubt" });
-    assert.equal(s.top, "direction");
-    assert.equal(s.totals.confidence, 2);
-    assert.equal(s.second, null);
+test("the runner-up is only mentioned when it scores four or more", () => {
+    assert.equal(content.secondThreshold, 4);
+    const two = CC.score(content, { situation: "next", harder: "direction", feeling: "doubt" });
+    assert.equal(two.top, "direction");
+    assert.equal(two.totals.confidence, 2);
+    assert.equal(two.second, null);
+    const three = CC.score(content, { situation: "next", harder: "direction", feeling: "doubt", value: "depends" });
+    assert.equal(three.totals.confidence, 3);
+    assert.equal(three.second, null);
+    const four = CC.score(content, { situation: "next", harder: "direction", clear: "cannot", feeling: "doubt", value: "undersell" });
+    assert.equal(four.top, "direction");
+    assert.equal(four.totals.direction, 5);
+    assert.equal(four.totals.confidence, 4);
+    assert.equal(four.second, "confidence");
 });
 
 test("the situation sets the line and the link on the result", () => {
@@ -174,7 +200,7 @@ test("each result points at the right package", () => {
     assert.equal(pkg({ situation: "change", harder: "decision" }), "clarity-session");
     assert.equal(pkg({ situation: "newrole", harder: "transition" }), "the-next-move");
     assert.equal(pkg({ situation: "next", harder: "direction" }), "the-next-move");
-    assert.equal(pkg({ situation: "leaving", harder: "momentum" }), "ongoing-partnership");
+    assert.equal(pkg({ situation: "next", harder: "momentum" }), "ongoing-partnership");
 });
 
 test("the timing answer chooses the first line of the invitation and nothing else", () => {

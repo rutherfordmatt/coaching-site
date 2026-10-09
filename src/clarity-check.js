@@ -59,7 +59,14 @@
 
     let state = load();
     state.step = Math.min(Math.max(state.step, LANDING), Math.min(state.max, RESULT));
+    // A situation saved by an earlier build that no longer exists counts as
+    // none chosen. Anyone past question 1 goes back to it to choose again.
+    if (state.answers.situation != null && !content.situations.some((s) => s.id === state.answers.situation)) {
+        delete state.answers.situation;
+        if (state.step > 0) state.step = 0;
+    }
     pruneAnswers();
+    save();
 
     // ─── Analytics: ids only, never wording, never written answers ───
 
@@ -297,10 +304,10 @@
                         <h3 class="cc-label">${esc(L.question)}</h3>
                         <p class="cc-big-question">${rich(r.question)}</p>
                     </div>
-                    <div class="cc-block">
+                    <div class="cc-exercise">
                         <h3 class="cc-label">${esc(L.exercise)}</h3>
                         <h4 class="cc-exercise-title">${rich(r.exerciseTitle)}</h4>
-                        <p>${exercise}</p>
+                        <p class="cc-exercise-text">${exercise}</p>
                     </div>
                     ${ownWords}
                     <p class="cc-print-only cc-print-close" aria-hidden="true">Bring this to a free conversation: mattrutherfordcoaching.com</p>

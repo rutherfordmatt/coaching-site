@@ -17,7 +17,7 @@
     "sounding"
   ],
   "tieBreakQuestion": "harder",
-  "secondThreshold": 3,
+  "secondThreshold": 4,
   "packages": [
     "clarity-session",
     "the-next-move",
@@ -77,9 +77,9 @@
     },
     {
       "id": "next",
-      "label": "Working out the next step",
-      "tileBlurb": "You want to move forward and are not sure where.",
-      "resultLine": "You said you want your career to move forward and are not sure yet what the next step is.",
+      "label": "Working out what comes next",
+      "tileBlurb": "A step up, a change of direction, or a change you did not choose.",
+      "resultLine": "You said you are working out what comes next.",
       "page": "/next-role/",
       "pageLabel": "the guide to landing the next role",
       "scores": {},
@@ -94,16 +94,6 @@
       "pageLabel": "the guide to leading through change",
       "scores": {},
       "group": "leading"
-    },
-    {
-      "id": "leaving",
-      "label": "Deciding what comes next",
-      "tileBlurb": "Laid off, or ready to leave.",
-      "resultLine": "You said you have been laid off, or are ready to leave, and are deciding what comes next.",
-      "page": "/laid-off/",
-      "pageLabel": "the guide for people who have been laid off",
-      "scores": {},
-      "group": "deciding"
     }
   ],
   "questions": [
@@ -286,10 +276,8 @@
       "options": [
         {
           "id": "energy",
-          "label": "Energy. I want a plan",
-          "scores": {
-            "momentum": 1
-          }
+          "label": "Energy. I want to get going",
+          "scores": {}
         },
         {
           "id": "doubt",
@@ -303,11 +291,6 @@
           "label": "Being pulled in two directions",
           "scores": {
             "decision": 2
-          },
-          "scoresByGroup": {
-            "arrived": {
-              "transition": 2
-            }
           }
         },
         {
@@ -315,6 +298,13 @@
           "label": "Tiredness before I have begun",
           "scores": {
             "momentum": 2
+          }
+        },
+        {
+          "id": "blank",
+          "label": "A blank. I cannot picture it yet",
+          "scores": {
+            "direction": 2
           }
         }
       ],
@@ -324,7 +314,55 @@
             "arrived",
             "leading"
           ],
-          "prompt": "When you think about the months ahead in this role, what do you notice first?"
+          "prompt": "When you think about the months ahead in this role, what do you notice first?",
+          "options": [
+            {
+              "id": "energy",
+              "label": "Energy. I want to get going",
+              "scores": {}
+            },
+            {
+              "id": "belong",
+              "label": "Doubt about whether I belong here",
+              "scores": {
+                "confidence": 2
+              }
+            },
+            {
+              "id": "different",
+              "label": "How different the work is from what I was good at",
+              "scores": {
+                "transition": 2
+              },
+              "groups": [
+                "arrived"
+              ]
+            },
+            {
+              "id": "torn",
+              "label": "Being pulled in two directions",
+              "scores": {
+                "decision": 2
+              },
+              "groups": [
+                "leading"
+              ]
+            },
+            {
+              "id": "load",
+              "label": "How much there is to do",
+              "scores": {
+                "momentum": 2
+              }
+            },
+            {
+              "id": "alone",
+              "label": "Not knowing who to turn to",
+              "scores": {
+                "sounding": 2
+              }
+            }
+          ]
         }
       ]
     },
@@ -476,9 +514,7 @@
             {
               "id": "some",
               "label": "Some of it",
-              "scores": {
-                "direction": 1
-              }
+              "scores": {}
             },
             {
               "id": "little",
@@ -572,7 +608,7 @@
       "part": 2,
       "type": "text",
       "optional": true,
-      "prompt": "What is the decision or conversation you keep putting off?",
+      "prompt": "What decision or conversation do you keep putting off?",
       "helper": "Optional. It stays in your browser and appears on your result."
     },
     {

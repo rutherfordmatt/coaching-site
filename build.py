@@ -283,7 +283,7 @@ def h_photo(ctx, args):
 
 
 def h_clarity_tiles(ctx, _):
-    """The five situation tiles on the Clarity Check landing page."""
+    """The situation tiles on the Clarity Check landing page."""
     return "".join(f"""
                     <li><button type="button" class="cc-tile" data-situation="{esc(s['id'])}">
                         <span class="cc-tile-label">{esc(s['label'])}</span>

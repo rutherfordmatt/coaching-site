@@ -46,6 +46,10 @@ The browser back button steps back one question within a visit. After a
 refresh there are no earlier steps in the browser's history, so it leaves the
 page; the on-page Back button still works.
 
+Every answer button is at least 44px tall. On the smallest phones (an iPhone
+SE in Safari, or a 360 by 640 Android with the browser bars showing), the
+five answers to question 5 need a short scroll to see the last one.
+
 The printed copy fits one A4 page in Chrome for every result, with or without
 written answers. Safari, phones and US Letter paper may lay it out a little
 differently.
