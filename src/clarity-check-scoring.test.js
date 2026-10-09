@@ -112,6 +112,8 @@ test("questions are worded for the group", () => {
 test("the situation question carries the line shown under each tile", () => {
     const q = CC.questionFor(content, "situation", {});
     assert.equal(q.options.length, 4);
+    // Shown as a career sequence: before the move, just after it, first team, leading at scale.
+    assert.deepEqual(q.options.map((o) => o.id), ["next", "newrole", "manage", "change"]);
     q.options.forEach((o) => {
         const s = content.situations.find((x) => x.id === o.id);
         assert.equal(o.label, s.label);
@@ -135,6 +137,10 @@ test("question 5 gives every group five answers that each point somewhere differ
     assert.ok(labels("newrole").includes("How different the work is from what I was good at"));
     assert.ok(!labels("change").includes("How different the work is from what I was good at"));
     assert.ok(labels("next").includes("A blank. I cannot picture it yet"));
+    // No wording of the question sets energy against tiredness: that was one scale asked twice.
+    ["newrole", "next", "change"].forEach((sid) => {
+        assert.ok(!labels(sid).some((l) => /tired/i.test(l)), sid + " still offers a tiredness answer");
+    });
 });
 
 test("question 9 only offers what a group can act on", () => {

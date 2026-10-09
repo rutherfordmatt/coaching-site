@@ -26,6 +26,23 @@
     const LANDING = -1;
     const RESULT = questions.length;
     const KEY = 'clarity-check';
+    const CLOSE = 'Bring this to a free conversation: mattrutherfordcoaching.com';
+
+    // Wording for keeping the result. It belongs in the content file's
+    // labels and moves there the next time that file is regenerated.
+    const KEEP = {
+        copy: 'Copy my result',
+        share: 'Share my result',
+        copied: 'Copied',
+        copyBlocked: 'Copying is blocked in this browser. Use "Print or save as PDF" to keep your result.',
+        print: 'Print or save as PDF',
+        printHelp: 'To keep a PDF, choose "Save as PDF" in the print window.',
+        newTab: ' (opens in a new tab)',
+    };
+
+    // The share sheet exists on some laptops too, so it is only offered
+    // where touch is the main input: phones and tablets.
+    const canShare = typeof navigator.share === 'function' && window.matchMedia('(pointer: coarse)').matches;
 
     // ─── State: which screen, the answers, and how far this run has got ───
 
@@ -124,6 +141,9 @@
     function rich(s) {
         return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     }
+
+    // The ** markers come out for plain text.
+    const plain = (s) => String(s).replace(/\*\*(.+?)\*\*/g, '$1');
 
     function fill(template, key, html) {
         return esc(template).replace('{' + key + '}', html);
@@ -246,6 +266,45 @@
         go(RESULT);
     }
 
+    // The result as plain text, for the clipboard or the share sheet.
+    function resultText(r, date) {
+        const ow = content.ownWords;
+        const parts = [`The Clarity Check\n${data.businessName}, ${date}`];
+        if (r.situation) parts.push(r.situation.resultLine);
+        parts.push(plain(r.headline), ...r.paragraphs.map(plain));
+        if (r.alsoInTheMix) parts.push(`${L.alsoInTheMix}: ${plain(r.alsoInTheMix)}`);
+        parts.push(`${L.question}\n${plain(r.question)}`);
+        parts.push(`${L.exercise}: ${plain(r.exerciseTitle)}\n${plain(r.exercise)}`);
+        const own = [['outcome', ow.outcomeLabel], ['avoiding', ow.avoidingLabel]]
+            .filter(([id]) => state.texts[id])
+            .map(([id, label]) => `${label}: ${state.texts[id]}`);
+        if (own.length) parts.push([ow.heading, ...own].join('\n'));
+        parts.push(CLOSE);
+        return parts.join('\n\n') + '\n';
+    }
+
+    async function copyText(text) {
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+        } catch (e) { /* blocked: try the older way */ }
+        try {
+            const area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.cssText = 'position: fixed; top: 0; left: -9999px; opacity: 0;';
+            document.body.appendChild(area);
+            area.select();
+            const done = document.execCommand('copy');
+            area.remove();
+            return done;
+        } catch (e) {
+            return false;
+        }
+    }
+
     function renderResult() {
         const r = CC.buildResult(content, state.answers);
         const situation = r.situation ? r.situation.id : 'none';
@@ -310,17 +369,22 @@
                         <p class="cc-exercise-text">${exercise}</p>
                     </div>
                     ${ownWords}
-                    <p class="cc-print-only cc-print-close" aria-hidden="true">Bring this to a free conversation: mattrutherfordcoaching.com</p>
+                    <p class="cc-print-only cc-print-close" aria-hidden="true">${esc(CLOSE)}</p>
                     <div class="cc-invite">
                         <h3>${esc(content.invitation.heading)}</h3>
                         <p class="cc-invite-line">${esc(r.invitationLine)}</p>
                         <p>${esc(content.invitation.body)}</p>
-                        <a href="${esc(booking)}" class="btn btn-primary" data-cc-book>${esc(content.invitation.button)}</a>
+                        <a href="${esc(booking)}" class="btn btn-primary" target="_blank" rel="noopener" data-cc-book>${esc(content.invitation.button)}<span class="visually-hidden">${esc(KEEP.newTab)}</span></a>
                     </div>
                     <p class="cc-quiet">${fill(content.packageLine, 'package', pkgLink)}${pageLink}</p>
                     <div class="cc-actions">
-                        <button type="button" class="btn btn-outline" data-cc-save>${esc(L.save)}</button>
-                        <a href="${esc(data.newsletter)}" class="text-link" data-cc-newsletter>${esc(L.newsletter)}<span aria-hidden="true"> &rarr;</span></a>
+                        <div class="cc-keep">
+                            <button type="button" class="btn btn-outline" data-cc-keep>${esc(canShare ? KEEP.share : KEEP.copy)}</button>
+                            <button type="button" class="btn btn-outline" data-cc-save>${esc(KEEP.print)}</button>
+                        </div>
+                        <p class="cc-keep-help">${esc(KEEP.printHelp)}</p>
+                        <p class="cc-keep-status" role="status" aria-live="polite"></p>
+                        <a href="${esc(data.newsletter)}" class="text-link" target="_blank" rel="noopener" data-cc-newsletter>${esc(L.newsletter)}<span class="visually-hidden">${esc(KEEP.newTab)}</span><span aria-hidden="true"> &rarr;</span></a>
                     </div>
                     <button type="button" class="cc-back cc-restart" data-cc-restart>${esc(L.restart)}</button>
                 </div>
@@ -330,8 +394,40 @@
         app.querySelector('[data-cc-package]').addEventListener('click', () => track('cc-package', { package: r.packageSlug }));
         app.querySelector('[data-cc-newsletter]').addEventListener('click', () => track('cc-newsletter'));
         app.querySelector('[data-cc-save]').addEventListener('click', () => {
-            track('cc-save');
+            track('cc-save', { how: 'print' });
             window.print();
+        });
+
+        const keep = app.querySelector('[data-cc-keep]');
+        const status = app.querySelector('.cc-keep-status');
+        let resetTimer;
+        keep.addEventListener('click', async () => {
+            const text = resultText(r, date);
+            if (canShare) {
+                try {
+                    await navigator.share({ title: 'Your Clarity Check result', text });
+                    track('cc-save', { how: 'share' });
+                    return;
+                } catch (e) {
+                    if (e && e.name === 'AbortError') return; // closed the share sheet on purpose
+                }
+            }
+            const copied = await copyText(text);
+            if (document.activeElement !== keep) keep.focus(); // the fallback copy moves focus away
+            clearTimeout(resetTimer);
+            if (copied) {
+                track('cc-save', { how: 'copy' });
+                keep.textContent = KEEP.copied;
+                status.textContent = KEEP.copied;
+                status.classList.add('visually-hidden');
+                resetTimer = setTimeout(() => {
+                    keep.textContent = canShare ? KEEP.share : KEEP.copy;
+                    status.textContent = '';
+                }, 2000);
+            } else {
+                status.classList.remove('visually-hidden');
+                status.textContent = KEEP.copyBlocked;
+            }
         });
         app.querySelector('[data-cc-restart]').addEventListener('click', () => {
             track('cc-restart');

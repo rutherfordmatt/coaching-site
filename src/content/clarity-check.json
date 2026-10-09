@@ -56,14 +56,14 @@
   },
   "situations": [
     {
-      "id": "manage",
-      "label": "Stepping up to manage",
-      "tileBlurb": "Managing people for the first time, or taking on a bigger team.",
-      "resultLine": "You said you are managing people for the first time, or taking on a bigger team.",
-      "page": "/new-manager/",
-      "pageLabel": "the guide for new managers",
+      "id": "next",
+      "label": "Working out what comes next",
+      "tileBlurb": "A step up, a change of direction, or a change you did not choose.",
+      "resultLine": "You said you are working out what comes next.",
+      "page": "/next-role/",
+      "pageLabel": "the guide to landing the next role",
       "scores": {},
-      "group": "arrived"
+      "group": "deciding"
     },
     {
       "id": "newrole",
@@ -76,14 +76,14 @@
       "group": "arrived"
     },
     {
-      "id": "next",
-      "label": "Working out what comes next",
-      "tileBlurb": "A step up, a change of direction, or a change you did not choose.",
-      "resultLine": "You said you are working out what comes next.",
-      "page": "/next-role/",
-      "pageLabel": "the guide to landing the next role",
+      "id": "manage",
+      "label": "Stepping up to manage",
+      "tileBlurb": "Managing people for the first time, or taking on a bigger team.",
+      "resultLine": "You said you are managing people for the first time, or taking on a bigger team.",
+      "page": "/new-manager/",
+      "pageLabel": "the guide for new managers",
       "scores": {},
-      "group": "deciding"
+      "group": "arrived"
     },
     {
       "id": "change",
@@ -294,8 +294,8 @@
           }
         },
         {
-          "id": "tired",
-          "label": "Tiredness before I have begun",
+          "id": "notime",
+          "label": "How little time I have for it",
           "scores": {
             "momentum": 2
           }
