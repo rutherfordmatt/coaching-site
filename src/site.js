@@ -30,6 +30,17 @@
         }
     });
 
+    // ─── Count clicks on booking links (Umami) ───
+    // Links with data-cc-book are counted by the Clarity Check itself.
+    document.addEventListener('click', (e) => {
+        try {
+            const link = e.target.closest && e.target.closest('a[href*="calendly.com"]');
+            if (!link || link.hasAttribute('data-cc-book') || !window.umami) return;
+            const type = new URL(link.href).pathname.split('/').filter(Boolean).pop() || '';
+            window.umami.track('book-click', { type, from: location.pathname });
+        } catch {}
+    });
+
     // ─── Contact form (Formspree AJAX, falls back to a normal POST) ───
     const form = document.getElementById('contactForm');
     if (form) {
