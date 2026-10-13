@@ -4,14 +4,14 @@
   "crumb": "Book",
   "og": {"label": "Book", "headline": "Book a time"},
   "title": "Book a Time | Matt Rutherford Coaching",
-  "description": "Book a free 30 minute conversation, a Clarity Session or a coaching session with Matt Rutherford, Career and Leadership Coach.",
+  "description": "Book a free 30 minute Discovery Session, The Sounding Board or a coaching session with Matt Rutherford, Career and Leadership Coach.",
   "priority": "0.5"
 }
 -->
         <section class="page-hero">
             <div class="page-hero-inner">
                 <h1>Book a time</h1>
-                <p class="page-lede" id="bookingIntro">Pick a time for a free 30 minute conversation. It is online, and it is not a sales call.</p>
+                <p class="page-lede" id="bookingIntro">Pick a time for a free 30 minute Discovery Session.</p>
             </div>
         </section>
 
@@ -21,7 +21,7 @@
                  data-clarity="{{ calendly.clarity }}"
                  data-coaching="{{ calendly.coaching }}"></div>
             <p class="booking-fallback" id="bookingFallback">Having trouble with the calendar? <a href="{{ calendly.conversation }}">Open the booking page</a>.</p>
-            <noscript><p class="booking-fallback">Booking a Clarity Session or a coaching session instead? Use the <a href="{{ calendly.clarity }}">Clarity Session booking page</a> or the <a href="{{ calendly.coaching }}">coaching session booking page</a>.</p></noscript>
+            <noscript><p class="booking-fallback">Booking The Sounding Board or a coaching session instead? Use the <a href="{{ calendly.clarity }}">Sounding Board booking page</a> or the <a href="{{ calendly.coaching }}">coaching session booking page</a>.</p></noscript>
         </div>
 
         <script>
@@ -30,8 +30,8 @@
             // conversation). The fallback link stays visible if the widget
             // does not load.
             var INTROS = {
-                conversation: "Pick a time for a free 30 minute conversation. It is online, and it is not a sales call.",
-                clarity: 'Pick a time for your Clarity Session.',
+                conversation: "Pick a time for a free 30 minute Discovery Session.",
+                clarity: 'Pick a time for The Sounding Board.',
                 coaching: 'Pick a time for a coaching session.'
             };
             var embed = document.getElementById('bookingEmbed');
