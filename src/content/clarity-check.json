@@ -741,10 +741,7 @@
       "exerciseTitle": "Say it out loud",
       "exercise": "Write the decision as one sentence that starts with \"I am deciding whether to\". Then record yourself talking it through for five minutes and listen back once. Notice what you said that you had not written down.",
       "alsoInTheMix": "You are also doing a lot of this thinking alone.",
-      "package": "sessions",
-      "packageBySituation": {
-        "change": "leadership-engagement"
-      }
+      "package": "discovery-session"
     }
   },
   "invitation": {
@@ -754,6 +751,11 @@
     "button": "Book a free Discovery Session"
   },
   "packageLine": "If we work together, the natural place to start would be {package}. What it covers and what it costs are on that page.",
+  "discovery": {
+    "slug": "discovery-session",
+    "name": "a Discovery Session",
+    "line": "If we work together, the natural place to start would be {package}."
+  },
   "situationLinkLine": "For more on your situation, read {pageLabel}.",
   "ownWords": {
     "heading": "In your own words",

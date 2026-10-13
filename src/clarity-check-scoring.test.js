@@ -201,7 +201,8 @@ test("the situation sets the line and the link on the result", () => {
 
 test("each result points at the right package", () => {
     const pkg = (answers) => CC.buildResult(content, answers).packageSlug;
-    assert.equal(pkg({ situation: "change", harder: "sounding" }), "leadership-engagement");
+    assert.equal(pkg({ situation: "change", harder: "sounding" }), "discovery-session");
+    assert.equal(pkg({ situation: "next", harder: "sounding" }), "discovery-session");
     assert.equal(pkg({ situation: "change", harder: "confidence" }), "leadership-engagement");
     assert.equal(pkg({ situation: "change", harder: "decision" }), "sounding-board");
     assert.equal(pkg({ situation: "newrole", harder: "transition" }), "the-next-move");

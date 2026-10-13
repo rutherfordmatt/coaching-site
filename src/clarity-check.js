@@ -308,7 +308,6 @@
     function renderResult() {
         const r = CC.buildResult(content, state.answers);
         const situation = r.situation ? r.situation.id : 'none';
-        const pkg = data.packages[r.packageSlug];
 
         let exercise = rich(r.exercise);
         Object.keys(r.exerciseLinks || {}).forEach((words) => {
@@ -340,6 +339,8 @@
         });
         const done = new Date(state.doneAt || Date.now());
         const date = done.toLocaleDateString('en-IE', { day: 'numeric', month: 'long', year: 'numeric' });
+        const discovery = content.discovery && r.packageSlug === content.discovery.slug;
+        const pkg = discovery ? { name: content.discovery.name, url: booking } : data.packages[r.packageSlug];
         const pkgLink = `<a href="${esc(pkg.url)}" data-cc-package>${esc(pkg.name)}</a>`;
         const pageLink = r.situation
             ? ' ' + fill(content.situationLinkLine, 'pageLabel', `<a href="${esc(r.situation.page)}">${esc(r.situation.pageLabel)}</a>`)
@@ -376,7 +377,7 @@
                         <p>${esc(content.invitation.body)}</p>
                         <a href="${esc(booking)}" class="btn btn-primary" target="_blank" rel="noopener" data-cc-book>${esc(content.invitation.button)}<span class="visually-hidden">${esc(KEEP.newTab)}</span></a>
                     </div>
-                    <p class="cc-quiet">${fill(content.packageLine, 'package', pkgLink)}${pageLink}</p>
+                    <p class="cc-quiet">${fill(discovery ? content.discovery.line : content.packageLine, 'package', pkgLink)}${pageLink}</p>
                     <div class="cc-actions">
                         <div class="cc-keep">
                             <button type="button" class="btn btn-outline" data-cc-keep>${esc(canShare ? KEEP.share : KEEP.copy)}</button>

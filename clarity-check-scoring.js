@@ -210,6 +210,9 @@
             list.forEach(function (k) { if (keys.indexOf(k) === -1) problems.push("group " + g + " lists unknown result " + k); });
         });
 
+        // A result recommends a package, or the Discovery Session when it is not a package.
+        var known = content.packages.concat(content.discovery ? [content.discovery.slug] : []);
+
         keys.forEach(function (k) {
             var r = (content.results || {})[k];
             if (!r) { problems.push("results." + k + " is missing"); return; }
@@ -217,10 +220,10 @@
                 var v = r[f];
                 if (v == null || v === "" || (Array.isArray(v) && v.length === 0)) problems.push("results." + k + "." + f + " is empty");
             });
-            if (content.packages.indexOf(r.package) === -1) problems.push("results." + k + ".package is not a known package slug");
+            if (known.indexOf(r.package) === -1) problems.push("results." + k + ".package is not a known package slug");
             Object.keys(r.packageBySituation || {}).forEach(function (sid) {
                 if (!byId(content.situations, sid)) problems.push("results." + k + ".packageBySituation names unknown situation " + sid);
-                if (content.packages.indexOf(r.packageBySituation[sid]) === -1) problems.push("results." + k + ".packageBySituation." + sid + " is not a known package slug");
+                if (known.indexOf(r.packageBySituation[sid]) === -1) problems.push("results." + k + ".packageBySituation." + sid + " is not a known package slug");
             });
             Object.keys(r.exerciseLinks || {}).forEach(function (words) {
                 if (String(r.exercise).indexOf(words) === -1) problems.push("results." + k + ".exerciseLinks names words that are not in the exercise: " + words);
