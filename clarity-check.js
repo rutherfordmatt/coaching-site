@@ -26,7 +26,7 @@
     const LANDING = -1;
     const RESULT = questions.length;
     const KEY = 'clarity-check';
-    const CLOSE = 'Bring this to a free conversation: mattrutherfordcoaching.com';
+    const CLOSE = 'Bring this to a free Discovery Session: mattrutherfordcoaching.com';
 
     // Wording for keeping the result. It belongs in the content file's
     // labels and moves there the next time that file is regenerated.

@@ -1,0 +1,93 @@
+<!--
+{
+  "path": "/book/",
+  "crumb": "Book",
+  "og": {"label": "Book", "headline": "Book a time"},
+  "title": "Book a Time | Matt Rutherford Coaching",
+  "description": "Book a free 30 minute Discovery Session, The Sounding Board or a coaching session with Matt Rutherford, Career and Leadership Coach.",
+  "priority": "0.5"
+}
+-->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <h1>Book a time</h1>
+                <p class="page-lede" id="bookingIntro">Pick a time for a free 30 minute Discovery Session.</p>
+            </div>
+        </section>
+
+        <div class="booking">
+            <div class="booking-embed" id="bookingEmbed"
+                 data-conversation="{{ calendly.conversation }}"
+                 data-clarity="{{ calendly.clarity }}"
+                 data-coaching="{{ calendly.coaching }}"></div>
+            <p class="booking-fallback" id="bookingFallback">Having trouble with the calendar? <a href="{{ calendly.conversation }}">Open the booking page</a>.</p>
+            <noscript><p class="booking-fallback">Booking The Sounding Board or a coaching session instead? Use the <a href="{{ calendly.clarity }}">Sounding Board booking page</a> or the <a href="{{ calendly.coaching }}">coaching session booking page</a>.</p></noscript>
+        </div>
+
+        <script>
+        (function () {
+            // Embed the Calendly event named in ?type= (default: the free
+            // conversation). The fallback link stays visible if the widget
+            // does not load.
+            var INTROS = {
+                conversation: "Pick a time for a free 30 minute Discovery Session.",
+                clarity: 'Pick a time for The Sounding Board.',
+                coaching: 'Pick a time for a coaching session.'
+            };
+            var embed = document.getElementById('bookingEmbed');
+            var fallback = document.getElementById('bookingFallback');
+            var params = new URLSearchParams(location.search);
+            var type = params.get('type');
+            if (!INTROS[type] || !embed.dataset[type]) type = 'conversation';
+            var base = embed.dataset[type];
+            if (!/^https:\/\/calendly\.com\//.test(base)) return;
+
+            document.getElementById('bookingIntro').textContent = INTROS[type];
+            fallback.querySelector('a').href = base;
+
+            // Colours come from the site's tokens so the widget matches site.css.
+            var css = getComputedStyle(document.documentElement);
+            var hex = function (name) { return css.getPropertyValue(name).trim().replace('#', ''); };
+            var url = new URL(base);
+            url.searchParams.set('hide_gdpr_banner', '1');
+            url.searchParams.set('hide_event_type_details', '1');
+            url.searchParams.set('primary_color', hex('--accent'));
+            url.searchParams.set('text_color', hex('--text'));
+            url.searchParams.set('background_color', hex('--bg'));
+            // Pass campaign tags on to Calendly so attribution survives the hop.
+            params.forEach(function (value, key) {
+                if (/^utm_(source|medium|campaign|content|term)$/.test(key)) url.searchParams.set(key, value);
+            });
+
+            var started = false;
+            var fail = function () { embed.classList.add('is-failed'); fallback.hidden = false; };
+            var load = function () {
+                if (started) return;
+                started = true;
+                fallback.hidden = true;
+                var script = document.createElement('script');
+                script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                script.async = true;
+                script.onload = function () {
+                    try {
+                        window.Calendly.initInlineWidget({ url: url.toString(), parentElement: embed });
+                    } catch (e) { fail(); }
+                };
+                script.onerror = fail;
+                document.head.appendChild(script);
+                setTimeout(function () { if (!embed.querySelector('iframe')) fail(); }, 8000);
+            };
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    if (entries.some(function (e) { return e.isIntersecting; })) {
+                        observer.disconnect();
+                        load();
+                    }
+                }, { rootMargin: '200px' });
+                observer.observe(embed);
+            } else {
+                load();
+            }
+        })();
+        </script>

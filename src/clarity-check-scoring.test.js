@@ -203,10 +203,10 @@ test("each result points at the right package", () => {
     const pkg = (answers) => CC.buildResult(content, answers).packageSlug;
     assert.equal(pkg({ situation: "change", harder: "sounding" }), "leadership-engagement");
     assert.equal(pkg({ situation: "change", harder: "confidence" }), "leadership-engagement");
-    assert.equal(pkg({ situation: "change", harder: "decision" }), "clarity-session");
+    assert.equal(pkg({ situation: "change", harder: "decision" }), "sounding-board");
     assert.equal(pkg({ situation: "newrole", harder: "transition" }), "the-next-move");
     assert.equal(pkg({ situation: "next", harder: "direction" }), "the-next-move");
-    assert.equal(pkg({ situation: "next", harder: "momentum" }), "ongoing-partnership");
+    assert.equal(pkg({ situation: "next", harder: "momentum" }), "sessions");
 });
 
 test("the timing answer chooses the first line of the invitation and nothing else", () => {

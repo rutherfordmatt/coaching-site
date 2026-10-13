@@ -4,8 +4,8 @@
     "id": "getting-started",
     "items": [
       {
-        "id": "free-conversation",
-        "question": "What happens in the first conversation?",
+        "id": "discovery-session",
+        "question": "What happens in the Discovery Session?",
         "answer": "<p>It is 30 minutes, online. You tell me where you are and what you want to change, and I ask questions until I understand it. By the end we will both know whether coaching would help and, if it would, which package fits.</p><p>If you want to go ahead, I send you a short written proposal afterwards: the package, what we will work on, dates and price. If you want something to bring, try the <a href=\"{{ links.valuesFinder }}\">Values Finder</a> beforehand.</p>"
       },
       {
@@ -26,7 +26,7 @@
       {
         "id": "how-many-sessions",
         "question": "How many sessions will I need?",
-        "answer": "<p>It depends on what you want to change. A single decision can often be worked through in one <a href=\"/coaching/clarity-session/\">Clarity Session</a>. A specific career move usually takes the six sessions of <a href=\"/coaching/the-next-move/\">The Next Move</a>, and changing how you lead takes the eight sessions over six months of <a href=\"/coaching/leadership-engagement/\">The Leadership Engagement</a>. We work out which fits in the first conversation.</p>"
+        "answer": "<p>It depends on what you want to change. A single challenge can often be talked through in <a href=\"/coaching/sounding-board/\">The Sounding Board</a>. A specific career move usually takes the six sessions of <a href=\"/coaching/the-next-move/\">The Next Move</a>, and changing how you lead takes the eight sessions over six months of <a href=\"/coaching/leadership-engagement/\">The Leadership Engagement</a>. We work out which fits in the Discovery Session.</p>"
       },
       {
         "id": "online",
@@ -42,17 +42,17 @@
       {
         "id": "cost",
         "question": "How much does career coaching cost?",
-        "answer": "<p>Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the <a href=\"/coaching/\">packages page</a>: {{ package clarity-session.price }} for a Clarity Session, {{ package ongoing-partnership.price }} for a single session, {{ package the-next-move.price }} for The Next Move and {{ package leadership-engagement.price }} for The Leadership Engagement. Blocks of four or eight sessions are {{ package ongoing-partnership.blockFour }} and {{ package ongoing-partnership.blockEight }}, and the price is the same whoever pays.</p>"
+        "answer": "<p>Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the <a href=\"/coaching/\">packages page</a>: {{ package sounding-board.price }} for The Sounding Board, {{ package sessions.price }} for a single session, {{ package the-next-move.price }} for The Next Move and {{ package leadership-engagement.price }} for The Leadership Engagement. Blocks of four or eight sessions are {{ package sessions.blockFour }} and {{ package sessions.blockEight }}, and the price is the same whoever pays.</p>"
       },
       {
         "id": "payment",
         "question": "How do I pay, and can I pay in instalments?",
-        "answer": "<p>Our first conversation is free. Other packages are payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>"
+        "answer": "<p>The Discovery Session is free. Other packages are payable when you book; if you would rather pay by bank transfer, say so and I will send an invoice instead.</p><p>Yes to instalments: The Next Move can be paid in two payments of €600, and The Leadership Engagement in three payments of €1,000, each a dated invoice.</p>"
       },
       {
         "id": "alumni-rate",
         "question": "Is there a discount for continuing after a programme?",
-        "answer": "<p>Yes. If you have completed The Next Move or The Leadership Engagement, you can continue with <a href=\"/coaching/ongoing-partnership/\">Ongoing Partnership</a> in blocks of four for €640 or eight for €1,280, which is €160 a session.</p>"
+        "answer": "<p>Yes. If you have completed The Next Move or The Leadership Engagement, you can continue with <a href=\"/coaching/sessions/\">Coaching Sessions</a> in blocks of four for €640 or eight for €1,280, which is €160 a session.</p>"
       },
       {
         "id": "employer",

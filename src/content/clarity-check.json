@@ -19,10 +19,10 @@
   "tieBreakQuestion": "harder",
   "secondThreshold": 4,
   "packages": [
-    "clarity-session",
+    "sounding-board",
     "the-next-move",
     "leadership-engagement",
-    "ongoing-partnership"
+    "sessions"
   ],
   "groups": {
     "arrived": {
@@ -622,19 +622,19 @@
           "id": "now",
           "label": "Now",
           "scores": {},
-          "invitationLine": "You said you want to move on this now. The quickest next step is a conversation."
+          "invitationLine": "You said you want to move on this now. The quickest next step is a Discovery Session."
         },
         {
           "id": "soon",
           "label": "In the next three months",
           "scores": {},
-          "invitationLine": "You said you want to move on this in the next three months. A conversation now leaves time to do it properly."
+          "invitationLine": "You said you want to move on this in the next three months. A Discovery Session now leaves time to do it properly."
         },
         {
           "id": "year",
           "label": "Some time this year",
           "scores": {},
-          "invitationLine": "You said this is for some time this year. Our first conversation is free, and it will tell you whether coaching would help."
+          "invitationLine": "You said this is for some time this year. The Discovery Session is free, and it will tell you whether coaching would help."
         },
         {
           "id": "exploring",
@@ -655,7 +655,7 @@
       ],
       "question": "What do I want more of, and less of, in the next three years?",
       "exerciseTitle": "Start with your values",
-      "exercise": "Spend 15 minutes with my Values Finder. It asks what really matters to you at work, which is the best place to start narrowing down your next move.",
+      "exercise": "Spend 15 minutes with my Values Finder. It asks what really matters to you at work, which is the best place to start narrowing down what comes next.",
       "alsoInTheMix": "Some of your answers also point to an open question about **what** you want.",
       "package": "the-next-move",
       "exerciseLinks": {
@@ -673,7 +673,7 @@
       "exerciseTitle": "The regret test",
       "exercise": "For each option, write three sentences from yourself two years on: one where it went well, one where it went badly, and one where you never tried. Notice which is hardest to write.",
       "alsoInTheMix": "There is also some choosing between options going on.",
-      "package": "clarity-session"
+      "package": "sounding-board"
     },
     "confidence": {
       "name": "Confidence",
@@ -728,10 +728,10 @@
       "exerciseTitle": "One hour, in the diary",
       "exercise": "Pick the single next action, small enough to finish in an hour. Put it in your calendar this week with a start time, and tell one person you are doing it.",
       "alsoInTheMix": "Time and energy are also getting in the way.",
-      "package": "ongoing-partnership"
+      "package": "sessions"
     },
     "sounding": {
-      "name": "Sounding board",
+      "name": "Thinking partner",
       "headline": "You are carrying this one on your own.",
       "paragraphs": [
         "Your answers suggest you have plenty of thinking and nowhere neutral to do it. The people around you have a stake in what you decide, or you cannot say it out loud at work, so it goes round in your head instead.",
@@ -741,17 +741,17 @@
       "exerciseTitle": "Say it out loud",
       "exercise": "Write the decision as one sentence that starts with \"I am deciding whether to\". Then record yourself talking it through for five minutes and listen back once. Notice what you said that you had not written down.",
       "alsoInTheMix": "You are also doing a lot of this thinking alone.",
-      "package": "ongoing-partnership",
+      "package": "sessions",
       "packageBySituation": {
         "change": "leadership-engagement"
       }
     }
   },
   "invitation": {
-    "heading": "Bring this to a free conversation",
+    "heading": "Bring this to a free Discovery Session",
     "defaultLine": "If this has left you with something to talk through, the offer is there.",
     "body": "30 minutes, online. Bring your result with you. It is a conversation, not a sales call.",
-    "button": "Book a free conversation"
+    "button": "Book a free Discovery Session"
   },
   "packageLine": "If we work together, the natural place to start would be {package}. What it covers and what it costs are on that page.",
   "situationLinkLine": "For more on your situation, read {pageLabel}.",

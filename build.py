@@ -82,15 +82,20 @@ SITE = CONFIG["siteUrl"].rstrip("/")
 
 
 def booking_links():
-    """Every booking button reads from here. An empty URL falls back to the
-    contact form so the site keeps working while a Calendly event is missing."""
-    return {k: (v if is_set(v) else "/#contact") for k, v in CONFIG["booking"].items()}
+    """Every booking button reads from here. Buttons go to the booking page on
+    this site, which embeds the Calendly event named in ?type=. An empty URL
+    falls back to the contact form so the site keeps working while a Calendly
+    event is missing."""
+    return {k: ("/#contact" if not is_set(v) else "/book/" if k == "conversation" else f"/book/?type={k}")
+            for k, v in CONFIG["booking"].items()}
 
 
 # ─── Helpers callable from templates ───
 
 def price_html(p):
     note = f'<span class="price-note">{p["priceNote"]}</span>' if p.get("priceNote") else ""
+    if p.get("blockFour"):
+        note += f'<span class="price-note">Block of four {p["blockFour"]}, block of eight {p["blockEight"]}</span>'
     return f'<span class="price">{p["price"]}</span>{note}'
 
 
@@ -131,7 +136,7 @@ def h_package_cards(ctx, style):
                 <p class="package-note">{p.get('note', '')}</p>
                 <div class="package-actions">
                     <a href="{book[p['booking']]}" class="btn btn-primary">Book this package<span class="visually-hidden">: {p['name']}</span></a>
-                    <p class="booking-note">{p['bookingNote']}</p>
+                    <p class="booking-note">{render(p['bookingNote'], ctx)}</p>
                     <a href="{p['url']}" class="text-link">View package<span class="visually-hidden">: {p['name']}</span><span aria-hidden="true"> &rarr;</span></a>
                 </div>
             </article>""")
@@ -643,7 +648,7 @@ def build():
             "noindex, follow" if page.get("noindex") else "index, follow, max-snippet:-1, max-image-preview:large")
 
         ctx = dict(CONFIG)
-        ctx.update(book=booking_links(), page=page, assetVersion=version)
+        ctx.update(book=booking_links(), calendly=CONFIG["booking"], page=page, assetVersion=version)
         body = render(raw[m.end():], ctx)
         ctx["content"] = body
         out = render(layout, ctx)
@@ -666,12 +671,47 @@ def build():
     write_llms_txt(pages)
     write_robots_txt()
     write_llms_full_txt(pages)
+    write_redirects()
     return pages
 
 
 def page_assets(pages):
     """Every stylesheet and script named in any page's front matter."""
     return sorted({n for p, _ in pages for n in p.get("css", []) + p.get("js", [])})
+
+
+# ─── Redirects for renamed pages ───
+
+# Old path -> new path. The site is static with no server redirects, so each
+# old path gets a small page that forwards the visitor. These pages are not in
+# the page list, so they stay out of the sitemap and the llms files.
+REDIRECTS = {
+    "/coaching/clarity-session/": "/coaching/sounding-board/",
+    "/coaching/ongoing-partnership/": "/coaching/sessions/",
+}
+
+
+def write_redirects():
+    for old, new in REDIRECTS.items():
+        url = esc(SITE + new)
+        dest = output_path(old)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(f"""<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This page has moved | {esc(CONFIG['businessName'])}</title>
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{url}">
+    <meta http-equiv="refresh" content="0; url={esc(new)}">
+    <script>location.replace({json.dumps(new)} + location.hash);</script>
+</head>
+<body>
+    <p>This page has moved to <a href="{esc(new)}">{url}</a>.</p>
+</body>
+</html>
+""", encoding="utf-8")
 
 
 # ─── Open Graph cards ───
@@ -692,7 +732,7 @@ def og_card(page):
         card = {"tagline": CONFIG["businessName"], **page["og"]}
     else:
         card = {"label": CONFIG["label"], "headline": CONFIG["businessName"],
-                "tagline": "Make your next move with clarity."}
+                "tagline": "Know your next step. Take it with clarity."}
     n = len(card["headline"])
     card["size"] = "96px" if n <= 28 else "76px" if n <= 48 else "62px"
     return card
@@ -757,7 +797,7 @@ def write_llms_txt(pages):
 
 > {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
-Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Ongoing Partnership at €160 a session. The first conversation is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
+Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Coaching Sessions at €160 a session. The Discovery Session is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 
 ## Packages
 
@@ -775,7 +815,7 @@ Prices are published and the same whoever pays, including when an employer funds
 
 - [Privacy statement]({SITE}/privacy/): {by_path['/privacy/']['description']}
 - [Full text of every page]({SITE}/llms-full.txt): the same pages as plain text, in one file.
-- [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 15 minute exercise to work out what matters to you at work.
+- [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 20 minute exercise to work out what matters to you at work.
 - [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
@@ -857,8 +897,8 @@ def page_text(dest):
     return "\n\n".join(scan.blocks)
 
 
-LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/clarity-session/", "/coaching/the-next-move/",
-                   "/coaching/leadership-engagement/", "/coaching/ongoing-partnership/",
+LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/sounding-board/", "/coaching/the-next-move/",
+                   "/coaching/leadership-engagement/", "/coaching/sessions/",
                    "/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/",
                    "/about/", "/faq/", "/for-organisations/", "/privacy/"]
 
