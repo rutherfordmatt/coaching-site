@@ -830,8 +830,8 @@ def page_text(dest):
     return "\n\n".join(scan.blocks)
 
 
-LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/sounding-board/", "/coaching/the-next-move/",
-                   "/coaching/leadership-engagement/", "/coaching/sessions/",
+LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/sessions/", "/coaching/sounding-board/",
+                   "/coaching/the-next-move/", "/coaching/leadership-engagement/",
                    "/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/",
                    "/about/", "/faq/", "/for-organisations/", "/privacy/"]
 

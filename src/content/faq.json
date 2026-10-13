@@ -42,7 +42,7 @@
       {
         "id": "cost",
         "question": "How much does career coaching cost?",
-        "answer": "<p>Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the <a href=\"/coaching/\">packages page</a>: {{ package sounding-board.price }} for The Sounding Board, {{ package sessions.price }} for a single session, {{ package the-next-move.price }} for The Next Move and {{ package leadership-engagement.price }} for The Leadership Engagement. Blocks of four or eight sessions are {{ package sessions.blockFour }} and {{ package sessions.blockEight }}, and the price is the same whoever pays.</p>"
+        "answer": "<p>Coaching prices vary widely, and many coaches don't publish theirs. Mine are on the <a href=\"/coaching/\">packages page</a>: {{ package sessions.price }} for a single session, {{ package sounding-board.price }} for The Sounding Board, {{ package the-next-move.price }} for The Next Move and {{ package leadership-engagement.price }} for The Leadership Engagement. Blocks of four or eight sessions are {{ package sessions.blockFour }} and {{ package sessions.blockEight }}, and the price is the same whoever pays.</p>"
       },
       {
         "id": "payment",

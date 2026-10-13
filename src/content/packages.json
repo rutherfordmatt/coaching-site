@@ -1,5 +1,35 @@
 [
   {
+    "slug": "sessions",
+    "name": "Coaching Sessions",
+    "url": "/coaching/sessions/",
+    "who": "For people who want regular coaching, or who want to start with a session or two before committing to a programme.",
+    "price": "€200",
+    "priceNote": "per session",
+    "blockFour": "€720",
+    "blockEight": "€1,360",
+    "cardNote": "After a programme: blocks at €160 a session.",
+    "length": "60 minute sessions, booked singly or in blocks",
+    "payment": "Payable when you book, singly or as a block.",
+    "includes": [
+      "60 minute sessions, booked singly or in blocks",
+      "Priority scheduling and messaging between sessions with a block",
+      "A block of four is valid for six months, a block of eight for 12 months"
+    ],
+    "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
+    "booking": "coaching",
+    "bookingNote": "Books one session. Blocks are agreed after a <a href=\"{{ book.conversation }}\">Discovery Session</a>.",
+    "primary": "Book a session",
+    "secondary": "For a block, start with a free Discovery Session",
+    "offers": [
+      { "name": "Coaching Sessions, single session", "price": "200" },
+      { "name": "Coaching Sessions, block of four sessions", "price": "720" },
+      { "name": "Coaching Sessions, block of eight sessions", "price": "1360" },
+      { "name": "Coaching Sessions, alumni block of four sessions", "price": "640" },
+      { "name": "Coaching Sessions, alumni block of eight sessions", "price": "1280" }
+    ]
+  },
+  {
     "slug": "sounding-board",
     "name": "The Sounding Board",
     "url": "/coaching/sounding-board/",
@@ -65,35 +95,5 @@
     "primary": "Start with a free Discovery Session",
     "secondary": "",
     "offers": [{ "name": "The Leadership Engagement", "price": "3000" }]
-  },
-  {
-    "slug": "sessions",
-    "name": "Coaching Sessions",
-    "url": "/coaching/sessions/",
-    "who": "For people who want regular coaching, or who want to start with a session or two before committing to a programme.",
-    "price": "€200",
-    "priceNote": "per session",
-    "blockFour": "€720",
-    "blockEight": "€1,360",
-    "cardNote": "After a programme: blocks at €160 a session.",
-    "length": "60 minute sessions, booked singly or in blocks",
-    "payment": "Payable when you book, singly or as a block.",
-    "includes": [
-      "60 minute sessions, booked singly or in blocks",
-      "A block of four for €720, saving 10%, or eight for €1,360, saving 15%",
-      "A block of four is valid for six months and a block of eight for 12 months. Both include messaging between sessions and priority scheduling"
-    ],
-    "note": "Six single sessions cost the same as The Next Move, which also includes the transition map, workbook and written plan.",
-    "booking": "coaching",
-    "bookingNote": "Books one session. Blocks are agreed after a <a href=\"{{ book.conversation }}\">Discovery Session</a>.",
-    "primary": "Book a session",
-    "secondary": "For a block, start with a free Discovery Session",
-    "offers": [
-      { "name": "Coaching Sessions, single session", "price": "200" },
-      { "name": "Coaching Sessions, block of four sessions", "price": "720" },
-      { "name": "Coaching Sessions, block of eight sessions", "price": "1360" },
-      { "name": "Coaching Sessions, alumni block of four sessions", "price": "640" },
-      { "name": "Coaching Sessions, alumni block of eight sessions", "price": "1280" }
-    ]
   }
 ]
