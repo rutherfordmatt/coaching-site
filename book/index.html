@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Time | Matt Rutherford Coaching</title>
+    <meta name="description" content="Book a free 30 minute conversation, a Clarity Session or a coaching session with Matt Rutherford, Career and Leadership Coach.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://mattrutherfordcoaching.com/book/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matt Rutherford Coaching">
+    <meta property="og:title" content="Book a Time | Matt Rutherford Coaching">
+    <meta property="og:description" content="Book a free 30 minute conversation, a Clarity Session or a coaching session with Matt Rutherford, Career and Leadership Coach.">
+    <meta property="og:url" content="https://mattrutherfordcoaching.com/book/">
+    <meta property="og:image" content="https://mattrutherfordcoaching.com/og/book.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Book a time. Matt Rutherford Coaching.">
+    <meta property="og:locale" content="en_IE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book a Time | Matt Rutherford Coaching">
+    <meta name="twitter:description" content="Book a free 30 minute conversation, a Clarity Session or a coaching session with Matt Rutherford, Career and Leadership Coach.">
+    <meta name="twitter:image" content="https://mattrutherfordcoaching.com/og/book.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=8fa61d4e">
+    <script defer src="https://analytics.stff.me/script.js" data-website-id="3a83373e-0ff3-446c-867f-f787745cc92f" data-domains="mattrutherfordcoaching.com"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mattrutherfordcoaching.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Book",
+      "item": "https://mattrutherfordcoaching.com/book/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" id="mainNav" aria-label="Main">
+        <a href="/" class="nav-brand">Matt Rutherford <span>Coaching</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/coaching/">For individuals</a></li>
+            <li><a href="/for-organisations/">For organisations</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/book/" class="nav-cta">Book a free conversation</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main id="main">
+<section class="page-hero">
+            <div class="page-hero-inner">
+                <h1>Book a time</h1>
+                <p class="page-lede" id="bookingIntro">Pick a time for a free 30 minute conversation. It is online, and it is not a sales call.</p>
+            </div>
+        </section>
+
+        <div class="booking">
+            <div class="booking-embed" id="bookingEmbed"
+                 data-conversation="https://calendly.com/mattrutherfordcoaching/conversation"
+                 data-clarity="https://calendly.com/mattrutherfordcoaching/clarity"
+                 data-coaching="https://calendly.com/mattrutherfordcoaching/coaching"></div>
+            <p class="booking-fallback" id="bookingFallback">Having trouble with the calendar? <a href="https://calendly.com/mattrutherfordcoaching/conversation">Open the booking page</a>.</p>
+            <noscript><p class="booking-fallback">Booking a Clarity Session or a coaching session instead? Use the <a href="https://calendly.com/mattrutherfordcoaching/clarity">Clarity Session booking page</a> or the <a href="https://calendly.com/mattrutherfordcoaching/coaching">coaching session booking page</a>.</p></noscript>
+        </div>
+
+        <script>
+        (function () {
+            // Embed the Calendly event named in ?type= (default: the free
+            // conversation). The fallback link stays visible if the widget
+            // does not load.
+            var INTROS = {
+                conversation: "Pick a time for a free 30 minute conversation. It is online, and it is not a sales call.",
+                clarity: 'Pick a time for your Clarity Session.',
+                coaching: 'Pick a time for a coaching session.'
+            };
+            var embed = document.getElementById('bookingEmbed');
+            var fallback = document.getElementById('bookingFallback');
+            var params = new URLSearchParams(location.search);
+            var type = params.get('type');
+            if (!INTROS[type] || !embed.dataset[type]) type = 'conversation';
+            var base = embed.dataset[type];
+            if (!/^https:\/\/calendly\.com\//.test(base)) return;
+
+            document.getElementById('bookingIntro').textContent = INTROS[type];
+            fallback.querySelector('a').href = base;
+
+            // Colours come from the site's tokens so the widget matches site.css.
+            var css = getComputedStyle(document.documentElement);
+            var hex = function (name) { return css.getPropertyValue(name).trim().replace('#', ''); };
+            var url = new URL(base);
+            url.searchParams.set('hide_gdpr_banner', '1');
+            url.searchParams.set('hide_event_type_details', '1');
+            url.searchParams.set('primary_color', hex('--accent'));
+            url.searchParams.set('text_color', hex('--text'));
+            url.searchParams.set('background_color', hex('--bg'));
+            // Pass campaign tags on to Calendly so attribution survives the hop.
+            params.forEach(function (value, key) {
+                if (/^utm_(source|medium|campaign|content|term)$/.test(key)) url.searchParams.set(key, value);
+            });
+
+            var started = false;
+            var fail = function () { embed.classList.add('is-failed'); fallback.hidden = false; };
+            var load = function () {
+                if (started) return;
+                started = true;
+                fallback.hidden = true;
+                var script = document.createElement('script');
+                script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                script.async = true;
+                script.onload = function () {
+                    try {
+                        window.Calendly.initInlineWidget({ url: url.toString(), parentElement: embed });
+                    } catch (e) { fail(); }
+                };
+                script.onerror = fail;
+                document.head.appendChild(script);
+                setTimeout(function () { if (!embed.querySelector('iframe')) fail(); }, 8000);
+            };
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    if (entries.some(function (e) { return e.isIntersecting; })) {
+                        observer.disconnect();
+                        load();
+                    }
+                }, { rootMargin: '200px' });
+                observer.observe(embed);
+            } else {
+                load();
+            }
+        })();
+        </script>
+
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-id">
+                <p class="footer-brand">Matt Rutherford Coaching</p>
+                <p class="footer-label">Career and Leadership Coach</p>
+                <p>Online and in person.</p>
+                <p><a href="mailto:matt@mattrutherfordcoaching.com">matt@mattrutherfordcoaching.com</a></p>
+                <p><a href="https://www.associationforcoaching.com/members/?id=82268264" rel="noopener noreferrer">Association for Coaching registered member</a></p>
+                
+            </div>
+            <nav class="footer-nav" aria-label="Footer">
+                <ul>
+                    <li><a href="/coaching/">For individuals</a></li>
+                    <li><a href="/for-organisations/">For organisations</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/privacy/">Privacy</a></li>
+                    <li><a href="https://www.linkedin.com/in/mattrutherford/" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-nav footer-nav--situations" aria-labelledby="footer-situations">
+                <p class="footer-heading" id="footer-situations">By situation</p>
+                <ul>
+                    <li><a href="/laid-off/">Just been laid off?</a></li>
+                    <li><a href="/new-manager/">New manager</a></li>
+                    <li><a href="/new-role/">New role</a></li>
+                    <li><a href="/leading-through-change/">Leading through change</a></li>
+                    <li><a href="/next-role/">Next role</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-nav footer-nav--situations" aria-labelledby="footer-ecosystem">
+                <p class="footer-heading" id="footer-ecosystem">Free tools and writing</p>
+                <ul>
+                    <li><a href="https://thevaluesfinder.com/?utm_source=mattrutherfordcoaching.com&amp;utm_medium=footer">The Values Finder</a></li>
+                    <li><a href="https://www.mattrutherford.co.uk/tools/?utm_source=mattrutherfordcoaching.com&amp;utm_medium=footer">More free tools</a></li>
+                    <li><a href="https://www.mattrutherford.co.uk/newsletter/?utm_source=mattrutherfordcoaching.com&amp;utm_medium=footer">The Monday newsletter</a></li>
+                    <!-- Switch on when Year Well Built is live:
+                    <li><a href="https://yearwellbuilt.com/?utm_source=mattrutherfordcoaching.com&amp;utm_medium=footer">Year Well Built</a></li>
+                    -->
+                </ul>
+            </nav>
+        </div>
+        <p class="footer-copy">&copy; 2026 Matt Rutherford Coaching</p>
+    </footer>
+
+    <script src="/site.js?v=8fa61d4e" defer></script>
+</body>
+</html>

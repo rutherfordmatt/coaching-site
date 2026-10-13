@@ -1,0 +1,71 @@
+<!--
+{
+  "path": "/thanks/",
+  "crumb": "Booked",
+  "noindex": true,
+  "og": {"label": "Booked", "headline": "You're booked"},
+  "title": "You're Booked | Matt Rutherford Coaching",
+  "description": "Your booking with Matt Rutherford Coaching is confirmed. What happens next, and one optional thing to do beforehand.",
+  "priority": "0.1"
+}
+-->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <h1>You're booked</h1>
+                <p class="page-lede" id="thanksWhen">Thanks for booking. I'm looking forward to talking with you.</p>
+            </div>
+        </section>
+
+        <div class="content-layout content-layout--single">
+            <div class="prose">
+                <h2>What happens next</h2>
+                <ul>
+                    <li>A calendar invite is on its way to your inbox, with the video link for our session.</li>
+                    <li>You'll get a reminder the day before.</li>
+                    <li>If you need to move it, use the link in the invite.</li>
+                </ul>
+
+                <div class="thanks-card">
+                    <p class="section-label">Optional, before we talk</p>
+                    <h3>Try the Values Finder</h3>
+                    <p>A free 20 minute exercise to work out what matters to you at work. Bring your results if you like; it gives us a useful place to start.</p>
+                    <a href="https://thevaluesfinder.com/?utm_source=mattrutherfordcoaching.com&amp;utm_medium=thanks" class="btn btn-outline">Open the Values Finder</a>
+                </div>
+
+                <p class="thanks-home"><a href="/">Back to the home page</a></p>
+            </div>
+        </div>
+
+        <script>
+        (function () {
+            // Calendly sends the invitee's details in the query string. Read
+            // the two used here, then cut the URL down to ?type= before the
+            // analytics script runs, so no personal data is recorded or kept
+            // in the browser history.
+            var TYPES = ['conversation', 'clarity', 'coaching'];
+            var params = new URLSearchParams(location.search);
+            var type = params.get('type') || '';
+            var name = (params.get('invitee_first_name') || '').trim();
+            if (name.length > 40 || !/^[\p{L}\p{M}' .-]+$/u.test(name)) name = '';
+            var start = new Date(params.get('event_start_time') || '');
+            try {
+                history.replaceState(null, '', '/thanks/' + (type ? '?type=' + encodeURIComponent(type) : '') + location.hash);
+            } catch (e) {}
+
+            if (!isNaN(start.getTime())) {
+                var day = new Intl.DateTimeFormat(undefined, { weekday: 'long', day: 'numeric', month: 'long' }).format(start);
+                var time = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit' }).format(start);
+                document.getElementById('thanksWhen').textContent =
+                    (name ? 'Thanks, ' + name + '. ' : '') + 'See you on ' + day + ' at ' + time + '.';
+            } else if (name) {
+                document.getElementById('thanksWhen').textContent =
+                    'Thanks, ' + name + ". I'm looking forward to talking with you.";
+            }
+
+            window.addEventListener('load', function () {
+                try {
+                    if (window.umami) window.umami.track('booking-complete', { type: TYPES.indexOf(type) > -1 ? type : 'unknown' });
+                } catch (e) {}
+            });
+        })();
+        </script>

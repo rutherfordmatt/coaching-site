@@ -63,9 +63,12 @@ SITE = CONFIG["siteUrl"].rstrip("/")
 
 
 def booking_links():
-    """Every booking button reads from here. An empty URL falls back to the
-    contact form so the site keeps working while a Calendly event is missing."""
-    return {k: (v if is_set(v) else "/#contact") for k, v in CONFIG["booking"].items()}
+    """Every booking button reads from here. Buttons go to the booking page on
+    this site, which embeds the Calendly event named in ?type=. An empty URL
+    falls back to the contact form so the site keeps working while a Calendly
+    event is missing."""
+    return {k: ("/#contact" if not is_set(v) else "/book/" if k == "conversation" else f"/book/?type={k}")
+            for k, v in CONFIG["booking"].items()}
 
 
 # ─── Helpers callable from templates ───
@@ -569,9 +572,11 @@ def build():
         page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
         page["ogImageAlt"] = f"{strip_tags(page['og']['headline'])}. {CONFIG['businessName']}."
         page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle", "ogImageAlt")}
+        page["robots"] = CONFIG.get("robots") or (
+            "noindex, follow" if page.get("noindex") else "index, follow, max-snippet:-1, max-image-preview:large")
 
         ctx = dict(CONFIG)
-        ctx.update(book=booking_links(), page=page, assetVersion=version)
+        ctx.update(book=booking_links(), calendly=CONFIG["booking"], page=page, assetVersion=version)
         body = render(raw[m.end():], ctx)
         ctx["content"] = body
         out = render(layout, ctx)
@@ -693,7 +698,7 @@ Prices are published and the same whoever pays, including when an employer funds
 
 - [Privacy statement]({SITE}/privacy/): {by_path['/privacy/']['description']}
 - [Full text of every page]({SITE}/llms-full.txt): the same pages as plain text, in one file.
-- [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 15 minute exercise to work out what matters to you at work.
+- [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 20 minute exercise to work out what matters to you at work.
 - [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
@@ -782,7 +787,7 @@ LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/clarity-session/", "/coaching/t
 
 
 def write_llms_full_txt(pages):
-    by_path = {p["path"]: (p, d) for p, d in pages}
+    by_path = {p["path"]: (p, d) for p, d in pages if not p.get("noindex")}
     order = LLMS_FULL_ORDER + sorted(set(by_path) - set(LLMS_FULL_ORDER))
     parts = [f"# {CONFIG['businessName']}: full text\n\n"
              f"> The text of every page on {SITE}, generated from the site on each build. "

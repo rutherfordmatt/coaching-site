@@ -316,6 +316,7 @@ p  { color: var(--text-muted); line-height: 1.85; }
 .page-lede {
     font-size: 1.1rem;
     max-width: 640px;
+    text-wrap: pretty;
     margin-bottom: 2.5rem;
 }
 .page-lede:last-child { margin-bottom: 0; }
@@ -1100,6 +1101,30 @@ textarea { resize: vertical; min-height: 140px; }
     color: rgba(255,255,255,0.6);
 }
 
+/* ─── Booking and thanks pages ─── */
+.booking {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+}
+/* Reserve the widget's height so the page does not jump when it loads */
+.booking-embed { height: 720px; }
+.booking-embed.is-failed { height: auto; }
+.booking-fallback { margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted); }
+.booking-fallback a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.booking-fallback a:hover { color: var(--accent); }
+
+.thanks-card {
+    margin: 3rem 0 2.5rem;
+    padding: 2.5rem;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--accent);
+}
+.thanks-card .section-label { margin-bottom: 0.6rem; }
+.prose .thanks-card h3 { margin-top: 0; }
+.thanks-card p { margin-bottom: 1.5rem; }
+.thanks-home { font-size: 0.95rem; }
+
 /* ─── Responsive ─── */
 @media (max-width: 1280px) {
     .hero-content { padding: 4rem 2.5rem 4rem 4rem; }
@@ -1186,6 +1211,10 @@ textarea { resize: vertical; min-height: 140px; }
 
 @media (max-width: 500px) {
     h1 { font-size: 2.2rem; }
+    .booking { padding: 1.5rem 0 4rem; }
+    .booking-fallback { padding: 0 1.25rem; }
+    .booking-embed { height: 1000px; }
+    .thanks-card { padding: 2rem 1.5rem; }
     h2 { font-size: 1.8rem; }
     .hero-content { padding: 2.5rem 1.25rem; }
     .package-card { padding: 2.5rem 1.6rem; }
