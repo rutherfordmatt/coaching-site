@@ -1045,7 +1045,7 @@ textarea { resize: vertical; min-height: 140px; }
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto;
     gap: 3rem;
     align-items: start;
 }
