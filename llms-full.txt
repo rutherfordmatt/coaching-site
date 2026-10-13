@@ -75,7 +75,7 @@ Eight 90 minute sessions over six months
 
 For people who want regular coaching, or who want to start with a session or two before committing to a programme.
 
-€200 per session. Block of four €720, block of eight €1,360. After a programme: blocks at €160 a session.
+€200 per session. Block of four: €720 (save 10%). Block of eight: €1,360 (save 15%). After a programme: blocks at €160 a session.
 
 60 minute sessions, booked singly or in blocks
 
@@ -262,7 +262,7 @@ Starts with a 30 minute Discovery Session.
 
 For people who want regular coaching, or who want to start with a session or two before committing to a programme.
 
-€200 per session. Block of four €720, block of eight €1,360. After a programme: blocks at €160 a session.
+€200 per session. Block of four: €720 (save 10%). Block of eight: €1,360 (save 15%). After a programme: blocks at €160 a session.
 
 60 minute sessions, booked singly or in blocks
 
@@ -674,7 +674,7 @@ Title: Coaching Sessions: from €200 | Matt Rutherford
 
 For people who want regular coaching, or who want to start with a session or two before committing to a programme.
 
-€200 per session. Block of four €720, block of eight €1,360
+€200 per session. Block of four: €720 (save 10%). Block of eight: €1,360 (save 15%)
 
 Length
 
@@ -1862,6 +1862,6 @@ Title: Book a Time | Matt Rutherford Coaching
 
 # Book a time
 
-Pick a time for a free 30 minute Discovery Session.
+Pick a time for your free 30 minute Discovery Session.
 
 Having trouble with the calendar? [Open the booking page](https://calendly.com/mattrutherfordcoaching/conversation).

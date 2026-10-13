@@ -73,10 +73,23 @@ def booking_links():
 
 # ─── Helpers callable from templates ───
 
+def euros(price):
+    return int(re.sub(r"\D", "", price))
+
+
+def block_line(word, count, block, single):
+    """One block price, with the saving worked out against single sessions."""
+    saving = round(100 * (1 - euros(block) / (count * euros(single))))
+    return f'<span class="price-block">Block of {word}: {block} (save {saving}%)</span>'
+
+
 def price_html(p):
     note = f'<span class="price-note">{p["priceNote"]}</span>' if p.get("priceNote") else ""
     if p.get("blockFour"):
-        note += f'<span class="price-note">Block of four {p["blockFour"]}, block of eight {p["blockEight"]}</span>'
+        note += ('<span class="price-blocks">'
+                 + block_line("four", 4, p["blockFour"], p["price"])
+                 + block_line("eight", 8, p["blockEight"], p["price"])
+                 + '</span>')
     return f'<span class="price">{p["price"]}</span>{note}'
 
 
@@ -773,7 +786,7 @@ class TextScan(HTMLParser):
         if tag in self.BLOCK:
             self.flush()
             self.prefix = {"h1": "# ", "h2": "## ", "h3": "### ", "h4": "#### ", "li": "- "}.get(tag, "")
-        if "price-note" in (a.get("class") or ""):
+        if {"price-note", "price-block"} & set((a.get("class") or "").split()):
             self.buf.append("\0")  # notes sit on their own line on the page
         if tag == "a" and a.get("href"):
             href = a["href"]
