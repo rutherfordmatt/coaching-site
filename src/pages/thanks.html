@@ -39,13 +39,14 @@
         <script>
         (function () {
             // Calendly sends the invitee's details in the query string. Read
-            // the two used here, then cut the URL down to ?type= before the
+            // the ones used here, then cut the URL down to ?type= before the
             // analytics script runs, so no personal data is recorded or kept
             // in the browser history.
             var TYPES = ['conversation', 'clarity', 'coaching'];
             var params = new URLSearchParams(location.search);
             var type = params.get('type') || '';
-            var name = (params.get('invitee_first_name') || '').trim();
+            var name = (params.get('invitee_first_name') || '').trim() ||
+                (params.get('invitee_full_name') || '').trim().split(/\s+/)[0];
             if (name.length > 40 || !/^[\p{L}\p{M}' .-]+$/u.test(name)) name = '';
             var start = new Date(params.get('event_start_time') || '');
             try {
