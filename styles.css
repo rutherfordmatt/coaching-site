@@ -438,6 +438,9 @@ p  { color: var(--text-muted); line-height: 1.85; }
     line-height: 1.1;
 }
 .price-note { display: block; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+.price-blocks { display: block; margin-top: 0.9rem; }
+.price-block { display: block; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+.price-blocks + .price-note { margin-top: 0.7rem; }
 .package-length {
     font-size: 0.78rem;
     font-weight: 500;

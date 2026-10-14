@@ -6,10 +6,10 @@ Prices are published and the same whoever pays, including when an employer funds
 
 ## Packages
 
+- [Coaching Sessions](https://staging.mattrutherfordcoaching.com/coaching/sessions/): For people who want regular coaching, or who want to start with a session or two before committing to a programme. €200 (per session). 60 minute sessions, booked singly or in blocks. Blocks of four for €720 or eight for €1,360. After a programme: blocks at €160 a session.
 - [The Sounding Board](https://staging.mattrutherfordcoaching.com/coaching/sounding-board/): A thinking partner for one challenge: someone with no stake in the outcome to test your thinking and help you decide. €350 (opening offer). One 90 minute session and a 30 minute follow-up.
 - [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): For people working through a career move who want guidance and support: stepping up into management, landing the next role, or starting well in a new one. €1,200 (for the programme: €200 a session, or two payments of €600). Six 60 minute sessions over twelve weeks.
 - [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/): For people building their leadership skills: experienced managers and senior leaders growing into a bigger role or leading through change. €3,000 (for six months: eight sessions, or three payments of €1,000). Eight 90 minute sessions over six months.
-- [Coaching Sessions](https://staging.mattrutherfordcoaching.com/coaching/sessions/): For people who want regular coaching, or who want to start with a session or two before committing to a programme. €200 (per session). 60 minute sessions, booked singly or in blocks. Blocks of four for €720 or eight for €1,360. After a programme: blocks at €160 a session.
 
 ## Situations
 
@@ -25,7 +25,7 @@ Prices are published and the same whoever pays, including when an employer funds
 - [About](https://staging.mattrutherfordcoaching.com/about/): Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta. Now coaching in Dublin.
 - [FAQ](https://staging.mattrutherfordcoaching.com/faq/): Answers on the free Discovery Session, who I work with, sessions online and in Dublin, payment and instalments, employer funding and confidentiality.
 - [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/): One to one coaching paid for by your organisation: new-manager coaching, leadership coaching and individual outplacement support.
-- [Coaching](https://staging.mattrutherfordcoaching.com/coaching/): Four career and leadership coaching packages with published prices, from The Sounding Board to a six month Leadership Engagement.
+- [Coaching](https://staging.mattrutherfordcoaching.com/coaching/): Four career and leadership coaching packages with published prices, from a single coaching session to a six month Leadership Engagement.
 
 ## Optional
 
