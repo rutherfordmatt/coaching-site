@@ -43,7 +43,6 @@
             if (!/^https:\/\/calendly\.com\//.test(base)) return;
 
             document.getElementById('bookingIntro').textContent = INTROS[type];
-            fallback.querySelector('a').href = base;
 
             // Colours come from the site's tokens so the widget matches site.css.
             var css = getComputedStyle(document.documentElement);
@@ -54,10 +53,15 @@
             url.searchParams.set('primary_color', hex('--accent'));
             url.searchParams.set('text_color', hex('--text'));
             url.searchParams.set('background_color', hex('--bg'));
-            // Pass campaign tags on to Calendly so attribution survives the hop.
+            // Pass campaign tags on to Calendly so attribution survives the hop,
+            // in the widget and in the fallback link.
+            var direct = new URL(base);
             params.forEach(function (value, key) {
-                if (/^utm_(source|medium|campaign|content|term)$/.test(key)) url.searchParams.set(key, value);
+                if (!/^utm_(source|medium|campaign|content|term)$/.test(key)) return;
+                url.searchParams.set(key, value);
+                direct.searchParams.set(key, value);
             });
+            fallback.querySelector('a').href = direct.toString();
 
             var started = false;
             var fail = function () { embed.classList.add('is-failed'); fallback.hidden = false; };

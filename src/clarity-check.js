@@ -149,11 +149,12 @@
         return esc(template).replace('{' + key + '}', html);
     }
 
+    // Site links such as /book/ stay relative; /book/ hands the tags on to Calendly.
     function withParams(url, params) {
-        if (!/^https?:/.test(url)) return url;
-        const u = new URL(url);
+        if (!/^(https?:|\/)/.test(url)) return url;
+        const u = new URL(url, location.origin);
         Object.keys(params).forEach((k) => { if (params[k]) u.searchParams.set(k, params[k]); });
-        return u.toString();
+        return u.origin === location.origin && url.startsWith('/') ? u.pathname + u.search + u.hash : u.toString();
     }
 
     const byId = (list, id) => list.find((x) => x.id === id) || null;

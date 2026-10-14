@@ -19,6 +19,11 @@
         "answer": "<p>People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are <a href=\"/next-role/\">looking for the next role</a>, <a href=\"/new-manager/\">stepping up to manage</a>, <a href=\"/new-role/\">starting a new role</a>, <a href=\"/leading-through-change/\">leading through change</a>, or <a href=\"/laid-off/\">having just been laid off</a>.</p>"
       },
       {
+        "id": "which-coaching",
+        "question": "How do I know which kind of coaching I need?",
+        "answer": "<p>Take the <a href=\"/clarity-check/\">Clarity Check</a>: twelve questions, about five minutes, and it points you to where to start. If you would rather talk it through, <a href=\"{{ book.conversation }}\">book a free Discovery Session</a>.</p>"
+      },
+      {
         "id": "leader-already",
         "question": "Do I need to be a leader already?",
         "answer": "<p>No. Many of the people I work with are experienced professionals thinking about, or just starting, their first management role. <a href=\"/coaching/the-next-move/\">The Next Move</a> is built for exactly that.</p>"

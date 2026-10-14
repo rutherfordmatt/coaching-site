@@ -806,6 +806,8 @@ def write_llms_txt(pages):
     situations = "\n".join(line(p) for p in ("/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/"))
     more = "\n".join([f"- [Home]({SITE}/): {by_path['/']['description']}"]
                      + [line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/")])
+    cc = by_path.get("/clarity-check/")
+    clarity = line("/clarity-check/") + "\n" if cc and not cc.get("noindex") else ""
     text = f"""# {CONFIG['businessName']}
 
 > {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
@@ -829,7 +831,7 @@ Prices are published and the same whoever pays, including when an employer funds
 - [Privacy statement]({SITE}/privacy/): {by_path['/privacy/']['description']}
 - [Full text of every page]({SITE}/llms-full.txt): the same pages as plain text, in one file.
 - [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 20 minute exercise to work out what matters to you at work.
-- [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
+{clarity}- [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
 """
     (ROOT / "llms.txt").write_text(text, encoding="utf-8")
 

@@ -35,6 +35,8 @@ If one of these sounds like you, a Discovery Session is the quickest way to find
 
 - You have been [laid off](https://staging.mattrutherfordcoaching.com/laid-off/), or you are ready to leave, and you are deciding what comes next.
 
+Not sure which one fits? [Take the Clarity Check](https://staging.mattrutherfordcoaching.com/clarity-check/): five minutes, twelve questions.
+
 Coaching packages
 
 ## Four ways to work together
@@ -281,6 +283,8 @@ Eight 90 minute sessions over six months
 Starts with a 30 minute Discovery Session.
 
 [View package](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
+
+Not sure which package fits? [The Clarity Check](https://staging.mattrutherfordcoaching.com/clarity-check/) points you to one.
 
 Start with your situation
 
@@ -799,6 +803,8 @@ The Discovery Session is free: 30 minutes, online, and not a sales call. You tel
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
 
+Not sure where to start? [Try the Clarity Check first](https://staging.mattrutherfordcoaching.com/clarity-check/).
+
 When you are ready to look forward, the Landing the next role track is redundancy coaching built for this, whether you were caught in a round of tech layoffs or a quiet restructure. Online, or in person in Dublin.
 
 ### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Landing the next role
@@ -938,6 +944,8 @@ The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
 
+Not sure where to start? [Try the Clarity Check first](https://staging.mattrutherfordcoaching.com/clarity-check/).
+
 New manager coaching works best early. The Stepping up track is built around your team and your first year, online or in person in Dublin.
 
 ### [The Next Move](https://staging.mattrutherfordcoaching.com/coaching/the-next-move/): Stepping up
@@ -1076,6 +1084,8 @@ This is the hardest version: the same people, and a different relationship. Your
 The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me about the role, how you got it and what you want from the first year, and we will work out what would help. If a strong induction and a good manager are all you need, I'll say so.
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
+
+Not sure where to start? [Try the Clarity Check first](https://staging.mattrutherfordcoaching.com/clarity-check/).
 
 The Starting well track is new role and promotion coaching for the first 90 days, whether you have been promoted, moved sideways or joined a new employer. Online, or in person in Dublin.
 
@@ -1222,6 +1232,8 @@ The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
 
+Not sure where to start? [Try the Clarity Check first](https://staging.mattrutherfordcoaching.com/clarity-check/).
+
 For leaders carrying a change over months, I offer executive and leadership coaching, online and in person in Dublin, built around the change you are actually leading.
 
 ### [The Leadership Engagement](https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/)
@@ -1362,6 +1374,8 @@ If you are here after a redundancy, start with [what to do if you have just been
 The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me where you are and what you think you want next, and we will work out what would help. If a recruiter who knows your market would serve you better, I'll say so.
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
+
+Not sure where to start? [Try the Clarity Check first](https://staging.mattrutherfordcoaching.com/clarity-check/).
 
 I coach professionals and senior people through this, online and in person in Dublin, including when the next step is a career change.
 
@@ -1544,6 +1558,10 @@ No. It is a conversation about your situation, and I will not push you to buy an
 ### Who do you work with?
 
 People making progress in their careers, from experienced professionals to executives, in any sector. The usual reasons people get in touch are [looking for the next role](https://staging.mattrutherfordcoaching.com/next-role/), [stepping up to manage](https://staging.mattrutherfordcoaching.com/new-manager/), [starting a new role](https://staging.mattrutherfordcoaching.com/new-role/), [leading through change](https://staging.mattrutherfordcoaching.com/leading-through-change/), or [having just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/).
+
+### How do I know which kind of coaching I need?
+
+Take the [Clarity Check](https://staging.mattrutherfordcoaching.com/clarity-check/): twelve questions, about five minutes, and it points you to where to start. If you would rather talk it through, [book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/).
 
 ### Do I need to be a leader already?
 
@@ -1781,11 +1799,11 @@ The [Values Finder](https://thevaluesfinder.com) is a separate site with its own
 
 ### The Clarity Check
 
-[CONFIRM: draft wording for the Clarity Check] The Clarity Check runs in your browser. Anything you write in it stays there and is never sent to me. The answers you choose from the lists, and the result you are shown, are counted in my analytics with nothing that identifies you, so that I can improve the questions. If you go on to book a conversation, the booking link tells Calendly which result you saw.
+The Clarity Check runs in your browser. Anything you write in it stays there and is never sent to me. The answers you choose from the lists, and the result you are shown, are counted in my analytics with nothing that identifies you, so that I can improve the questions. If you go on to book a conversation, the booking link tells Calendly which result you saw.
 
 ### Website analytics
 
-This site uses Umami, a privacy-focused analytics tool that I host myself, on the same server as this site in Finland. It counts page views, which pages are visited, the referring site, browser, device type and country, and a few events such as which answers are chosen in the Clarity Check. [CONFIRM: events wording] It does not use cookies and does not build a profile of you.
+This site uses Umami, a privacy-focused analytics tool that I host myself, on the same server as this site in Finland. It counts page views, which pages are visited, the referring site, browser, device type and country, and a few events such as which answers are chosen in the Clarity Check. It does not use cookies and does not build a profile of you.
 
 ### Fonts and hosting
 
@@ -1869,3 +1887,48 @@ Title: Book a Time | Matt Rutherford Coaching
 Pick a time for your free 30 minute Discovery Session.
 
 Having trouble with the calendar? [Open the booking page](https://calendly.com/mattrutherfordcoaching/conversation).
+
+---
+
+URL: https://staging.mattrutherfordcoaching.com/clarity-check/
+Title: The Clarity Check: Free Career Assessment | Matt Rutherford
+
+The Clarity Check
+
+# What's standing between you and your next step?
+
+Get a plain read on where you are, what you could focus on, and one thing to try this week. Five minutes, twelve questions.
+
+Which one sounds like you? Pick one to start.
+
+Privacy: what you write stays in your browser, and nothing identifies you. More in the [privacy statement](https://staging.mattrutherfordcoaching.com/privacy/).
+
+What you walk away with
+
+## A starting point, not a verdict.
+
+### A plain read on where you are
+
+A short written view of what your answers suggest is getting in the way, in ordinary language.
+
+### The question worth working on
+
+One question, chosen from your answers, that is more useful than the one you arrived with.
+
+### One thing to try this week
+
+A small exercise you can do on your own in under half an hour. You see it straight away, with no sign-up.
+
+No score, no personality type and no list of job titles. Every result is written by me, not generated.
+
+Who is asking
+
+## Direct, practical, and on your side
+
+I'm Matt Rutherford, a career and leadership coach in Dublin. I know these moves from the inside, because I have spent my career making them and leading people through them.
+
+If your result leaves you with something to talk through, the Discovery Session is free.
+
+## Five minutes. Start with the first question.
+
+You can stop at any point, and you see your result as soon as you finish.

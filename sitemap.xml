@@ -11,23 +11,28 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/</loc>
+    <loc>https://staging.mattrutherfordcoaching.com/clarity-check/</loc>
     <lastmod>2026-10-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://staging.mattrutherfordcoaching.com/coaching/leadership-engagement/</loc>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/coaching/sessions/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/coaching/sounding-board/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/coaching/the-next-move/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -42,7 +47,7 @@
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/for-organisations/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -77,7 +82,7 @@
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/privacy/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

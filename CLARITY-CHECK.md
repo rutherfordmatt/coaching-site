@@ -1,9 +1,10 @@
 # The Clarity Check: hand-over note
 
 The free five minute assessment at `/clarity-check/`, built on the
-`clarity-check` branch and tested on staging (see `STAGING.md`). The brief and
-the master copies of the content, scoring and tests are in Matt's
-`Documents/Claude/clarity-check` folder.
+`clarity-check` branch and tested on staging (see `STAGING.md`). Version one
+went live on 14 October 2026. The repository is now the source of truth for the
+content, scoring and tests; the copies in Matt's `Documents/Claude/clarity-check`
+folder are out of date and should not be copied in again.
 
 ## What is where
 
@@ -34,9 +35,11 @@ Umami events, with ids only and never written answers: `cc-tile`,
 `cc-start`, `cc-answer`, `cc-text`, `cc-complete`, `cc-book`, `cc-package`,
 `cc-newsletter`, `cc-save` and `cc-restart`. `cc-start`, `cc-answer` and
 `cc-complete` also carry the group, and `cc-save` carries `how`: `print`,
-`copy` or `share`. The booking link carries
+`copy` or `share`. The booking link goes to `/book/` and carries
 `utm_source=clarity-check` and `utm_content=<result>-<situation>` (plus
-`utm_medium=staging` on staging). The newsletter link on the result is
+`utm_medium=staging` on staging). `/book/` passes those tags on to Calendly,
+in the embedded calendar and in its fallback link, which is what the privacy
+statement relies on. The newsletter link on the result is
 `links.newsletterSignup`, which opens the sign-up box on mattrutherford.co.uk
 with `ref=clarity-check`. Those two links open in a new tab, so the result
 stays in view; links that stay on the site open in the same tab.
@@ -61,18 +64,15 @@ The printed copy fits one A4 page in Chrome for every result, with or without
 written answers. Safari, phones and US Letter paper may lay it out a little
 differently.
 
-## Before launch
+## Where it is linked from
 
-- Matt to approve the privacy wording and remove the two `[CONFIRM: ...]`
-  placeholders in `src/pages/privacy.html`.
+The home page "Is this you?" section, the five situation pages (under the
+"When a conversation helps" button), the coaching page (under the package
+cards), the footer's free tools list, one FAQ question ("How do I know which
+kind of coaching I need?") and `llms.txt`. It is not in the main navigation.
 
-## Launch-day steps (2 November 2026)
+## Still open
 
-1. Rebuild without the staging flag and merge to `main` (see `STAGING.md`).
-2. Remove `noindex` from the page's front matter.
-3. Add links to the Clarity Check from the home page "Is this you?" section,
-   the footer and the five situation pages.
-4. Add it to `llms.txt`.
-5. Check the events arrive in the live Umami site.
-6. Decide whether the footer newsletter link should use the sign-up address
-   too.
+- Matt to recreate the four-step funnel (page view, `cc-start`,
+  `cc-complete`, `cc-book`) on the live Umami site.
+- Whether the footer newsletter link should use the sign-up address too.

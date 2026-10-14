@@ -350,6 +350,8 @@ p  { color: var(--text-muted); line-height: 1.85; }
     font-size: 0.9rem;
     color: var(--text-muted);
 }
+.checklist-note { margin-top: 1.4rem; }
+.packages-note { margin-top: 2.5rem; text-align: center; }
 
 /* ─── Is this you? ─── */
 .checklist-wrap {
