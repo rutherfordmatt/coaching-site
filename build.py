@@ -737,18 +737,23 @@ def og_slug(page):
 def og_card(page):
     """What the page's 1200x630 share image says. Package pages are built
     from the package; other pages set og.label and og.headline in their
-    front matter, and fall back to the home card."""
+    front matter. The home card uses the hero line, and any other page
+    falls back to its title. None repeats the business name, which the
+    logo on the card already shows."""
     pkg = next((p for p in PACKAGES if p["url"] == page["path"]), None)
     if pkg:
         card = {"label": "Coaching package", "headline": pkg["name"],
                 "tagline": f"{pkg['price']}, {pkg['length'][0].lower()}{pkg['length'][1:]}"}
     elif page.get("og"):
         card = {"tagline": "", **page["og"]}
+    elif page["path"] == "/":
+        card = {"label": CONFIG["label"], "tagline": "",
+                "headline": "Know your next step. <em>Take it with clarity.</em>"}
     else:
-        card = {"label": CONFIG["label"], "headline": CONFIG["businessName"],
-                "tagline": "Know your next step. Take it with clarity."}
-    n = len(card["headline"])
-    card["size"] = "96px" if n <= 28 else "76px" if n <= 48 else "62px"
+        card = {"label": CONFIG["label"], "tagline": "",
+                "headline": page["title"].split(" | ")[0]}
+    n = len(strip_tags(card["headline"]))
+    card["size"] = "96px" if n <= 20 else "76px" if n <= 48 else "62px"
     return card
 
 
