@@ -655,7 +655,9 @@ def build():
         page.setdefault("ogType", "website")
         page["og"] = og_card(page)
         page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
-        page["ogImageAlt"] = f"{strip_tags(page['og']['headline'])}. {CONFIG['businessName']}."
+        headline = strip_tags(page["og"]["headline"])
+        stop = "" if headline.endswith((".", "?", "!")) else "."
+        page["ogImageAlt"] = f"{headline}{stop} {CONFIG['businessName']}."
         page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle", "ogImageAlt")}
         page["robots"] = CONFIG.get("robots") or (
             "noindex, follow" if page.get("noindex") else "index, follow, max-snippet:-1, max-image-preview:large")
