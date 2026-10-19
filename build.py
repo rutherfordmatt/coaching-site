@@ -631,7 +631,7 @@ def output_path(url_path):
 
 def asset_version():
     digest = hashlib.sha1()
-    for name in ("site.css", "site.js"):
+    for name in ("brand-tokens.css", "site.css", "site.js"):
         digest.update((SRC / name).read_bytes())
     return digest.hexdigest()[:8]
 
@@ -676,6 +676,7 @@ def build():
         dest.write_text(out, encoding="utf-8")
         pages.append((page, dest))
 
+    (ROOT / "brand-tokens.css").write_bytes((SRC / "brand-tokens.css").read_bytes())
     (ROOT / "styles.css").write_bytes((SRC / "site.css").read_bytes())
     (ROOT / "site.js").write_bytes((SRC / "site.js").read_bytes())
     for name in page_assets(pages):
@@ -742,7 +743,7 @@ def og_card(page):
         card = {"label": "Coaching package", "headline": pkg["name"],
                 "tagline": f"{pkg['price']}, {pkg['length'][0].lower()}{pkg['length'][1:]}"}
     elif page.get("og"):
-        card = {"tagline": CONFIG["businessName"], **page["og"]}
+        card = {"tagline": "", **page["og"]}
     else:
         card = {"label": CONFIG["label"], "headline": CONFIG["businessName"],
                 "tagline": "Know your next step. Take it with clarity."}
@@ -756,9 +757,10 @@ def build_og_images(pages):
     (ROOT / "og").mkdir(exist_ok=True)
     template = (SRC / "og-image.html").read_text(encoding="utf-8")
     with tempfile.TemporaryDirectory() as tmp:
+        ctx = {"tokens": (SRC / "brand-tokens.css").as_uri(), "logo": (ROOT / "logo" / "lockup.svg").as_uri()}
         for page, _ in pages:
             src = pathlib.Path(tmp) / f"{og_slug(page)}.html"
-            src.write_text(render(template, {"og": page["og"]}), encoding="utf-8")
+            src.write_text(render(template, {**ctx, "og": page["og"]}), encoding="utf-8")
             out = ROOT / "og" / f"{og_slug(page)}.png"
             subprocess.run([
                 CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
@@ -1057,7 +1059,7 @@ def check(pages):
             warnings.append(f"{name}: visible '&' in copy; the house style is 'and'")
 
     assets = [ROOT / n for n in page_assets(pages)]
-    for f in [d for _, d in pages] + [ROOT / "styles.css", ROOT / "site.js"] + assets + [CLARITY_FILE]:
+    for f in [d for _, d in pages] + [ROOT / "brand-tokens.css", ROOT / "styles.css", ROOT / "site.js"] + assets + [CLARITY_FILE]:
         body = f.read_text(encoding="utf-8")
         for dash, label in (("—", "em-dash"), ("–", "en-dash")):
             if dash in body:

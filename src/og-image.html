@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <!-- Template for the Open Graph images in og/ (1200x630), one per page. Regenerate with: python3 build.py --og -->
-<html lang="en-IE">
+<html lang="en-IE" data-site="coaching">
 <head>
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@500;600&display=block" rel="stylesheet">
+<link href="{{ tokens }}" rel="stylesheet">
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 1200px; height: 630px; overflow: hidden; }
     body {
-        background: #F3F0EB;
-        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--mr-ground);
+        font-family: var(--mr-sans);
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding: 0 96px;
+        padding: 72px 96px;
         position: relative;
     }
     body::before {
         content: '';
         position: absolute;
         inset: 36px;
-        border: 1px solid #E2DEDA;
+        border: 1px solid var(--mr-line);
+    }
+    .logo { height: 60px; width: auto; align-self: flex-start; }
+    .card {
+        flex: 1;
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .label {
         font-size: 20px;
         font-weight: 600;
         letter-spacing: 0.24em;
         text-transform: uppercase;
-        color: #3A6B6B;
-        margin-bottom: 28px;
+        color: var(--mr-accent);
+        margin-bottom: 24px;
     }
     .name {
-        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-family: var(--mr-serif);
         font-weight: 400;
         font-size: {{ og.size }};
         line-height: 1.02;
-        color: #1A1A1A;
+        color: var(--mr-ink);
         margin-bottom: 30px;
     }
     .tagline {
-        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-family: var(--mr-serif);
         font-style: italic;
         font-size: 48px;
-        color: #3A6B6B;
+        color: var(--mr-accent);
     }
-    .rule { width: 72px; height: 2px; background: #3A6B6B; margin-bottom: 32px; }
+    .tagline:empty { display: none; }
+    .rule { width: 72px; height: 2px; background: var(--mr-accent); margin-bottom: 32px; }
     .place {
         position: absolute;
         right: 96px;
@@ -53,15 +62,18 @@
         font-weight: 500;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #686460;
+        color: var(--mr-muted);
     }
 </style>
 </head>
 <body>
-    <p class="label">{{ og.label }}</p>
-    <p class="name">{{ og.headline }}</p>
-    <div class="rule"></div>
-    <p class="tagline">{{ og.tagline }}</p>
+    <img class="logo" src="{{ logo }}" alt="Matt Rutherford Coaching">
+    <div class="card">
+        <p class="label">{{ og.label }}</p>
+        <p class="name">{{ og.headline }}</p>
+        <div class="rule"></div>
+        <p class="tagline">{{ og.tagline }}</p>
+    </div>
     <p class="place">Dublin, Ireland</p>
 </body>
 </html>

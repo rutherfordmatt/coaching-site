@@ -52,7 +52,7 @@
 
 /* Tiles start the questions, so they need to look like something to press. */
 .cc-tile { position: relative; padding-bottom: 2.6rem; }
-.cc-tile:hover { background: var(--accent-light); box-shadow: 0 6px 18px rgba(58,107,107,0.12); }
+.cc-tile:hover { background: var(--accent-light); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 12%, transparent); }
 .cc-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-color: var(--accent); }
 .cc-tile-arrow {
     position: absolute;
