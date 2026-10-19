@@ -2,17 +2,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --bg:           #FAFAF8;
-    --bg-alt:       #F3F0EB;
-    --text:         #1A1A1A;
-    --text-muted:   #686460;
-    --accent:       #3A6B6B;
-    --accent-dark:  #2B5050;
-    --accent-light: #E6EFEF;
-    --border:       #E2DEDA;
-    --white:        #FFFFFF;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body:    'Inter', system-ui, sans-serif;
+    /* Aliases for the brand tokens in brand-tokens.css */
+    --bg:           var(--mr-ground);
+    --bg-alt:       var(--mr-alt);
+    --text:         var(--mr-ink);
+    --text-muted:   var(--mr-muted);
+    --accent:       var(--mr-accent);
+    --accent-dark:  var(--mr-accent-dark);
+    --accent-light: var(--mr-accent-pale);
+    --border:       var(--mr-line);
+    --white:        var(--mr-paper);
+    --font-display: var(--mr-serif);
+    --font-body:    var(--mr-sans);
     --nav-height:   68px;
 }
 
@@ -124,7 +125,7 @@ p  { color: var(--text-muted); line-height: 1.85; }
 .btn-primary:hover {
     background: var(--accent-dark);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(58,107,107,0.25);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .btn-outline {
     background: transparent;
@@ -162,18 +163,8 @@ p  { color: var(--text-muted); line-height: 1.85; }
 }
 .site-nav.scrolled { border-bottom-color: var(--border); }
 
-.nav-brand {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    color: var(--text);
-}
-.nav-brand span {
-    font-style: italic;
-    color: var(--accent);
-}
+.nav-brand { display: block; }
+.nav-brand img { height: 48px; width: auto; }
 
 .nav-links {
     display: flex;
@@ -1016,7 +1007,7 @@ select {
 }
 input:focus, textarea:focus, select:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(58,107,107,0.15);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 input::placeholder, textarea::placeholder { color: #767069; }
@@ -1055,23 +1046,14 @@ textarea { resize: vertical; min-height: 140px; }
     gap: 3rem;
     align-items: start;
 }
-.footer-brand {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 0.2rem;
-}
+.footer-brand { margin-bottom: 0.9rem; }
+/* The mono lockup draws in currentColor. Opacity on the whole logo matches
+   the footer text's rgba white without the ring and dot overlap showing. */
+.footer-brand svg { display: block; height: 44px; width: 224px; color: var(--white); opacity: 0.7; }
 .footer-id p:not(.footer-brand) {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.7);
     line-height: 1.8;
-}
-.footer-id .footer-label {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0.9rem;
 }
 .site-footer a {
     color: rgba(255,255,255,0.78);
@@ -1210,6 +1192,7 @@ textarea { resize: vertical; min-height: 140px; }
 }
 
 @media (max-width: 600px) {
+    .nav-brand img { height: 40px; }
     .packages-grid--compact, .map-grid { grid-template-columns: 1fr; }
     .map-grid { gap: 2.2rem; }
 }
