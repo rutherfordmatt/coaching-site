@@ -1046,19 +1046,14 @@ textarea { resize: vertical; min-height: 140px; }
     gap: 3rem;
     align-items: start;
 }
-.footer-brand { margin-bottom: 0.35rem; }
-.footer-brand img { height: 36px; width: auto; }
+.footer-brand { margin-bottom: 0.9rem; }
+/* The mono lockup draws in currentColor. Opacity on the whole logo matches
+   the footer text's rgba white without the ring and dot overlap showing. */
+.footer-brand svg { display: block; height: 44px; width: 224px; color: var(--white); opacity: 0.7; }
 .footer-id p:not(.footer-brand) {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.7);
     line-height: 1.8;
-}
-.footer-id .footer-label {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0.9rem;
 }
 .site-footer a {
     color: rgba(255,255,255,0.78);
