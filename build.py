@@ -838,6 +838,7 @@ Prices are published and the same whoever pays, including when an employer funds
 ## Optional
 
 - [Privacy statement]({SITE}/privacy/): {by_path['/privacy/']['description']}
+- [Terms of business]({SITE}/terms/): {by_path['/terms/']['description']}
 - [Full text of every page]({SITE}/llms-full.txt): the same pages as plain text, in one file.
 - [The Values Finder]({CONFIG['links']['valuesFinder']}): a free 20 minute exercise to work out what matters to you at work.
 {clarity}- [Stuff that MattRs]({CONFIG['links']['newsletter']}): Matt's weekly newsletter.
@@ -924,7 +925,7 @@ def page_text(dest):
 LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/sessions/", "/coaching/sounding-board/",
                    "/coaching/the-next-move/", "/coaching/leadership-engagement/",
                    "/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/",
-                   "/about/", "/faq/", "/for-organisations/", "/privacy/"]
+                   "/about/", "/faq/", "/for-organisations/", "/privacy/", "/terms/"]
 
 
 def write_llms_full_txt(pages):

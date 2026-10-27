@@ -30,6 +30,7 @@ Prices are published and the same whoever pays, including when an employer funds
 ## Optional
 
 - [Privacy statement](https://mattrutherfordcoaching.com/privacy/): How Matt Rutherford Coaching collects, uses and protects your personal data under GDPR: what is collected, why, how long it is kept, and your rights.
+- [Terms of business](https://mattrutherfordcoaching.com/terms/): Terms of business for Matt Rutherford Coaching: prices, paying, rescheduling, your right to cancel, refunds and what happens if plans change.
 - [Full text of every page](https://mattrutherfordcoaching.com/llms-full.txt): the same pages as plain text, in one file.
 - [The Values Finder](https://thevaluesfinder.com): a free 20 minute exercise to work out what matters to you at work.
 - [The Clarity Check](https://mattrutherfordcoaching.com/clarity-check/): A free five minute career assessment. Twelve questions to name what is standing between you and your next step, with one thing to try this week.
