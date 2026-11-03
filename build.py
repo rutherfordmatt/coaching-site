@@ -455,10 +455,11 @@ def org_service_nodes():
 
 def area_served():
     return [
-        {"@type": "City", "name": "Dublin"},
         {"@type": "Country", "name": "Ireland"},
         {"@type": "Country", "name": "United Kingdom"},
-        {"@type": "Place", "name": "Europe"},
+        {"@type": "Country", "name": "United States"},
+        {"@type": "Country", "name": "Australia"},
+        {"@type": "Continent", "name": "Europe"},
     ]
 
 
@@ -504,7 +505,7 @@ def person_node():
         "url": SITE + "/about/",
         "image": SITE + "/" + c["photos"]["portrait"]["src"],
         "worksFor": {"@id": SITE + "/#business"},
-        "workLocation": {"@type": "Place", "name": "Dublin, Ireland"},
+        "workLocation": {"@type": "Place", "name": "Online"},
         "memberOf": {"@type": "Organization", "name": "Association for Coaching"},
         "hasCredential": {
             "@type": "EducationalOccupationalCredential",
@@ -657,7 +658,7 @@ def build():
         page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
         headline = strip_tags(page["og"]["headline"])
         stop = "" if headline.endswith((".", "?", "!")) else "."
-        page["ogImageAlt"] = f"{headline}{stop} {CONFIG['businessName']}."
+        page.setdefault("ogImageAlt", f"{headline}{stop} {CONFIG['businessName']}.")
         page["meta"] = {k: esc(page[k]) for k in ("title", "description", "ogTitle", "ogImageAlt")}
         page["robots"] = CONFIG.get("robots") or (
             "noindex, follow" if page.get("noindex") else "index, follow, max-snippet:-1, max-image-preview:large")
@@ -750,7 +751,7 @@ def og_card(page):
         card = {"tagline": "", **page["og"]}
     elif page["path"] == "/":
         card = {"label": CONFIG["label"], "tagline": "",
-                "headline": "Know your next step. <em>Take it with clarity.</em>"}
+                "headline": "Clarity. <em>For your next career move.</em>"}
     else:
         card = {"label": CONFIG["label"], "tagline": "",
                 "headline": page["title"].split(" | ")[0]}
@@ -819,7 +820,7 @@ def write_llms_txt(pages):
     clarity = line("/clarity-check/") + "\n" if cc and not cc.get("noindex") else ""
     text = f"""# {CONFIG['businessName']}
 
-> {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Dublin, Ireland, working online with clients in Ireland, the UK and Europe, and in person by arrangement. {CONFIG['positioning']} {CONFIG['background']}
+> {CONFIG['personName']} is a {CONFIG['label'].lower()} working online with clients wherever they are, and in person in Ireland by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
 Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Coaching Sessions at €160 a session. The Discovery Session is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 

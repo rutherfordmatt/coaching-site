@@ -36,7 +36,12 @@
       {
         "id": "online",
         "question": "Are sessions online or in person?",
-        "answer": "<p>Online by default, over Google Meet. In person by arrangement: in Dublin, or further afield if travel costs are covered. I work with clients in Ireland, the UK and Europe.</p>"
+        "answer": "<p>Online by default, over Google Meet, with clients in several time zones. In person by arrangement in Ireland, or further afield if travel costs are covered.</p>"
+      },
+      {
+        "id": "ireland-uk",
+        "question": "Do you only work with people in Ireland or the UK?",
+        "answer": "<p>No. Coaching is online. Sessions run on Irish time, which overlaps with most of the world for at least part of the day, and payment is by card in euros, so nothing else changes.</p>"
       }
     ]
   },
