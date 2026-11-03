@@ -411,6 +411,7 @@ def service_node(p):
         "url": SITE + p["url"],
         "provider": {"@id": SITE + "/#business"},
         "areaServed": area_served(),
+        "inLanguage": "en",
         "offers": offers_for(p),
     }
 
@@ -441,6 +442,7 @@ def org_service_nodes():
             "url": url,
             "provider": {"@id": SITE + "/#business"},
             "areaServed": area_served(),
+            "inLanguage": "en",
             "offers": [{
                 "@type": "Offer",
                 "name": name,
@@ -454,13 +456,7 @@ def org_service_nodes():
 
 
 def area_served():
-    return [
-        {"@type": "Country", "name": "Ireland"},
-        {"@type": "Country", "name": "United Kingdom"},
-        {"@type": "Country", "name": "United States"},
-        {"@type": "Country", "name": "Australia"},
-        {"@type": "Continent", "name": "Europe"},
-    ]
+    return "Worldwide"
 
 
 def price_range():
@@ -483,6 +479,7 @@ def business_node():
         "priceRange": price_range(),
         "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
         "areaServed": area_served(),
+        "inLanguage": "en",
         "founder": {"@id": SITE + "/#matt"},
         "sameAs": [c["links"]["linkedin"], c["links"]["acDirectory"]],
         "hasOfferCatalog": {
