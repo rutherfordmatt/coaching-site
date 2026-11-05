@@ -286,7 +286,8 @@ def h_cro_line(ctx, _):
     number = CONFIG.get("croNumber", "")
     if not is_set(number):
         return ""
-    return f"<p>Registered business name number {esc(number)}</p>"
+    return (f"<p>{esc(CONFIG['businessName'])} is the registered business name of "
+            f"{esc(CONFIG['personName'])}, CRO {esc(number)}</p>")
 
 
 def h_photo(ctx, args):
