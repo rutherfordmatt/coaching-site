@@ -818,7 +818,7 @@ def write_llms_txt(pages):
     clarity = line("/clarity-check/") + "\n" if cc and not cc.get("noindex") else ""
     text = f"""# {CONFIG['businessName']}
 
-> {CONFIG['personName']} is a {CONFIG['label'].lower()} working online with clients wherever they are, and in person in Ireland by arrangement. {CONFIG['llmsPositioning']} {CONFIG['background']}
+> {CONFIG['personName']} is a {CONFIG['label'].lower()} working online with clients wherever they are, and in person in Ireland by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
 Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Coaching Sessions at €160 a session. The Discovery Session is free: 30 minutes, online, and not a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 
