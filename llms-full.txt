@@ -799,7 +799,7 @@ This page is the short version, enough to get you through this week. [The Layoff
 
 ## When a conversation helps
 
-The Discovery Session is free: 30 minutes, online, and not a sales call. You tell me where things stand and we work out what would help most. If what you need is a recruiter, a solicitor or a rest, I'll say so.
+The Discovery Session is 30 minutes, online, and never a sales call. You tell me where things stand and we work out what would help most. If what you need is a recruiter, a solicitor or a rest, I'll say so.
 
 [Book a free Discovery Session](https://mattrutherfordcoaching.com/book/)
 
@@ -940,7 +940,7 @@ Stepping up to manager is a change of job, not a bigger version of the old one. 
 
 ## When a conversation helps
 
-The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me about the team, the role and what is on your mind, and we will work out what would help most. If what you need is a good management course or a few more months, I'll say so.
+The Discovery Session is 30 minutes, online, and never a sales call. Tell me about the team, the role and what is on your mind, and we will work out what would help most. If what you need is a good management course or a few more months, I'll say so.
 
 [Book a free Discovery Session](https://mattrutherfordcoaching.com/book/)
 
@@ -1081,7 +1081,7 @@ This is the hardest version: the same people, and a different relationship. Your
 
 ## When a conversation helps
 
-The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me about the role, how you got it and what you want from the first year, and we will work out what would help. If a strong induction and a good manager are all you need, I'll say so.
+The Discovery Session is 30 minutes, online, and never a sales call. Tell me about the role, how you got it and what you want from the first year, and we will work out what would help. If a strong induction and a good manager are all you need, I'll say so.
 
 [Book a free Discovery Session](https://mattrutherfordcoaching.com/book/)
 
@@ -1228,7 +1228,7 @@ Sometimes the change is your own: a bigger scope, a new layer, a team of manager
 
 ## When a conversation helps
 
-The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me what is changing and where you are in it, and we will work out what would help. If what you need is an employment lawyer or a stronger HR partner, I'll say so.
+The Discovery Session is 30 minutes, online, and never a sales call. Tell me what is changing and where you are in it, and we will work out what would help. If what you need is an employment lawyer or a stronger HR partner, I'll say so.
 
 [Book a free Discovery Session](https://mattrutherfordcoaching.com/book/)
 
@@ -1371,7 +1371,7 @@ If you are here after a redundancy, start with [what to do if you have just been
 
 ## When a conversation helps
 
-The Discovery Session is free: 30 minutes, online, and not a sales call. Tell me where you are and what you think you want next, and we will work out what would help. If a recruiter who knows your market would serve you better, I'll say so.
+The Discovery Session is 30 minutes, online, and never a sales call. Tell me where you are and what you think you want next, and we will work out what would help. If a recruiter who knows your market would serve you better, I'll say so.
 
 [Book a free Discovery Session](https://mattrutherfordcoaching.com/book/)
 
@@ -1787,7 +1787,7 @@ I keep the emails we exchange. My email is provided by Google Workspace.
 
 I keep brief session notes to support our work: what we covered, what you agreed to do next, and the transition map and plans we build. They can include things you tell me about your work and life. Online sessions run on Google Meet. I never record sessions.
 
-Handwritten session notes are kept securely for at least five years from each session, a condition of my professional indemnity insurance, and then destroyed. Business records are kept for six years. The session log holds your name, the date and the length of each session only.
+Handwritten session notes are kept securely for five years from each session, a condition of my professional indemnity insurance, and then destroyed. Business records are kept for six years. The session log holds your name, the date and the length of each session only.
 
 I keep session notes for five years because my professional indemnity insurer requires it, so I could respond to a complaint or claim. The legal basis is my legitimate interest in being able to do that.
 
@@ -1827,7 +1827,7 @@ This site does not set cookies. Calendly sets its own cookies when you go to it 
 
 - Contract: booking, delivering coaching, invoicing and taking payment, and the steps before an agreement, such as the Discovery Session and the proposal.
 
-- Legitimate interests: replying to enquiries, gathering 360 feedback for an engagement you have agreed to, keeping the site secure, and understanding how the site is used through cookie-free analytics.
+- Legitimate interests: replying to enquiries, gathering 360 feedback for an engagement you have agreed to, keeping session notes to defend a complaint or claim, keeping the site secure, and understanding how the site is used through cookie-free analytics.
 
 - Legal obligation: keeping financial records for Irish tax purposes.
 
@@ -1835,7 +1835,7 @@ This site does not set cookies. Calendly sets its own cookies when you go to it 
 
 ## How long I keep it
 
-- Handwritten session notes: at least five years from each session, a condition of my professional indemnity insurance, then destroyed.
+- Handwritten session notes: five years from each session, a condition of my professional indemnity insurance, then destroyed.
 
 - The Sounding Board written summary: my copy is kept for the same period as session notes.
 
@@ -1877,7 +1877,7 @@ You have the right to:
 
 - have it corrected if it is wrong
 
-- have it deleted, unless I have to keep it by law
+- have it deleted, unless I need to keep it (see below)
 
 - restrict or object to how I use it
 
