@@ -1787,6 +1787,10 @@ I keep the emails we exchange. My email is provided by Google Workspace.
 
 I keep brief session notes to support our work: what we covered, what you agreed to do next, and the transition map and plans we build. They can include things you tell me about your work and life. Online sessions run on Google Meet. I never record sessions.
 
+Handwritten session notes are kept securely for at least five years from each session, a condition of my professional indemnity insurance, and then destroyed. Business records are kept for six years. The session log holds your name, the date and the length of each session only.
+
+The Sounding Board written summary is a typed record. You get it, and I keep a copy for the same period as session notes.
+
 If you share information about your health or other sensitive matters, I record it only where it is needed for the coaching and only with your explicit consent.
 
 ### 360 feedback
@@ -1829,13 +1833,19 @@ This site does not set cookies. Calendly sets its own cookies when you go to it 
 
 ## How long I keep it
 
-- Session notes and coaching materials: 12 months after our last session, then deleted, unless we are still working together or have agreed something different.
+- Handwritten session notes: at least five years from each session, a condition of my professional indemnity insurance, then destroyed.
 
-- 360 feedback: kept with the session notes, on the same 12 month schedule.
+- The Sounding Board written summary: my copy is kept for the same period as session notes.
+
+- Other coaching materials: 12 months after our last session, then deleted, unless we are still working together or have agreed something different.
+
+- 360 feedback: 12 months after our last session, then deleted.
 
 - Enquiries that do not lead to coaching: 12 months from our last contact, then deleted.
 
 - Invoices and payment records: six years, as Irish tax law requires.
+
+- Other business records, including the session log: six years.
 
 - Booking records in Calendly: Calendly keeps past bookings until I delete them. I delete them on the same 12 month schedule.
 
@@ -1879,7 +1889,7 @@ To use any of these, email [matt@mattrutherfordcoaching.com](mailto:matt@mattrut
 
 If you are unhappy with how I handle your data, please tell me first and I will try to put it right. You also have the right to complain to the Data Protection Commission, the supervisory authority in Ireland, at [dataprotection.ie](https://www.dataprotection.ie/).
 
-Last updated 6 October 2026.
+Last updated 5 November 2026.
 
 ---
 
