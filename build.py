@@ -412,7 +412,6 @@ def service_node(p):
         "url": SITE + p["url"],
         "provider": {"@id": SITE + "/#business"},
         "areaServed": area_served(),
-        "inLanguage": "en",
         "offers": offers_for(p),
     }
 
@@ -443,7 +442,6 @@ def org_service_nodes():
             "url": url,
             "provider": {"@id": SITE + "/#business"},
             "areaServed": area_served(),
-            "inLanguage": "en",
             "offers": [{
                 "@type": "Offer",
                 "name": name,
@@ -457,7 +455,7 @@ def org_service_nodes():
 
 
 def area_served():
-    return "Worldwide"
+    return {"@type": "Country", "name": "Ireland"}
 
 
 def price_range():
@@ -478,9 +476,9 @@ def business_node():
         "description": c["positioning"],
         "email": c["email"],
         "priceRange": price_range(),
-        "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
+        "address": {"@type": "PostalAddress", "addressCountry": "IE"},
         "areaServed": area_served(),
-        "inLanguage": "en",
+        "knowsLanguage": "en",
         "founder": {"@id": SITE + "/#matt"},
         "sameAs": [c["links"]["linkedin"], c["links"]["acDirectory"]],
         "hasOfferCatalog": {
@@ -813,14 +811,15 @@ def write_llms_txt(pages):
         for p in PACKAGES)
     situations = "\n".join(line(p) for p in ("/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/"))
     more = "\n".join([f"- [Home]({SITE}/): {by_path['/']['description']}"]
-                     + [line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/")])
+                     + [line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/")]
+                     + [line("/book/", "Book the free 30 minute Discovery Session, online.")])
     cc = by_path.get("/clarity-check/")
     clarity = line("/clarity-check/") + "\n" if cc and not cc.get("noindex") else ""
     text = f"""# {CONFIG['businessName']}
 
-> {CONFIG['personName']} is a {CONFIG['label'].lower()} working online with clients wherever they are, and in person in Ireland by arrangement. {CONFIG['positioning']} {CONFIG['background']}
+> {CONFIG['personName']} is a {CONFIG['label'].lower()} based in Ireland, working online with clients wherever they are, and in person in Ireland by arrangement. {CONFIG['positioning']} {CONFIG['background']}
 
-Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is for people who have finished a programme, who continue with Coaching Sessions at €160 a session. The Discovery Session is 30 minutes, online, and never a sales call. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
+Prices are published and the same whoever pays, including when an employer funds the coaching. The one exception is the alumni rate: people who have finished a programme continue with Coaching Sessions at €160 a session (a block of four for €640, or eight for €1,280). The first step is a free 30 minute Discovery Session, online, which is never a sales call. Packages start at €200 a session; the full price list is at {SITE}/coaching/. Contact: {CONFIG['email']}. Booking: {CONFIG['booking']['conversation']}
 
 ## Packages
 
