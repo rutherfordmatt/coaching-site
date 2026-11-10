@@ -177,6 +177,7 @@ def h_package_hero(ctx, slug):
                 <dl class="hero-facts">
                     <div><dt>Length</dt><dd>{p['length']}</dd></div>
                     <div><dt>Payment</dt><dd>{p['payment']}</dd></div>
+                    <div><dt>Where</dt><dd>Online</dd></div>
                     {extra}
                 </dl>
                 <div class="hero-actions">
