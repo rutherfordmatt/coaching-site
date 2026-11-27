@@ -370,7 +370,7 @@ def h_jsonld(ctx, _):
     blocks = []
     for kind in ctx["page"].get("schema", []):
         blocks.append(schema(kind, ctx))
-    if ctx["page"]["path"] != "/":
+    if ctx["page"]["path"] != "/" and not ctx["page"].get("notFound"):
         blocks.append(breadcrumb(ctx["page"]))
     return "\n".join(
         '<script type="application/ld+json">\n'
@@ -681,12 +681,14 @@ def build():
         page = json.loads(m.group(1))
         page.setdefault("schema", [])
         page.setdefault("bodyClass", "")
-        page["canonical"] = SITE + page["path"]
+        # The 404 page is served by nginx at whatever address was missing, so
+        # it is written to its own file and points at the home share card.
+        page["canonical"] = SITE + ("/" + page["file"] if page.get("file") else page["path"])
         page["sources"] = page_sources(src, raw)
         page["ogTitle"] = page.get("ogTitle", page["title"])
         page.setdefault("ogType", "website")
         page["og"] = og_card(page)
-        page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
+        page["ogImage"] = f"{SITE}/og/{'home' if page.get('notFound') else og_slug(page)}.png"
         headline = strip_tags(page["og"]["headline"])
         stop = "" if headline.endswith((".", "?", "!")) else "."
         page.setdefault("ogImageAlt", f"{headline}{stop} {CONFIG['businessName']}.")
@@ -705,7 +707,7 @@ def build():
         out = re.sub(r' data-nav="([^"]*)"',
                      lambda n: ' aria-current="page"' if n.group(1) == section else "", out)
 
-        dest = output_path(page["path"])
+        dest = ROOT / page["file"] if page.get("file") else output_path(page["path"])
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(out, encoding="utf-8")
         pages.append((page, dest))
@@ -1135,6 +1137,8 @@ def check(pages):
                 warnings.append(f"{dest.relative_to(ROOT)}: {field} is {len(page[field])} characters (limit {limit})")
 
     for page, dest in pages:
+        if page.get("notFound"):
+            continue
         if not (ROOT / "og" / f"{og_slug(page)}.png").exists():
             problems.append(f"{dest.relative_to(ROOT)}: og/{og_slug(page)}.png is missing; run build.py --og")
 
