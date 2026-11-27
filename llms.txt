@@ -23,6 +23,7 @@ Prices are published and the same whoever pays, including when an employer funds
 
 - [Home](https://staging.mattrutherfordcoaching.com/): One-to-one coaching for your next career move. Career and leadership coaching for people stepping up, starting somewhere new, or deciding whether to stay.
 - [About](https://staging.mattrutherfordcoaching.com/about/): Thirty years in senior roles at Meta, LinkedIn and Microsoft, most recently Global Head of Change Management at Meta. Now coaching online.
+- [Working with me](https://staging.mattrutherfordcoaching.com/working-with-me/): Who Matt Rutherford works best with as a career and leadership coach, how to tell if you are a fit, and what the first 30 minute conversation is for.
 - [FAQ](https://staging.mattrutherfordcoaching.com/faq/): Answers on the free Discovery Session, who I work with, sessions online, wherever you are, payment and instalments, employer funding and confidentiality.
 - [For organisations](https://staging.mattrutherfordcoaching.com/for-organisations/): One to one coaching paid for by your organisation: new-manager coaching, leadership coaching and individual outplacement support.
 - [Coaching](https://staging.mattrutherfordcoaching.com/coaching/): Four career and leadership coaching packages with published prices, from a single coaching session to a six month Leadership Engagement.

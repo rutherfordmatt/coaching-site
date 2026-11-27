@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/about/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://staging.mattrutherfordcoaching.com/book/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -89,5 +89,10 @@
     <loc>https://staging.mattrutherfordcoaching.com/terms/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://staging.mattrutherfordcoaching.com/working-with-me/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

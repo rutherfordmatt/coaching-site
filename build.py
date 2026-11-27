@@ -848,7 +848,7 @@ def write_llms_txt(pages):
         for p in PACKAGES)
     situations = "\n".join(line(p) for p in ("/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/"))
     more = "\n".join([f"- [Home]({SITE}/): {by_path['/']['description']}"]
-                     + [line(p) for p in ("/about/", "/faq/", "/for-organisations/", "/coaching/")]
+                     + [line(p) for p in ("/about/", "/working-with-me/", "/faq/", "/for-organisations/", "/coaching/")]
                      + [line("/book/", "Book the free 30 minute Discovery Session, online.")])
     cc = by_path.get("/clarity-check/")
     clarity = line("/clarity-check/") + "\n" if cc and not cc.get("noindex") else ""
@@ -960,7 +960,7 @@ def page_text(dest):
 LLMS_FULL_ORDER = ["/", "/coaching/", "/coaching/sessions/", "/coaching/sounding-board/",
                    "/coaching/the-next-move/", "/coaching/leadership-engagement/",
                    "/laid-off/", "/new-manager/", "/new-role/", "/leading-through-change/", "/next-role/",
-                   "/about/", "/faq/", "/for-organisations/", "/privacy/", "/terms/"]
+                   "/about/", "/working-with-me/", "/faq/", "/for-organisations/", "/privacy/", "/terms/"]
 
 
 def write_llms_full_txt(pages):

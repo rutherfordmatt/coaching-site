@@ -1550,6 +1550,8 @@ People making progress in their careers, from experienced professionals to execu
 
 - [Just been laid off](https://staging.mattrutherfordcoaching.com/laid-off/)
 
+[How to tell if we are a fit](https://staging.mattrutherfordcoaching.com/working-with-me/)
+
 ## Training and standards
 
 I hold a Diploma in Executive and Business Coaching (2024) and I am a registered member of the [Association for Coaching](https://www.associationforcoaching.com/members/?id=82268264). My coaching follows the Association for Coaching code of ethics.
@@ -1563,6 +1565,49 @@ I also write [Stuff that MattRs](https://www.mattrutherford.co.uk/newsletter/), 
 I'm based in Ireland. Sessions are online, with clients across time zones. In person by arrangement in Ireland.
 
 [Book a free Discovery Session](https://staging.mattrutherfordcoaching.com/book/) [See the packages](https://staging.mattrutherfordcoaching.com/coaching/)
+
+---
+
+URL: https://staging.mattrutherfordcoaching.com/working-with-me/
+Title: Working With Me | Matt Rutherford Coaching
+
+# Working with me
+
+The short version: who I work best with, how to tell if we are a fit, and what our first conversation is for. For a neutral guide, read [Five questions to ask before hiring a career coach](https://www.mattrutherford.co.uk/five-questions-to-ask-before-hiring-a-career-coach/?utm_source=mattrutherfordcoaching.com&utm_medium=working-with-me).
+
+## Who I work best with
+
+People making progress in their careers, from senior individual contributor to senior leader. Usually in the middle of a change:
+
+- stepping up to manage people
+
+- starting a new role
+
+- looking for the next one, including after a layoff
+
+- deciding whether to stay
+
+## How I work
+
+I listen first. I tell you what I see, plainly. You leave each session with something to try. The decisions stay yours.
+
+## Probably a fit if
+
+- you want a thinking partner who will be honest with you
+
+- you are ready to try things between sessions
+
+## Probably not a fit if
+
+- you want someone to find you a job
+
+- you want one fixed method, whatever your situation
+
+## The first conversation
+
+A Discovery Session: 30 minutes, online. It is on me, and it is not a sales call. You tell me where you are and what you want to change. We both find out if we would work well together. If we would, I send a short proposal. If not, I will say so and suggest someone who might be a better fit.
+
+[Book a Discovery Session](https://staging.mattrutherfordcoaching.com/book/)
 
 ---
 
@@ -2050,6 +2095,8 @@ Title: Book a Time | Matt Rutherford Coaching
 # Book a time
 
 Pick a time for your free 30 minute Discovery Session.
+
+Not sure yet? [Read how I work](https://staging.mattrutherfordcoaching.com/working-with-me/).
 
 Having trouble with the calendar? [Open the booking page](https://calendly.com/mattrutherfordcoaching/conversation).
 
