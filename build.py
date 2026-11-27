@@ -217,6 +217,23 @@ def h_testimonials(ctx, _):
     return f'<div class="testimonials-grid testimonials-grid--{count}">{"".join(out)}</div>'
 
 
+def h_pull_quote(ctx, tid):
+    """{{ pull_quote dermot-smith }}: the short cut of one testimonial, in his
+    exact words, as a single card inside a page. The short cut must appear
+    word for word in the full quote."""
+    t = next(t for t in TESTIMONIALS if t.get("id") == tid)
+    assert t["short"] in t["quote"], f"short quote for {tid} is not in the full quote"
+    role = f'<p class="author-role">{t["role"]}</p>' if t.get("role") else ""
+    return f"""<figure class="testimonial testimonial--pull">
+                    <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                    <blockquote class="testimonial-text"><p>{t['short']}</p></blockquote>
+                    <figcaption class="testimonial-author">
+                        <p class="author-name">{t['name']}</p>
+                        {role}
+                    </figcaption>
+                </figure>"""
+
+
 def faq_items():
     return [item for group in FAQ for item in group["items"]]
 
@@ -368,6 +385,7 @@ HELPERS = {
     "package_includes": h_package_includes,
     "package": h_package,
     "testimonials": h_testimonials,
+    "pull_quote": h_pull_quote,
     "faq_list": h_faq_list,
     "newsletter": h_newsletter,
     "newsletter_li": h_newsletter_li,
