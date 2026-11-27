@@ -75,6 +75,7 @@
             <div class="page-hero-inner">
                 <h1>Book a time</h1>
                 <p class="page-lede" id="bookingIntro">Pick a time for your free 30 minute Discovery Session.</p>
+                <p class="muted-note" id="bookingFit">Not sure yet? <a href="/working-with-me/">Read how I work</a>.</p>
             </div>
         </section>
 
@@ -106,6 +107,7 @@
             if (!/^https:\/\/calendly\.com\//.test(base)) return;
 
             document.getElementById('bookingIntro').textContent = INTROS[type];
+            if (type !== 'conversation') document.getElementById('bookingFit').hidden = true;
 
             // Colours come from the site's tokens so the widget matches site.css.
             var css = getComputedStyle(document.documentElement);
@@ -174,6 +176,7 @@
                     <li><a href="/coaching/">For individuals</a></li>
                     <li><a href="/for-organisations/">For organisations</a></li>
                     <li><a href="/about/">About</a></li>
+                    <li><a href="/working-with-me/">Working with me</a></li>
                     <li><a href="/faq/">FAQ</a></li>
                     <li><a href="/privacy/">Privacy</a></li>
                     <li><a href="/terms/">Terms</a></li>
