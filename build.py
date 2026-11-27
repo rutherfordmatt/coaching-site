@@ -413,6 +413,7 @@ def service_node(p):
         "url": SITE + p["url"],
         "provider": {"@id": SITE + "/#business"},
         "areaServed": area_served(),
+        "availableChannel": online_channel(),
         "offers": offers_for(p),
     }
 
@@ -443,6 +444,7 @@ def org_service_nodes():
             "url": url,
             "provider": {"@id": SITE + "/#business"},
             "areaServed": area_served(),
+            "availableChannel": online_channel(),
             "offers": [{
                 "@type": "Offer",
                 "name": name,
@@ -455,8 +457,22 @@ def org_service_nodes():
     return nodes
 
 
+# Based in Ireland, coaching online with clients anywhere, mainly in
+# English-speaking countries. The address stays Ireland (country only).
+AREA_SERVED = ["Ireland", "United Kingdom", "United States", "Canada", "Australia"]
+
+
 def area_served():
-    return {"@type": "Country", "name": "Ireland"}
+    return [{"@type": "Country", "name": n} for n in AREA_SERVED]
+
+
+def online_channel():
+    """How every service is delivered: online, over Google Meet."""
+    return {
+        "@type": "ServiceChannel",
+        "name": "Online, over Google Meet",
+        "serviceUrl": SITE + "/book/",
+    }
 
 
 def price_range():
