@@ -719,6 +719,15 @@ p  { color: var(--text-muted); line-height: 1.85; }
     line-height: 1.6;
 }
 
+/* One short quote inside a page's prose (Leadership Engagement, For organisations) */
+.testimonial--pull { margin: 2.5rem 0 3rem; gap: 1.2rem; }
+.testimonial--pull:hover { box-shadow: none; transform: none; }
+.testimonial--pull .testimonial-text { margin: 0; }
+.testimonial--pull .testimonial-text p { font-size: 1.2rem; margin: 0; }
+.testimonial--pull .testimonial-author { min-height: 0; }
+.testimonial--pull .author-name, .testimonial--pull .author-role { margin: 0; }
+.testimonial--pull .author-name { margin-bottom: 0.2rem; }
+
 /* ─── About (home summary and about page) ─── */
 .about { background: var(--bg-alt); }
 .about-inner {

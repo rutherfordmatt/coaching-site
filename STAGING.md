@@ -20,12 +20,15 @@ the live site. It is the only place a work branch is deployed.
 Anything else that should differ on staging belongs in `config.staging.json`,
 not in a page or the layout.
 
-## Working on a branch
+## Working on staging
 
-1. Branch from `main`. Never commit work in progress to `main`.
-2. Before each commit on the branch, run `python3 build.py --staging`, so the
-   generated files in the branch are the staging build that Coolify deploys.
-3. Push the branch. The staging app in Coolify deploys it.
+The staging app always deploys the permanent `staging` branch (since 27 Nov
+2026). Never point it at another branch; the full rule is in `CLAUDE.md`.
+
+1. Work on `staging`. Never commit work in progress to `main`.
+2. Before each commit, run `python3 build.py --staging`, so the generated
+   files in the branch are the staging build that Coolify deploys.
+3. Push `staging`. The staging app in Coolify deploys it.
 
 ## Before merging to main
 
@@ -44,7 +47,7 @@ The branch holds a staging build, which must never reach the live site.
 - **DNS:** an A record for `staging` pointing at the same server as the live
   site.
 - **Coolify:** a second application from the same repository, with the branch
-  set to the work branch and the domain set to
+  set to `staging` and the domain set to
   `https://staging.mattrutherfordcoaching.com`. Coolify issues the certificate.
 - **Password:** HTTP basic authentication on the staging application in
   Coolify (one shared username and password for testers). The live

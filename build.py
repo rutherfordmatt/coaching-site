@@ -217,6 +217,23 @@ def h_testimonials(ctx, _):
     return f'<div class="testimonials-grid testimonials-grid--{count}">{"".join(out)}</div>'
 
 
+def h_pull_quote(ctx, tid):
+    """{{ pull_quote dermot-smith }}: the short cut of one testimonial, in his
+    exact words, as a single card inside a page. The short cut must appear
+    word for word in the full quote."""
+    t = next(t for t in TESTIMONIALS if t.get("id") == tid)
+    assert t["short"] in t["quote"], f"short quote for {tid} is not in the full quote"
+    role = f'<p class="author-role">{t["role"]}</p>' if t.get("role") else ""
+    return f"""<figure class="testimonial testimonial--pull">
+                    <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                    <blockquote class="testimonial-text"><p>{t['short']}</p></blockquote>
+                    <figcaption class="testimonial-author">
+                        <p class="author-name">{t['name']}</p>
+                        {role}
+                    </figcaption>
+                </figure>"""
+
+
 def faq_items():
     return [item for group in FAQ for item in group["items"]]
 
@@ -353,7 +370,7 @@ def h_jsonld(ctx, _):
     blocks = []
     for kind in ctx["page"].get("schema", []):
         blocks.append(schema(kind, ctx))
-    if ctx["page"]["path"] != "/":
+    if ctx["page"]["path"] != "/" and not ctx["page"].get("notFound"):
         blocks.append(breadcrumb(ctx["page"]))
     return "\n".join(
         '<script type="application/ld+json">\n'
@@ -368,6 +385,7 @@ HELPERS = {
     "package_includes": h_package_includes,
     "package": h_package,
     "testimonials": h_testimonials,
+    "pull_quote": h_pull_quote,
     "faq_list": h_faq_list,
     "newsletter": h_newsletter,
     "newsletter_li": h_newsletter_li,
@@ -413,6 +431,7 @@ def service_node(p):
         "url": SITE + p["url"],
         "provider": {"@id": SITE + "/#business"},
         "areaServed": area_served(),
+        "availableChannel": online_channel(),
         "offers": offers_for(p),
     }
 
@@ -443,6 +462,7 @@ def org_service_nodes():
             "url": url,
             "provider": {"@id": SITE + "/#business"},
             "areaServed": area_served(),
+            "availableChannel": online_channel(),
             "offers": [{
                 "@type": "Offer",
                 "name": name,
@@ -455,8 +475,22 @@ def org_service_nodes():
     return nodes
 
 
+# Based in Ireland, coaching online with clients anywhere, mainly in
+# English-speaking countries. The address stays Ireland (country only).
+AREA_SERVED = ["Ireland", "United Kingdom", "United States", "Canada", "Australia"]
+
+
 def area_served():
-    return {"@type": "Country", "name": "Ireland"}
+    return [{"@type": "Country", "name": n} for n in AREA_SERVED]
+
+
+def online_channel():
+    """How every service is delivered: online, over Google Meet."""
+    return {
+        "@type": "ServiceChannel",
+        "name": "Online, over Google Meet",
+        "serviceUrl": SITE + "/book/",
+    }
 
 
 def price_range():
@@ -647,12 +681,14 @@ def build():
         page = json.loads(m.group(1))
         page.setdefault("schema", [])
         page.setdefault("bodyClass", "")
-        page["canonical"] = SITE + page["path"]
+        # The 404 page is served by nginx at whatever address was missing, so
+        # it is written to its own file and points at the home share card.
+        page["canonical"] = SITE + ("/" + page["file"] if page.get("file") else page["path"])
         page["sources"] = page_sources(src, raw)
         page["ogTitle"] = page.get("ogTitle", page["title"])
         page.setdefault("ogType", "website")
         page["og"] = og_card(page)
-        page["ogImage"] = f"{SITE}/og/{og_slug(page)}.png"
+        page["ogImage"] = f"{SITE}/og/{'home' if page.get('notFound') else og_slug(page)}.png"
         headline = strip_tags(page["og"]["headline"])
         stop = "" if headline.endswith((".", "?", "!")) else "."
         page.setdefault("ogImageAlt", f"{headline}{stop} {CONFIG['businessName']}.")
@@ -671,7 +707,7 @@ def build():
         out = re.sub(r' data-nav="([^"]*)"',
                      lambda n: ' aria-current="page"' if n.group(1) == section else "", out)
 
-        dest = output_path(page["path"])
+        dest = ROOT / page["file"] if page.get("file") else output_path(page["path"])
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(out, encoding="utf-8")
         pages.append((page, dest))
@@ -1101,6 +1137,8 @@ def check(pages):
                 warnings.append(f"{dest.relative_to(ROOT)}: {field} is {len(page[field])} characters (limit {limit})")
 
     for page, dest in pages:
+        if page.get("notFound"):
+            continue
         if not (ROOT / "og" / f"{og_slug(page)}.png").exists():
             problems.append(f"{dest.relative_to(ROOT)}: og/{og_slug(page)}.png is missing; run build.py --og")
 
